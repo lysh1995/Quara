@@ -36,14 +36,25 @@ tools:context="quara.test_login.MainActivity">
             android:textColor= "@color/black" />
 
         <Spinner
-            android:id="@+id/planets_spinner"
+            android:id="@+id/course_spinner"
             android:layout_width="fill_parent"
+            android:textSize="30sp"
             android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_marginTop="10dp"
+            android:text="Medium Text"
+            android:textColor="@color/black"
+            android:id="@+id/textView" />
 
         <Button
             android:layout_width="match_parent"
             android:id="@+id/bLogout"
             android:text="Logout"
+            android:layout_marginTop="10dp"
             android:layout_height="wrap_content" />
 
     </LinearLayout>
