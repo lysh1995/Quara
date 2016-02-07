@@ -25,7 +25,7 @@ public class ServerRequests {
     ProgressDialog progressDialog;
 
     public static final int CONNECTION_TIMEOUT = 1000*15;
-    public static final String SERVER_ADDRESS = "http://monkeyking.web.engr.illinois.edu/";
+    public static final String SERVER_ADDRESS = "http://quara2016.web.engr.illinois.edu/";
 
     public ServerRequests(Context context)
     {
@@ -88,7 +88,6 @@ public class ServerRequests {
             Map dataToSend = new HashMap();
             dataToSend.put("name", user.name);
             dataToSend.put("username", user.username);
-
             dataToSend.put("password", user.password);
 
             String encodedStr = getEncodedData(dataToSend);
@@ -310,7 +309,7 @@ public class ServerRequests {
 
                 if (line.equals("[]"))
                 {
-                    returnUser = new User(user.name, user.username, user.username);
+                    returnUser = new User(user.name, user.username, user.password);
                 }
                 else
                 {
