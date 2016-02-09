@@ -2,6 +2,7 @@ package quara.test_login;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -14,6 +15,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -87,8 +89,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         serverRequests.getCourseDescriptionInBackground(selected_course, new GetDescriptionCallBack() {
                             @Override
                             public void done(String returnDescription) {
-                                tv = (TextView) findViewById(R.id.textView);
+                                //this is the place that can be used to create question queue
+                                LinearLayout linearLayout = (LinearLayout) findViewById(R.id.couse_queue_form);
+                                TextView tv = new TextView(temp);
                                 tv.setText(returnDescription);
+                                tv.setId(0);
+                                tv.setTextColor(Color.parseColor("#000000"));
+                                linearLayout.removeAllViews();
+                                linearLayout.addView(tv);
                             }
                         });
                     }

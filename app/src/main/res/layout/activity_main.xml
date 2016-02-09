@@ -41,14 +41,14 @@ tools:context="quara.test_login.MainActivity">
             android:textSize="30sp"
             android:layout_height="wrap_content" />
 
-        <TextView
+        <LinearLayout
+            android:id="@+id/couse_queue_form"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
             android:layout_marginTop="10dp"
-            android:text="Medium Text"
-            android:textColor="@color/black"
-            android:id="@+id/textView" />
+            android:orientation="vertical">
+
+        </LinearLayout>
 
         <Button
             android:layout_width="match_parent"
