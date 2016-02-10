@@ -67,6 +67,12 @@ public class ServerRequests {
         new getAllCourseDescriptionAsyncTask(course, callBack).execute();
     }
 
+    public void getQueueInBackground(Queue queue, GetQueueCallBack callBack)
+    {
+        progressDialog.show();
+        new getAllQueueAsyncTask(queue, callBack).execute();
+    }
+
     public class StoreUserDateAsyncTask extends AsyncTask<Void, Void, Void>
     {
         User user;
@@ -555,4 +561,124 @@ public class ServerRequests {
             super.onPostExecute(returnDescription);
         }
     }
+
+    public class getAllQueueAsyncTask extends AsyncTask<Void, Void, Map> {
+        Queue queue;
+        GetQueueCallBack QueueCallback;
+
+        public getAllQueueAsyncTask(Queue queue, GetQueueCallBack QueueCallback) {
+            this.queue = queue;
+            this.QueueCallback = QueueCallback;
+        }
+
+        private String getEncodedData(Map<String,String> data) {
+            StringBuilder sb = new StringBuilder();
+            for(String key : data.keySet()) {
+                String value = null;
+                try {
+                    value = URLEncoder.encode(data.get(key), "UTF-8");
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                }
+
+                if(sb.length()>0)
+                    sb.append("&");
+
+                sb.append(key + "=" + value);
+            }
+            return sb.toString();
+        }
+
+        @Override
+        protected Map doInBackground(Void... params) {
+            Map dataToSend = new HashMap();
+            dataToSend.put("course_name", queue.course_name);
+
+            String encodedStr = getEncodedData(dataToSend);
+
+            BufferedReader reader = null;
+
+            Map queue = new HashMap();
+
+            try {
+
+                URL url = new URL(SERVER_ADDRESS + "GetAllQueue.php");
+
+                HttpURLConnection con = (HttpURLConnection) url.openConnection();
+
+                con.setRequestMethod("POST");
+
+                con.setDoOutput(true);
+                OutputStreamWriter writer = new OutputStreamWriter(con.getOutputStream());
+
+                writer.write(encodedStr);
+                writer.flush();
+
+                StringBuilder sb = new StringBuilder();
+                reader = new BufferedReader(new InputStreamReader(con.getInputStream()));
+
+                String line;
+                while((line = reader.readLine()) != null) {
+                    sb.append(line);
+                }
+                line = sb.toString();
+
+                Log.i("custom_check","The values received in the store part are as follows:");
+                Log.i("custom_check",line);
+
+                if (!line.equals("null"))
+                {
+                    line = line.substring(1);
+                    line = line.substring(0, line.length() - 1);
+                    String[] temp_list = line.split("],");
+                    for (int i = 0; i < temp_list.length; i++)
+                    {
+                        String new_element = temp_list[i];
+                        if (new_element.charAt(0) == '[')
+                            new_element = new_element.substring(1);
+                        if (new_element.charAt(new_element.length()-1) == ']')
+                            new_element = new_element.substring(0, new_element.length() - 1);
+                        new_element = new_element.substring(1);
+                        new_element = new_element.substring(0, new_element.length() - 1);
+                        String temp_info[] = new_element.split(",");
+                        Map user_info = new HashMap();
+                        for (int j = 0; j < temp_info.length; j++)
+                        {
+                            String new_info = temp_info[j];
+                            String temp[] = new_info.split(":");
+                            String key = temp[0];
+                            key = key.substring(1);
+                            key = key.substring(0, key.length() - 1);
+                            String value = temp[1];
+                            value = value.substring(1);
+                            value = value.substring(0, value.length() - 1);
+                            user_info.put(key, value);
+                        }
+
+                        queue.put(i, user_info);
+                    }
+                }
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            } finally {
+                if(reader != null) {
+                    try {
+                        reader.close();     //Closing the
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+            return queue;
+        }
+
+        @Override
+        protected void onPostExecute(Map returnQueue) {
+            progressDialog.dismiss();
+            QueueCallback.done(returnQueue);
+            super.onPostExecute(returnQueue);
+        }
+    }
+
 }

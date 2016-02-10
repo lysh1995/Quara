@@ -23,6 +23,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -85,6 +86,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             AdapterView<?> parent, View view, int position, long id) {
                         String selected = parent.getItemAtPosition(position).toString();
                         Course selected_course = new Course(selected, "");
+                        Queue selected_queue = new Queue("","","",selected);
                         ServerRequests serverRequests = new ServerRequests(temp);
                         serverRequests.getCourseDescriptionInBackground(selected_course, new GetDescriptionCallBack() {
                             @Override
@@ -99,6 +101,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                 linearLayout.addView(tv);
                             }
                         });
+                        serverRequests = new ServerRequests(temp);
+                        serverRequests.getQueueInBackground(selected_queue, new GetQueueCallBack() {
+                            @Override
+                            public void done(Map returnQueue) {
+                                Iterator<Map.Entry<String,Map>> iterator = returnQueue.entrySet().iterator();
+                                while (iterator.hasNext()) {
+                                    Map.Entry<String,Map> entry = (Map.Entry<String,Map>) iterator.next();
+                                    LinearLayout linearLayout = (LinearLayout) findViewById(R.id.couse_queue_form);
+                                    TextView tv = new TextView(temp);
+                                    Map result = entry.getValue();
+                                    tv.setText("student name: "+ result.get("user_name")+ " position: "+ result.get("user_pos")+ " topic: "+ result.get("user_topic"));
+                                    tv.setId(0);
+                                    tv.setTextColor(Color.parseColor("#000000"));
+                                    linearLayout.addView(tv);
+                                }
+                            }
+                        });
+
                     }
 
                     public void onNothingSelected(AdapterView<?> parent) {

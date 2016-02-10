@@ -2235,6 +2235,7 @@ containing a value of this type.
         public static final int collapseActionView=0x7f0c0033;
         public static final int contentPanel=0x7f0c004a;
         public static final int course_spinner=0x7f0c0070;
+        public static final int couse_queue_form=0x7f0c0071;
         public static final int custom=0x7f0c0050;
         public static final int customPanel=0x7f0c004f;
         public static final int decor_content_parent=0x7f0c0058;
@@ -2324,7 +2325,6 @@ containing a value of this type.
         public static final int text=0x7f0c0086;
         public static final int text2=0x7f0c0084;
         public static final int textSpacerNoButtons=0x7f0c004d;
-        public static final int textView=0x7f0c0071;
         public static final int time=0x7f0c0082;
         public static final int title=0x7f0c0043;
         public static final int title_template=0x7f0c0048;

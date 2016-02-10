@@ -28,6 +28,13 @@
         <activity
             android:name=".Register"
             android:label="@string/title_activity_register"></activity>
+        <receiver
+            android:name=".DatabaseChangedReceiver"
+            android:enabled="true" >
+            <intent-filter>
+                <action android:name="com.youapppackage.DATABASE_CHANGED"></action>
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>
