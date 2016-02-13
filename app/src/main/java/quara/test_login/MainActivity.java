@@ -1,16 +1,21 @@
 package quara.test_login;
 
+import android.app.Activity;
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -32,7 +37,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     final Context temp = this;
     Spinner cSpinner;
     Button bLogout;
+    Button add;
+    Button delete;
     TextView tv;
+    EditText text;
+    EditText text1;
+    EditText text2;
+    String selected;
 
     Map<String, String> course_list;
 
@@ -44,8 +55,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         bLogout = (Button) findViewById(R.id.bLogout);
-
         bLogout.setOnClickListener(this);
+
+        add = (Button) findViewById(R.id.add);
+        add.setOnClickListener(this);
+
+        delete = (Button) findViewById(R.id.delete);
+        delete.setOnClickListener(this);
 
         userLocalStore = new UserLocalStore(this);
     }
@@ -84,7 +100,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 new AdapterView.OnItemSelectedListener() {
                     public void onItemSelected(
                             AdapterView<?> parent, View view, int position, long id) {
-                        String selected = parent.getItemAtPosition(position).toString();
+                        LinearLayout layout = (LinearLayout) findViewById(R.id.user_info_form);
+                        layout.removeAllViews();
+                        selected = parent.getItemAtPosition(position).toString();
                         Course selected_course = new Course(selected, "");
                         Queue selected_queue = new Queue("","","",selected);
                         ServerRequests serverRequests = new ServerRequests(temp);
@@ -106,9 +124,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             @Override
                             public void done(Map returnQueue) {
                                 Iterator<Map.Entry<String,Map>> iterator = returnQueue.entrySet().iterator();
+                                LinearLayout linearLayout = (LinearLayout) findViewById(R.id.couse_queue_form);
                                 while (iterator.hasNext()) {
                                     Map.Entry<String,Map> entry = (Map.Entry<String,Map>) iterator.next();
-                                    LinearLayout linearLayout = (LinearLayout) findViewById(R.id.couse_queue_form);
                                     TextView tv = new TextView(temp);
                                     Map result = entry.getValue();
                                     tv.setText("student name: "+ result.get("user_name")+ " position: "+ result.get("user_pos")+ " topic: "+ result.get("user_topic"));
@@ -144,15 +162,61 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
+
     @Override
     public void onClick(View v) {
         switch(v.getId())
         {
             case R.id.bLogout:
-
                 userLocalStore.clearUserData();
                 userLocalStore.setUserLoggedIn(false);
                 startActivity(new Intent(this, Login.class));
+                break;
+            case R.id.add:
+                LinearLayout layout = (LinearLayout) findViewById(R.id.user_info_form);
+                layout.removeAllViews();
+                text1 = new EditText(temp);
+                text1.setLayoutParams(new AbsListView.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+                text1.setHint("user_position");
+                layout.addView(text1);
+                text2 = new EditText(temp);
+                text2.setLayoutParams(new AbsListView.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+                text2.setHint("user_topic");
+                layout.addView(text2);
+                Button b = new Button(temp);
+                b.setText("summit");
+                b.setOnClickListener(
+                        new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                String name = userLocalStore.getLoggedInUser().name;
+                                String pos = text1.getText().toString();
+                                String topic = text2.getText().toString();
+                                Queue queue = new Queue(name,pos,topic,selected);
+                                ServerRequests serverRequests = new ServerRequests(temp);
+                                serverRequests.insertQueueInBackground(queue, new GetQueueCallBack() {
+                                    @Override
+                                    public void done(Map returnQueue) {
+                                        LinearLayout layout = (LinearLayout) findViewById(R.id.user_info_form);
+                                        layout.removeAllViews();
+                                    }
+                                });
+                            }
+                        }
+                );
+                layout.addView(b);
+                break;
+            case R.id.delete:
+                layout = (LinearLayout) findViewById(R.id.user_info_form);
+                layout.removeAllViews();
+                String name = userLocalStore.getLoggedInUser().name;
+                Queue queue = new Queue(name,"","",selected);
+                ServerRequests serverRequests = new ServerRequests(temp);
+                serverRequests.deleteQueueInBackground(queue, new GetQueueCallBack() {
+                    @Override
+                    public void done(Map returnQueue) {
+                    }
+                });
                 break;
         }
     }
