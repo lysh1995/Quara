@@ -34,6 +34,15 @@
         <activity
             android:name="quara.test_login.Register"
             android:label="@string/title_activity_register" />
+
+        <receiver
+            android:name="com.pycitup.pyc.MyReceiver"
+            android:enabled="true"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="com.pycitup.BroadcastReceiver" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>
