@@ -34,13 +34,15 @@ import java.util.Map;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
+    static Context tt;
     final Context temp = this;
-    Spinner cSpinner;
+    public static Spinner cSpinner;
+    public static LinearLayout lyout1;
+    public static LinearLayout lyout2;
     Button bLogout;
     Button add;
     Button delete;
-    TextView tv;
-    EditText text;
+
     EditText text1;
     EditText text2;
     String selected;
@@ -188,7 +190,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
+                                tt = temp;
                                 String name = userLocalStore.getLoggedInUser().name;
+                                LinearLayout layout = (LinearLayout) findViewById(R.id.user_info_form);
+                                lyout1 = layout;
                                 String pos = text1.getText().toString();
                                 String topic = text2.getText().toString();
                                 Queue queue = new Queue(name, pos, topic, selected);
@@ -197,49 +202,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                     @Override
                                     public void done(Map returnQueue) {
                                         LinearLayout layout = (LinearLayout) findViewById(R.id.user_info_form);
+                                        lyout1 = layout;
                                         layout.removeAllViews();
                                         Course selected_course = new Course(selected, "");
                                         Queue selected_queue = new Queue("", "", "", selected);
-                                        ServerRequests serverRequests = new ServerRequests(temp);
-                                        serverRequests.getCourseDescriptionInBackground(selected_course, new GetDescriptionCallBack() {
-                                            @Override
-                                            public void done(String returnDescription) {
-                                                //this is the place that can be used to create question queue
-                                                LinearLayout linearLayout = (LinearLayout) findViewById(R.id.couse_queue_form);
-                                                TextView tv = new TextView(temp);
-                                                tv.setText(returnDescription);
-                                                tv.setId(0);
-                                                tv.setTextColor(Color.parseColor("#000000"));
-                                                linearLayout.removeAllViews();
-                                                linearLayout.addView(tv);
-                                            }
-                                        });
-                                        serverRequests = new ServerRequests(temp);
-                                        serverRequests.getQueueInBackground(selected_queue, new GetQueueCallBack() {
-                                            @Override
-                                            public void done(Map returnQueue) {
-                                                Iterator<Map.Entry<String, Map>> iterator = returnQueue.entrySet().iterator();
-                                                LinearLayout linearLayout = (LinearLayout) findViewById(R.id.couse_queue_form);
-                                                while (iterator.hasNext()) {
-                                                    Map.Entry<String, Map> entry = (Map.Entry<String, Map>) iterator.next();
-                                                    TextView tv = new TextView(temp);
-                                                    Map result = entry.getValue();
-                                                    tv.setText("student name: " + result.get("user_name") + " position: " + result.get("user_pos") + " topic: " + result.get("user_topic"));
-                                                    tv.setId(0);
-                                                    tv.setTextColor(Color.parseColor("#000000"));
-                                                    linearLayout.addView(tv);
-                                                }
-                                            }
-                                        });
+                                        LinearLayout linearLayout = (LinearLayout) findViewById(R.id.couse_queue_form);
+                                        lyout2 = linearLayout;
+                                        linearLayout.removeAllViews();
+                                        Intent intent = new Intent(temp, MyReceiverAdd.class);
+                                        intent.setAction("com.pycitup.BroadcastReceiverAdd");
+                                        sendBroadcast(intent);
                                     }
                                 });
                             }
                         }
                 );
                 layout.addView(b);
-                Intent intent = new Intent(this, MyReceiver.class);
-                intent.setAction("com.pycitup.BroadcastReceiver");
-                sendBroadcast(intent);
                 break;
             case R.id.delete:
                 layout = (LinearLayout) findViewById(R.id.user_info_form);
@@ -250,39 +228,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 serverRequests.deleteQueueInBackground(queue, new GetQueueCallBack() {
                     @Override
                     public void done(Map returnQueue) {
-                        Course selected_course = new Course(selected, "");
-                        Queue selected_queue = new Queue("","","",selected);
-                        ServerRequests serverRequests = new ServerRequests(temp);
-                        serverRequests.getCourseDescriptionInBackground(selected_course, new GetDescriptionCallBack() {
-                            @Override
-                            public void done(String returnDescription) {
-                                //this is the place that can be used to create question queue
-                                LinearLayout linearLayout = (LinearLayout) findViewById(R.id.couse_queue_form);
-                                TextView tv = new TextView(temp);
-                                tv.setText(returnDescription);
-                                tv.setId(0);
-                                tv.setTextColor(Color.parseColor("#000000"));
-                                linearLayout.removeAllViews();
-                                linearLayout.addView(tv);
-                            }
-                        });
-                        serverRequests = new ServerRequests(temp);
-                        serverRequests.getQueueInBackground(selected_queue, new GetQueueCallBack() {
-                            @Override
-                            public void done(Map returnQueue) {
-                                Iterator<Map.Entry<String,Map>> iterator = returnQueue.entrySet().iterator();
-                                LinearLayout linearLayout = (LinearLayout) findViewById(R.id.couse_queue_form);
-                                while (iterator.hasNext()) {
-                                    Map.Entry<String,Map> entry = (Map.Entry<String,Map>) iterator.next();
-                                    TextView tv = new TextView(temp);
-                                    Map result = entry.getValue();
-                                    tv.setText("student name: "+ result.get("user_name")+ " position: "+ result.get("user_pos")+ " topic: "+ result.get("user_topic"));
-                                    tv.setId(0);
-                                    tv.setTextColor(Color.parseColor("#000000"));
-                                    linearLayout.addView(tv);
-                                }
-                            }
-                        });
+                        LinearLayout layout = (LinearLayout) findViewById(R.id.user_info_form);
+                        lyout1 = layout;
+                        layout.removeAllViews();
+                        LinearLayout linearLayout = (LinearLayout) findViewById(R.id.couse_queue_form);
+                        lyout2 = linearLayout;
+                        linearLayout.removeAllViews();
+                        Intent intent = new Intent(temp, MyReceiverDelete.class);
+                        intent.setAction("com.pycitup.BroadcastReceiverDelete");
+                        sendBroadcast(intent);
                     }
                 });
                 break;
