@@ -47,6 +47,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     EditText text2;
     String selected;
 
+    // Keeps track of names that are already in the queue. Prevents user from submitting more than one quests.
+    Map<String, Boolean> names_on_queue = new HashMap<String, Boolean>();
+
     Map<String, String> course_list;
 
     UserLocalStore userLocalStore;
@@ -198,6 +201,27 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                 String topic = text2.getText().toString();
                                 Queue queue = new Queue(name, pos, topic, selected);
                                 ServerRequests serverRequests = new ServerRequests(temp);
+                                // This if-else statement will ensure that users cannot push their name more than once.
+                                if(names_on_queue!=null)
+                                {
+                                    if (names_on_queue.containsKey(name))
+                                    {
+                                        if (names_on_queue.get(name))
+                                        {
+                                            showToast("LOL FOOLS");
+                                            return;
+                                        }
+                                    }
+                                    else
+                                    {
+                                        showToast("OMG BBQ" + name);
+                                        names_on_queue.put(name, true);
+                                    }
+                                }
+                                else
+                                {
+                                    return;
+                                }
                                 serverRequests.insertQueueInBackground(queue, new GetQueueCallBack() {
                                     @Override
                                     public void done(Map returnQueue) {
@@ -220,6 +244,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 layout.addView(b);
                 break;
             case R.id.delete:
+                // we remove the name if they remove themselves from the queue
+                names_on_queue.remove(userLocalStore.getLoggedInUser().name);
                 layout = (LinearLayout) findViewById(R.id.user_info_form);
                 layout.removeAllViews();
                 String name = userLocalStore.getLoggedInUser().name;
