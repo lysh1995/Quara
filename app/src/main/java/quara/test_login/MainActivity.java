@@ -25,6 +25,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -125,13 +126,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         serverRequests = new ServerRequests(temp);
                         serverRequests.getQueueInBackground(selected_queue, new GetQueueCallBack() {
                             @Override
-                            public void done(Map returnQueue) {
-                                Iterator<Map.Entry<String,Map>> iterator = returnQueue.entrySet().iterator();
+                            public void done(ArrayList returnQueue) {
+                                Iterator<ArrayList> iterator = returnQueue.iterator();
                                 LinearLayout linearLayout = (LinearLayout) findViewById(R.id.couse_queue_form);
                                 while (iterator.hasNext()) {
-                                    Map.Entry<String,Map> entry = (Map.Entry<String,Map>) iterator.next();
+                                    Map entry = (Map) iterator.next();
                                     TextView tv = new TextView(temp);
-                                    Map result = entry.getValue();
+                                    Map result = entry;
                                     tv.setText("student name: "+ result.get("user_name")+ " position: "+ result.get("user_pos")+ " topic: "+ result.get("user_topic"));
                                     tv.setId(0);
                                     tv.setTextColor(Color.parseColor("#000000"));
@@ -224,7 +225,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                 }
                                 serverRequests.insertQueueInBackground(queue, new GetQueueCallBack() {
                                     @Override
-                                    public void done(Map returnQueue) {
+                                    public void done(ArrayList returnQueue) {
                                         LinearLayout layout = (LinearLayout) findViewById(R.id.user_info_form);
                                         lyout1 = layout;
                                         layout.removeAllViews();
@@ -253,7 +254,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 ServerRequests serverRequests = new ServerRequests(temp);
                 serverRequests.deleteQueueInBackground(queue, new GetQueueCallBack() {
                     @Override
-                    public void done(Map returnQueue) {
+                    public void done(ArrayList returnQueue) {
                         LinearLayout layout = (LinearLayout) findViewById(R.id.user_info_form);
                         lyout1 = layout;
                         layout.removeAllViews();
