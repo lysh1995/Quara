@@ -178,6 +178,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(new Intent(this, Login.class));
                 break;
             case R.id.add:
+                tt = temp;
                 LinearLayout layout = (LinearLayout) findViewById(R.id.user_info_form);
                 layout.removeAllViews();
                 text1 = new EditText(temp);
@@ -194,7 +195,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
-                                tt = temp;
                                 String name = userLocalStore.getLoggedInUser().name;
                                 LinearLayout layout = (LinearLayout) findViewById(R.id.user_info_form);
                                 lyout1 = layout;
@@ -245,6 +245,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 layout.addView(b);
                 break;
             case R.id.delete:
+                tt = temp;
                 // we remove the name if they remove themselves from the queue
                 names_on_queue.remove(userLocalStore.getLoggedInUser().name);
                 layout = (LinearLayout) findViewById(R.id.user_info_form);
