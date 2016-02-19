@@ -13,6 +13,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.io.UnsupportedEncodingException;
+import java.lang.reflect.Array;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
@@ -574,7 +575,7 @@ public class ServerRequests {
         }
     }
 
-    public class getAllQueueAsyncTask extends AsyncTask<Void, Void, Map> {
+    public class getAllQueueAsyncTask extends AsyncTask<Void, Void, ArrayList> {
         Queue queue;
         GetQueueCallBack QueueCallback;
 
@@ -602,7 +603,7 @@ public class ServerRequests {
         }
 
         @Override
-        protected Map doInBackground(Void... params) {
+        protected ArrayList doInBackground(Void... params) {
             Map dataToSend = new HashMap();
             dataToSend.put("course_name", queue.course_name);
 
@@ -610,7 +611,7 @@ public class ServerRequests {
 
             BufferedReader reader = null;
 
-            Map queue = new HashMap();
+            ArrayList queue = new ArrayList();
 
             try {
 
@@ -667,7 +668,7 @@ public class ServerRequests {
                             user_info.put(key, value);
                         }
 
-                        queue.put(i, user_info);
+                        queue.add(user_info);
                     }
                 }
 
@@ -686,14 +687,14 @@ public class ServerRequests {
         }
 
         @Override
-        protected void onPostExecute(Map returnQueue) {
+        protected void onPostExecute(ArrayList returnQueue) {
             progressDialog.dismiss();
             QueueCallback.done(returnQueue);
             super.onPostExecute(returnQueue);
         }
     }
 
-    public class InsertQueueAsyncTask extends AsyncTask<Void, Void, Map> {
+    public class InsertQueueAsyncTask extends AsyncTask<Void, Void, ArrayList> {
         Queue queue;
         GetQueueCallBack QueueCallback;
 
@@ -721,7 +722,7 @@ public class ServerRequests {
         }
 
         @Override
-        protected Map doInBackground(Void... params) {
+        protected ArrayList doInBackground(Void... params) {
             Map dataToSend = new HashMap();
             dataToSend.put("user_name", queue.user_name);
             dataToSend.put("user_pos", queue.user_pos);
@@ -732,7 +733,7 @@ public class ServerRequests {
 
             BufferedReader reader = null;
 
-            Map queue = new HashMap();
+            ArrayList queue = new ArrayList();
 
             try {
 
@@ -780,14 +781,14 @@ public class ServerRequests {
         }
 
         @Override
-        protected void onPostExecute(Map returnQueue) {
+        protected void onPostExecute(ArrayList returnQueue) {
             progressDialog.dismiss();
             QueueCallback.done(returnQueue);
             super.onPostExecute(returnQueue);
         }
     }
 
-    public class DeleteQueueAsyncTask extends AsyncTask<Void, Void, Map> {
+    public class DeleteQueueAsyncTask extends AsyncTask<Void, Void, ArrayList> {
         Queue queue;
         GetQueueCallBack QueueCallback;
 
@@ -815,7 +816,7 @@ public class ServerRequests {
         }
 
         @Override
-        protected Map doInBackground(Void... params) {
+        protected ArrayList doInBackground(Void... params) {
             Map dataToSend = new HashMap();
             dataToSend.put("user_name", queue.user_name);
             dataToSend.put("course_name", queue.course_name);
@@ -824,7 +825,7 @@ public class ServerRequests {
 
             BufferedReader reader = null;
 
-            Map queue = new HashMap();
+            ArrayList queue = new ArrayList();
 
             try {
 
@@ -872,7 +873,7 @@ public class ServerRequests {
         }
 
         @Override
-        protected void onPostExecute(Map returnQueue) {
+        protected void onPostExecute(ArrayList returnQueue) {
             progressDialog.dismiss();
             QueueCallback.done(returnQueue);
             super.onPostExecute(returnQueue);
