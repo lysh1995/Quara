@@ -45,7 +45,7 @@ public class MyReceiverAdd extends BroadcastReceiver {
         serverRequests.getQueueInBackground(selected_queue, new GetQueueCallBack() {
             @Override
             public void done(ArrayList returnQueue) {
-                Iterator<Map.Entry<String,Map>> iterator = returnQueue.iterator();
+                Iterator<ArrayList> iterator = returnQueue.iterator();
                 LinearLayout linearLayout = MainActivity.lyout2;
                 while (iterator.hasNext()) {
                     Map entry = (Map) iterator.next();
