@@ -209,13 +209,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                     {
                                         if (names_on_queue.get(name))
                                         {
-                                            showToast("LOL FOOLS");
+                                            showToast("Already in Queue");
                                             return;
                                         }
                                     }
                                     else
                                     {
-                                        showToast("OMG BBQ" + name);
+                                        showToast("Add to queue" + name);
                                         names_on_queue.put(name, true);
                                     }
                                 }
