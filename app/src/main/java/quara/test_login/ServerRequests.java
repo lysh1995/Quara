@@ -240,14 +240,13 @@ public class ServerRequests {
                 Log.i("custom_check","The values received in the store part are as follows:");
                 Log.i("custom_check",line);
 
-                JSONObject jObject = new JSONObject(line);
-
-                if (jObject.length() == 0)
+                if (line.equals("[]"))
                 {
                     user = null;
                 }
                 else
                 {
+                    JSONObject jObject = new JSONObject(line);
                     String name = jObject.getString("name");
                     returnUser = new User(name, user.username, user.username);
 
