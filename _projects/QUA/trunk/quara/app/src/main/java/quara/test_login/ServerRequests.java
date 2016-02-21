@@ -248,7 +248,7 @@ public class ServerRequests {
                 {
                     JSONObject jObject = new JSONObject(line);
                     String name = jObject.getString("name");
-                    returnUser = new User(name, user.username, user.username);
+                    returnUser = new User(name, user.username, user.password);
 
                 }
 
