@@ -231,8 +231,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                     //change the add button text
                                     addButton.setText(MODIFY_QUEUE_STRING);
 
-
-
                                     serverRequests.insertQueueInBackground(queue, new GetQueueCallBack() {
                                         @Override
                                         public void done(ArrayList returnQueue) {
@@ -306,7 +304,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 tt = temp;
                 layout = (LinearLayout) findViewById(R.id.answer_form);
                 //get the name of the person who is at front of queue so we can answer his question
-                final Queue sel_queue = new Queue("","","",selected);
+                Queue sel_queue = new Queue("","","",selected);
                 serverRequests = new ServerRequests(temp);
                 serverRequests.getQueueInBackground(sel_queue, new GetQueueCallBack() {
                     @Override
@@ -318,7 +316,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             Map entry = (Map) iterator.next();
                             Map res = entry;
                             text3 = new TextView(temp);
-                            String name = (String) res.get("user_name"); //name of first person in queue
+                            final String name = (String) res.get("user_name"); //name of first person in queue
                             first = name;
                             text3.setText("Answering " + name + "'s Question.....");
                             text3.setId(0);
@@ -332,16 +330,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                 public void onClick(View v) {
                                     // we remove the first question in Queue if T.A. has answered it.
 
+                                    names_on_queue.remove(name);
+                                    LinearLayout layout = (LinearLayout) findViewById(R.id.user_info_form);
+                                    layout.removeAllViews();
+                                    Queue queue = new Queue(name,"","",selected);
+
                                     ServerRequests serverRequests = new ServerRequests(temp);
-                                    serverRequests.deleteQueueInBackground(sel_queue, new GetQueueCallBack() {
+                                    serverRequests.deleteQueueInBackground(queue, new GetQueueCallBack() {
                                         @Override
                                         public void done(ArrayList returnQueue) {
-                                            names_on_queue.remove(sel_queue.user_name);
-                                            LinearLayout layout = (LinearLayout) findViewById(R.id.user_info_form);
-                                            layout.removeAllViews();
                                             LinearLayout answer_layout = (LinearLayout) findViewById(R.id.answer_form);
                                             answer_layout.removeAllViews();
-                                            layout = (LinearLayout) findViewById(R.id.user_info_form);
+                                            LinearLayout layout = (LinearLayout) findViewById(R.id.user_info_form);
                                             lyout1 = layout;
                                             layout.removeAllViews();
                                             LinearLayout linearLayout = (LinearLayout) findViewById(R.id.couse_queue_form);
@@ -361,7 +361,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         }
                     }
                 });
-                layout.removeAllViews();
                 break;
         }
     }
