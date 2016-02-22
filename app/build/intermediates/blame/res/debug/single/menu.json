@@ -1,14 +1,6 @@
 [
     {
-        "merged": "/Users/patrickchu/Desktop/trunk/quara/C:\\Users\\ylin9\\AndroidStudioProjects\\test_login\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_main.xml",
-        "source": "/Users/patrickchu/Desktop/trunk/quara/C:\\Users\\ylin9\\AndroidStudioProjects\\test_login\\app\\src\\main\\res\\menu\\menu_main.xml"
-    },
-    {
-        "merged": "/Users/patrickchu/Desktop/trunk/quara/app/build/intermediates/res/merged/debug/menu/menu_main.xml",
-        "source": "/Users/patrickchu/Desktop/trunk/quara/app/src/main/res/menu/menu_main.xml"
-    },
-    {
-        "merged": "/Users/Maddie/QUA/trunk/quara/app/build/intermediates/res/merged/debug/menu/menu_main.xml",
-        "source": "/Users/Maddie/QUA/trunk/quara/app/src/main/res/menu/menu_main.xml"
+        "merged": "C:\\Users\\Jamie\\cs429\\quara\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_main.xml",
+        "source": "C:\\Users\\Jamie\\cs429\\quara\\app\\src\\main\\res\\menu\\menu_main.xml"
     }
 ]

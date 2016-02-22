@@ -86,6 +86,12 @@ public class ServerRequests {
         new DeleteQueueAsyncTask(queue, callBack).execute();
     }
 
+    public void editQueueInBackground(Queue queue, GetQueueCallBack callBack)
+    {
+        progressDialog.show();
+        new EditQueueAsyncTask(queue, callBack).execute();
+    }
+
     public class StoreUserDateAsyncTask extends AsyncTask<Void, Void, Void>
     {
         User user;
@@ -786,6 +792,103 @@ public class ServerRequests {
             super.onPostExecute(returnQueue);
         }
     }
+
+
+    public class EditQueueAsyncTask extends AsyncTask<Void, Void, ArrayList> {
+        Queue queue;
+        GetQueueCallBack QueueCallback;
+
+        public EditQueueAsyncTask(Queue queue, GetQueueCallBack QueueCallback) {
+            this.queue = queue;
+            this.QueueCallback = QueueCallback;
+        }
+
+        private String getEncodedData(Map<String,String> data) {
+            StringBuilder sb = new StringBuilder();
+            for(String key : data.keySet()) {
+                String value = null;
+                try {
+                    value = URLEncoder.encode(data.get(key), "UTF-8");
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                }
+
+                if(sb.length()>0)
+                    sb.append("&");
+
+                sb.append(key + "=" + value);
+            }
+            return sb.toString();
+        }
+
+        @Override
+        protected ArrayList doInBackground(Void... params) {
+            Map dataToSend = new HashMap();
+            dataToSend.put("user_name", queue.user_name);
+            dataToSend.put("user_pos", queue.user_pos);
+            dataToSend.put("user_topic", queue.user_topic);
+            dataToSend.put("course_name", queue.course_name);
+
+            String encodedStr = getEncodedData(dataToSend);
+
+            BufferedReader reader = null;
+
+            ArrayList queue = new ArrayList();
+
+            try {
+
+                URL url = new URL(SERVER_ADDRESS + "Editqueue.php");
+
+                HttpURLConnection con = (HttpURLConnection) url.openConnection();
+
+                con.setRequestMethod("POST");
+
+                con.setDoOutput(true);
+                OutputStreamWriter writer = new OutputStreamWriter(con.getOutputStream());
+
+                writer.write(encodedStr);
+                writer.flush();
+
+                StringBuilder sb = new StringBuilder();
+                reader = new BufferedReader(new InputStreamReader(con.getInputStream()));
+
+                String line;
+                while((line = reader.readLine()) != null) {
+                    sb.append(line);
+                }
+                line = sb.toString();
+
+                Log.i("custom_check","The values received in the store part are as follows:");
+                Log.i("custom_check",line);
+
+                if (!line.equals("null"))
+                {
+
+                }
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            } finally {
+                if(reader != null) {
+                    try {
+                        reader.close();     //Closing the
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+            return queue;
+        }
+
+        @Override
+        protected void onPostExecute(ArrayList returnQueue) {
+            progressDialog.dismiss();
+            QueueCallback.done(returnQueue);
+            super.onPostExecute(returnQueue);
+        }
+    }
+
+
 
     public class DeleteQueueAsyncTask extends AsyncTask<Void, Void, ArrayList> {
         Queue queue;

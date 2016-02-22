@@ -1,14 +1,6 @@
 [
     {
-        "merged": "/Users/patrickchu/Desktop/trunk/quara/C:\\Users\\ylin9\\AndroidStudioProjects\\test_login\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\ic_launcher.png",
-        "source": "/Users/patrickchu/Desktop/trunk/quara/C:\\Users\\ylin9\\AndroidStudioProjects\\test_login\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
-    },
-    {
-        "merged": "/Users/patrickchu/Desktop/trunk/quara/app/build/intermediates/res/merged/debug/mipmap-mdpi-v4/ic_launcher.png",
-        "source": "/Users/patrickchu/Desktop/trunk/quara/app/src/main/res/mipmap-mdpi/ic_launcher.png"
-    },
-    {
-        "merged": "/Users/Maddie/QUA/trunk/quara/app/build/intermediates/res/merged/debug/mipmap-mdpi-v4/ic_launcher.png",
-        "source": "/Users/Maddie/QUA/trunk/quara/app/src/main/res/mipmap-mdpi/ic_launcher.png"
+        "merged": "C:\\Users\\Jamie\\cs429\\quara\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\ic_launcher.png",
+        "source": "C:\\Users\\Jamie\\cs429\\quara\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
     }
 ]

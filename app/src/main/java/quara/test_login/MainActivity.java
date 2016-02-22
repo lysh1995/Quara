@@ -48,6 +48,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     EditText text2;
     String selected;
 
+    final String MODIFY_QUEUE_STRING = "Modify Queue";
+
     // Keeps track of names that are already in the queue. Prevents user from submitting more than one quests.
     Map<String, Boolean> names_on_queue = new HashMap<String, Boolean>();
 
@@ -178,6 +180,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(new Intent(this, Login.class));
                 break;
             case R.id.add:
+                //get text of add button
+                final Button addButton = (Button)v;
+                String buttonText = addButton.getText().toString();
+                final boolean edit = buttonText == MODIFY_QUEUE_STRING;
+
                 tt = temp;
                 LinearLayout layout = (LinearLayout) findViewById(R.id.user_info_form);
                 layout.removeAllViews();
@@ -189,8 +196,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 text2.setLayoutParams(new AbsListView.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
                 text2.setHint("user_topic");
                 layout.addView(text2);
+
+                //create new submit button
                 Button b = new Button(temp);
-                b.setText("summit");
+                if (edit) {
+                    b.setText("edit");
+                }
+                else {
+                    b.setText("submit");
+                }
                 b.setOnClickListener(
                         new View.OnClickListener() {
                             @Override
@@ -202,49 +216,63 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                 String topic = text2.getText().toString();
                                 Queue queue = new Queue(name, pos, topic, selected);
                                 ServerRequests serverRequests = new ServerRequests(temp);
-                                // This if-else statement will ensure that users cannot push their name more than once.
-                                if(names_on_queue!=null)
-                                {
-                                    if (names_on_queue.containsKey(name))
-                                    {
-                                        if (names_on_queue.get(name))
-                                        {
-                                            showToast("Already in Queue");
-                                            return;
+
+                                if (!edit) { //insert into queue
+
+                                    showToast("Add to queue" + name);
+                                    names_on_queue.put(name, true);
+
+                                    //change the add button text
+                                    addButton.setText(MODIFY_QUEUE_STRING);
+
+
+
+                                    serverRequests.insertQueueInBackground(queue, new GetQueueCallBack() {
+                                        @Override
+                                        public void done(ArrayList returnQueue) {
+                                            LinearLayout layout = (LinearLayout) findViewById(R.id.user_info_form);
+                                            lyout1 = layout;
+                                            layout.removeAllViews();
+                                            Course selected_course = new Course(selected, "");
+                                            Queue selected_queue = new Queue("", "", "", selected);
+                                            LinearLayout linearLayout = (LinearLayout) findViewById(R.id.couse_queue_form);
+                                            lyout2 = linearLayout;
+                                            linearLayout.removeAllViews();
+                                            Intent intent = new Intent(temp, MyReceiverAdd.class);
+                                            intent.setAction("com.pycitup.BroadcastReceiverAdd");
+                                            sendBroadcast(intent);
                                         }
-                                    }
-                                    else
-                                    {
-                                        showToast("Add to queue" + name);
-                                        names_on_queue.put(name, true);
-                                    }
+                                    });
                                 }
-                                else
-                                {
-                                    return;
+                                else { //edit queue
+                                    serverRequests.editQueueInBackground(queue, new GetQueueCallBack() {
+                                        @Override
+                                        public void done(ArrayList returnQueue) {
+                                            LinearLayout layout = (LinearLayout) findViewById(R.id.user_info_form);
+                                            lyout1 = layout;
+                                            layout.removeAllViews();
+                                            Course selected_course = new Course(selected, "");
+                                            Queue selected_queue = new Queue("", "", "", selected);
+                                            LinearLayout linearLayout = (LinearLayout) findViewById(R.id.couse_queue_form);
+                                            lyout2 = linearLayout;
+                                            linearLayout.removeAllViews();
+                                            Intent intent = new Intent(temp, MyReceiverAdd.class);
+                                            intent.setAction("com.pycitup.BroadcastReceiverAdd");
+                                            sendBroadcast(intent);
+                                        }
+                                    });
+
                                 }
-                                serverRequests.insertQueueInBackground(queue, new GetQueueCallBack() {
-                                    @Override
-                                    public void done(ArrayList returnQueue) {
-                                        LinearLayout layout = (LinearLayout) findViewById(R.id.user_info_form);
-                                        lyout1 = layout;
-                                        layout.removeAllViews();
-                                        Course selected_course = new Course(selected, "");
-                                        Queue selected_queue = new Queue("", "", "", selected);
-                                        LinearLayout linearLayout = (LinearLayout) findViewById(R.id.couse_queue_form);
-                                        lyout2 = linearLayout;
-                                        linearLayout.removeAllViews();
-                                        Intent intent = new Intent(temp, MyReceiverAdd.class);
-                                        intent.setAction("com.pycitup.BroadcastReceiverAdd");
-                                        sendBroadcast(intent);
-                                    }
-                                });
                             }
                         }
                 );
                 layout.addView(b);
                 break;
             case R.id.delete:
+                //Change the other button's text back to add
+                Button button = (Button)v.findViewById(R.id.add);
+                button.setText(MODIFY_QUEUE_STRING);
+
                 tt = temp;
                 // we remove the name if they remove themselves from the queue
                 names_on_queue.remove(userLocalStore.getLoggedInUser().name);
