@@ -43,9 +43,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button bLogout;
     Button add;
     Button delete;
+    Button answer;
 
     EditText text1;
     EditText text2;
+    String first;
+    TextView text3;
     String selected;
 
     final String MODIFY_QUEUE_STRING = "Modify Queue";
@@ -70,6 +73,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         delete = (Button) findViewById(R.id.delete);
         delete.setOnClickListener(this);
+
+        answer = (Button) findViewById(R.id.answer);
+        answer.setOnClickListener(this);
 
         userLocalStore = new UserLocalStore(this);
     }
@@ -295,6 +301,67 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         sendBroadcast(intent);
                     }
                 });
+                break;
+            case R.id.answer:
+                tt = temp;
+                layout = (LinearLayout) findViewById(R.id.answer_form);
+                //get the name of the person who is at front of queue so we can answer his question
+                final Queue sel_queue = new Queue("","","",selected);
+                serverRequests = new ServerRequests(temp);
+                serverRequests.getQueueInBackground(sel_queue, new GetQueueCallBack() {
+                    @Override
+                    public void done(ArrayList returnQueue) {
+                        Iterator<ArrayList> iterator = returnQueue.iterator();
+                        LinearLayout linlayout = (LinearLayout) findViewById(R.id.answer_form);
+
+                        if(iterator.hasNext()){
+                            Map entry = (Map) iterator.next();
+                            Map res = entry;
+                            text3 = new TextView(temp);
+                            String name = (String) res.get("user_name"); //name of first person in queue
+                            first = name;
+                            text3.setText("Answering " + name + "'s Question.....");
+                            text3.setId(0);
+                            text3.setTextColor(Color.parseColor("#000000"));
+                            linlayout.removeAllViews();
+                            linlayout.addView(text3);
+                            Button b = new Button(temp);
+                            b.setText("Finish Answering");
+                            b.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    // we remove the first question in Queue if T.A. has answered it.
+
+                                    ServerRequests serverRequests = new ServerRequests(temp);
+                                    serverRequests.deleteQueueInBackground(sel_queue, new GetQueueCallBack() {
+                                        @Override
+                                        public void done(ArrayList returnQueue) {
+                                            names_on_queue.remove(sel_queue.user_name);
+                                            LinearLayout layout = (LinearLayout) findViewById(R.id.user_info_form);
+                                            layout.removeAllViews();
+                                            LinearLayout answer_layout = (LinearLayout) findViewById(R.id.answer_form);
+                                            answer_layout.removeAllViews();
+                                            layout = (LinearLayout) findViewById(R.id.user_info_form);
+                                            lyout1 = layout;
+                                            layout.removeAllViews();
+                                            LinearLayout linearLayout = (LinearLayout) findViewById(R.id.couse_queue_form);
+                                            lyout2 = linearLayout;
+                                            linearLayout.removeAllViews();
+                                            Intent intent = new Intent(temp, MyReceiverDelete.class);
+                                            intent.setAction("com.pycitup.BroadcastReceiverDelete");
+                                            sendBroadcast(intent);
+                                        }
+                                    });
+                                }
+                            });
+                            linlayout.addView(b);
+                        }else{
+                            Toast toast = Toast.makeText(getApplicationContext(), "No Question in Queue.", Toast.LENGTH_LONG);
+                            toast.show();
+                        }
+                    }
+                });
+                layout.removeAllViews();
                 break;
         }
     }
