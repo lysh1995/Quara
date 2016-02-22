@@ -270,8 +270,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.delete:
                 //Change the other button's text back to add
-                Button button = (Button)v.findViewById(R.id.add);
-                button.setText(MODIFY_QUEUE_STRING);
+                Button button = (Button)findViewById(R.id.add);
+                button.setText("Add to queue");
 
                 tt = temp;
                 // we remove the name if they remove themselves from the queue
