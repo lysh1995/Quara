@@ -57,7 +57,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         startActivity(new Intent(this, MainActivity.class));
     }
 
-    private void authenticate(User user)
+    public void authenticate(User user)
     {
         ServerRequests serverRequests = new ServerRequests(this);
         serverRequests.fetchUserDataInBackground(user, new GetUserCallBack() {
