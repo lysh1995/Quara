@@ -20,7 +20,7 @@ public class LoginTest extends ActivityInstrumentationTestCase2<Login>{
     @SmallTest
     public void testAuthenticateSuccess(){
         User user = new User("testpzhao12","testpzhao12","testpzhao12");
-       // this.getActivity().authenticate(user);
+        this.getActivity().authenticate(user);
         assertEquals(true, this.getActivity().userLocalStore.getUserLoggedIn());
     }
 
