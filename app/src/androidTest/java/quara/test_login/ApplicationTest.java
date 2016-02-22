@@ -31,5 +31,16 @@ public class ApplicationTest extends ApplicationTestCase<Application> {
         boolean containsAlbert = names_on_queue.containsKey("ALBERT");
         assertEquals(containsAlbert,false);
     }
+
+    @Test
+    public void testEditFromQueue() {
+        Map<String, Boolean> names_on_queue = new HashMap<String, Boolean>();
+        names_on_queue.put("ALBERT",true);
+        names_on_queue.put("ALBERT",false);
+        boolean containsFalse = names_on_queue.get("ALBERT");
+        assertEquals(containsFalse,false);
+    }
+
+
 }
 

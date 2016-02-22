@@ -1,6 +1,10 @@
 [
     {
-        "merged": "C:\\Users\\Jamie\\cs429\\quara\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_color_highlight_material.xml",
-        "source": "C:\\Users\\Jamie\\cs429\\quara\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\color-v23\\abc_color_highlight_material.xml"
+        "merged": "/Users/DZ1/AndroidStudioProjects/quara/C:\\Users\\Jamie\\cs429\\quara\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_color_highlight_material.xml",
+        "source": "/Users/DZ1/AndroidStudioProjects/quara/C:\\Users\\Jamie\\cs429\\quara\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\color-v23\\abc_color_highlight_material.xml"
+    },
+    {
+        "merged": "/Users/DZ1/AndroidStudioProjects/quara/app/build/intermediates/res/merged/debug/color-v23/abc_color_highlight_material.xml",
+        "source": "/Users/DZ1/AndroidStudioProjects/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/color-v23/abc_color_highlight_material.xml"
     }
 ]

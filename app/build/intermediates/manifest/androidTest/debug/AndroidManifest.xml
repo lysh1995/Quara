@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="quara.test_login.test">
+    package="quara.test_login.test" >
 
-    <uses-sdk android:minSdkVersion="15" android:targetSdkVersion="23" />
+    <uses-sdk
+        android:minSdkVersion="15"
+        android:targetSdkVersion="23" />
+
+    <instrumentation
+        android:name="android.test.InstrumentationTestRunner"
+        android:functionalTest="false"
+        android:handleProfiling="false"
+        android:label="Tests for quara.test_login"
+        android:targetPackage="quara.test_login" />
 
     <application>
         <uses-library android:name="android.test.runner" />
     </application>
 
-    <instrumentation android:name="android.test.InstrumentationTestRunner"
-                     android:targetPackage="quara.test_login"
-                     android:handleProfiling="false"
-                     android:functionalTest="false"
-                     android:label="Tests for quara.test_login"/>
 </manifest>
