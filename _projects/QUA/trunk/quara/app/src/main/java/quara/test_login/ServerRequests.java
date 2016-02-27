@@ -92,6 +92,12 @@ public class ServerRequests {
         new EditQueueAsyncTask(queue, callBack).execute();
     }
 
+    public void CheckAuthorisationInBackground(TA ta, CheckAuthorisationCallBack callBack)
+    {
+        progressDialog.show();
+        new CheckAuthorisationAsyncTask(ta, callBack).execute();
+    }
+
     public class StoreUserDateAsyncTask extends AsyncTask<Void, Void, Void>
     {
         User user;
@@ -979,6 +985,98 @@ public class ServerRequests {
             progressDialog.dismiss();
             QueueCallback.done(returnQueue);
             super.onPostExecute(returnQueue);
+        }
+    }
+
+    public class CheckAuthorisationAsyncTask extends AsyncTask<Void, Void, String> {
+        TA ta;
+        CheckAuthorisationCallBack TaCallback;
+
+        public CheckAuthorisationAsyncTask(TA ta, CheckAuthorisationCallBack TaCallback) {
+            this.ta = ta;
+            this.TaCallback = TaCallback;
+        }
+
+        private String getEncodedData(Map<String,String> data) {
+            StringBuilder sb = new StringBuilder();
+            for(String key : data.keySet()) {
+                String value = null;
+                try {
+                    value = URLEncoder.encode(data.get(key), "UTF-8");
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                }
+
+                if(sb.length()>0)
+                    sb.append("&");
+
+                sb.append(key + "=" + value);
+            }
+            return sb.toString();
+        }
+
+        @Override
+        protected String doInBackground(Void... params) {
+            Map dataToSend = new HashMap();
+            dataToSend.put("name", ta.name);
+            dataToSend.put("course_name", ta.course_name);
+
+            String encodedStr = getEncodedData(dataToSend);
+
+            BufferedReader reader = null;
+
+            String ta_info = "";
+
+            try {
+
+                URL url = new URL(SERVER_ADDRESS + "CheckAuthorisation.php");
+
+                HttpURLConnection con = (HttpURLConnection) url.openConnection();
+
+                con.setRequestMethod("POST");
+
+                con.setDoOutput(true);
+                OutputStreamWriter writer = new OutputStreamWriter(con.getOutputStream());
+
+                writer.write(encodedStr);
+                writer.flush();
+
+                StringBuilder sb = new StringBuilder();
+                reader = new BufferedReader(new InputStreamReader(con.getInputStream()));
+
+                String line;
+                while((line = reader.readLine()) != null) {
+                    sb.append(line);
+                }
+                line = sb.toString();
+
+                Log.i("custom_check","The values received in the store part are as follows:");
+                Log.i("custom_check",line);
+
+                if (!line.equals("[]"))
+                {
+                    ta_info = line;
+                }
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            } finally {
+                if(reader != null) {
+                    try {
+                        reader.close();     //Closing the
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+            return ta_info;
+        }
+
+        @Override
+        protected void onPostExecute(String ta_info) {
+            progressDialog.dismiss();
+            TaCallback.done(ta_info);
+            super.onPostExecute(ta_info);
         }
     }
 
