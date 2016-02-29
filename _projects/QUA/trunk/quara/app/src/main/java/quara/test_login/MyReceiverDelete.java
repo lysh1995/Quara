@@ -27,20 +27,7 @@ public class MyReceiverDelete extends BroadcastReceiver {
         String selected = spinner1.getSelectedItem().toString();
         Course selected_course = new Course(selected, "");
         Queue selected_queue = new Queue("","","",selected);
-        ServerRequests serverRequests = new ServerRequests(temp);
-        serverRequests.getCourseDescriptionInBackground(selected_course, new GetDescriptionCallBack() {
-            @Override
-            public void done(String returnDescription) {
-                //this is the place that can be used to create question queue
-                LinearLayout linearLayout = MainActivity.lyout2;
-                TextView tv = new TextView(temp);
-                tv.setText(returnDescription);
-                tv.setId(0);
-                tv.setTextColor(Color.parseColor("#000000"));
-                linearLayout.removeAllViews();
-                linearLayout.addView(tv);
-            }
-        });
+        ServerRequests serverRequests;
         serverRequests = new ServerRequests(temp);
         serverRequests.getQueueInBackground(selected_queue, new GetQueueCallBack() {
             @Override

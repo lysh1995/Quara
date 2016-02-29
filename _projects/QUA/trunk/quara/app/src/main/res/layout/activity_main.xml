@@ -50,6 +50,15 @@ tools:context="quara.test_login.MainActivity">
 
         </LinearLayout>
 
+        <LinearLayout
+            android:id="@+id/couse_student_form"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
+
+        </LinearLayout>
+
         <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"

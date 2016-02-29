@@ -1,6 +1,7 @@
 package quara.test_login;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -22,6 +23,8 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     TextView tvRegisterLink;
 
     UserLocalStore userLocalStore;
+
+    final Context temp = this;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,9 +70,18 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                     showErrorMessage();
                 } else {
                     logUserIn(returnUser);
+                    TA ta = new TA(returnUser.name,"");
+                    ServerRequests serverRequest = new ServerRequests(temp);
+                    serverRequest.setOnDutyInBackground(ta, new UpdateDutyCallBack() {
+                        @Override
+                        public void done(String returnTA) {
+                            return;
+                        }
+                    });
                 }
             }
         });
+        serverRequests = new ServerRequests(this);
     }
 
     //Click will trigger this function
