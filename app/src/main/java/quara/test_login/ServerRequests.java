@@ -98,6 +98,24 @@ public class ServerRequests {
         new CheckAuthorisationAsyncTask(ta, callBack).execute();
     }
 
+    public void setOnDutyInBackground(TA ta, UpdateDutyCallBack callBack)
+    {
+        progressDialog.show();
+        new setOnDutyAsyncTask(ta, callBack).execute();
+    }
+
+    public void setOffDutyInBackground(TA ta, UpdateDutyCallBack callBack)
+    {
+        progressDialog.show();
+        new setOffDutyAsyncTask(ta, callBack).execute();
+    }
+
+    public void getOnDutyTAInBackground(TA ta, getOnDutyCallBack callBack)
+    {
+        progressDialog.show();
+        new getOnDutyTAAsyncTask(ta, callBack).execute();
+    }
+
     public class StoreUserDateAsyncTask extends AsyncTask<Void, Void, Void>
     {
         User user;
@@ -1080,6 +1098,289 @@ public class ServerRequests {
         }
     }
 
+    public class setOnDutyAsyncTask extends AsyncTask<Void, Void, String> {
+        TA ta;
+        UpdateDutyCallBack TaCallback;
+
+        public setOnDutyAsyncTask(TA ta, UpdateDutyCallBack TaCallback) {
+            this.ta = ta;
+            this.TaCallback = TaCallback;
+        }
+
+        private String getEncodedData(Map<String,String> data) {
+            StringBuilder sb = new StringBuilder();
+            for(String key : data.keySet()) {
+                String value = null;
+                try {
+                    value = URLEncoder.encode(data.get(key), "UTF-8");
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                }
+
+                if(sb.length()>0)
+                    sb.append("&");
+
+                sb.append(key + "=" + value);
+            }
+            return sb.toString();
+        }
+
+        @Override
+        protected String doInBackground(Void... params) {
+            Map dataToSend = new HashMap();
+            dataToSend.put("name", ta.name);
+            dataToSend.put("course_name", ta.course_name);
+
+            String encodedStr = getEncodedData(dataToSend);
+
+            BufferedReader reader = null;
+
+            String ta_info = "";
+
+            try {
+
+                URL url = new URL(SERVER_ADDRESS + "Onduty.php");
+
+                HttpURLConnection con = (HttpURLConnection) url.openConnection();
+
+                con.setRequestMethod("POST");
+
+                con.setDoOutput(true);
+                OutputStreamWriter writer = new OutputStreamWriter(con.getOutputStream());
+
+                writer.write(encodedStr);
+                writer.flush();
+
+                StringBuilder sb = new StringBuilder();
+                reader = new BufferedReader(new InputStreamReader(con.getInputStream()));
+
+                String line;
+                while((line = reader.readLine()) != null) {
+                    sb.append(line);
+                }
+                line = sb.toString();
+
+                Log.i("custom_check","The values received in the store part are as follows:");
+                Log.i("custom_check",line);
+
+                if (!line.equals("[]"))
+                {
+                    ta_info = line;
+                }
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            } finally {
+                if(reader != null) {
+                    try {
+                        reader.close();     //Closing the
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+            return ta_info;
+        }
+
+        @Override
+        protected void onPostExecute(String ta_info) {
+            progressDialog.dismiss();
+            TaCallback.done(ta_info);
+            super.onPostExecute(ta_info);
+        }
+    }
+
+    public class setOffDutyAsyncTask extends AsyncTask<Void, Void, String> {
+        TA ta;
+        UpdateDutyCallBack TaCallback;
+
+        public setOffDutyAsyncTask(TA ta, UpdateDutyCallBack TaCallback) {
+            this.ta = ta;
+            this.TaCallback = TaCallback;
+        }
+
+        private String getEncodedData(Map<String,String> data) {
+            StringBuilder sb = new StringBuilder();
+            for(String key : data.keySet()) {
+                String value = null;
+                try {
+                    value = URLEncoder.encode(data.get(key), "UTF-8");
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                }
+
+                if(sb.length()>0)
+                    sb.append("&");
+
+                sb.append(key + "=" + value);
+            }
+            return sb.toString();
+        }
+
+        @Override
+        protected String doInBackground(Void... params) {
+            Map dataToSend = new HashMap();
+            dataToSend.put("name", ta.name);
+            dataToSend.put("course_name", ta.course_name);
+
+            System.out.println("check" + ta.name);
+
+            String encodedStr = getEncodedData(dataToSend);
+
+            BufferedReader reader = null;
+
+            String ta_info = "";
+
+            try {
+
+                URL url = new URL(SERVER_ADDRESS + "Offduty.php");
+
+                HttpURLConnection con = (HttpURLConnection) url.openConnection();
+
+                con.setRequestMethod("POST");
+
+                con.setDoOutput(true);
+                OutputStreamWriter writer = new OutputStreamWriter(con.getOutputStream());
+
+                writer.write(encodedStr);
+                writer.flush();
+
+                StringBuilder sb = new StringBuilder();
+                reader = new BufferedReader(new InputStreamReader(con.getInputStream()));
+
+                String line;
+                while((line = reader.readLine()) != null) {
+                    sb.append(line);
+                }
+                line = sb.toString();
+
+                Log.i("custom_check","The values received in the store part are as follows:");
+                Log.i("custom_check",line);
+
+                if (!line.equals("[]"))
+                {
+                    ta_info = line;
+                }
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            } finally {
+                if(reader != null) {
+                    try {
+                        reader.close();     //Closing the
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+            return ta_info;
+        }
+
+        @Override
+        protected void onPostExecute(String ta_info) {
+            progressDialog.dismiss();
+            TaCallback.done(ta_info);
+            super.onPostExecute(ta_info);
+        }
+    }
+
+    public class getOnDutyTAAsyncTask extends AsyncTask<Void, Void, String[]> {
+        TA ta;
+        getOnDutyCallBack TaCallback;
+
+        public getOnDutyTAAsyncTask(TA ta, getOnDutyCallBack TaCallback) {
+            this.ta = ta;
+            this.TaCallback = TaCallback;
+        }
+
+        private String getEncodedData(Map<String,String> data) {
+            StringBuilder sb = new StringBuilder();
+            for(String key : data.keySet()) {
+                String value = null;
+                try {
+                    value = URLEncoder.encode(data.get(key), "UTF-8");
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                }
+
+                if(sb.length()>0)
+                    sb.append("&");
+
+                sb.append(key + "=" + value);
+            }
+            return sb.toString();
+        }
+
+        @Override
+        protected String[] doInBackground(Void... params) {
+            Map dataToSend = new HashMap();
+            dataToSend.put("course_name", ta.course_name);
+
+            String encodedStr = getEncodedData(dataToSend);
+
+            BufferedReader reader = null;
+
+            String[] ta_list = new String[20];
+
+            try {
+
+                URL url = new URL(SERVER_ADDRESS + "GetOnDutyTA.php");
+
+                HttpURLConnection con = (HttpURLConnection) url.openConnection();
+
+                con.setRequestMethod("POST");
+
+                con.setDoOutput(true);
+                OutputStreamWriter writer = new OutputStreamWriter(con.getOutputStream());
+
+                writer.write(encodedStr);
+                writer.flush();
+
+                StringBuilder sb = new StringBuilder();
+                reader = new BufferedReader(new InputStreamReader(con.getInputStream()));
+
+                String line;
+                int index = 0;
+                while((line = reader.readLine()) != null) {
+                    sb.append(line);
+                    ta_list[index] = line.toString();
+                    index++;
+                }
+                line = sb.toString();
+
+                Log.i("custom_check","The values received in the store part are as follows:");
+                Log.i("custom_check",line);
+
+                if (line.equals(""))
+                {
+                   ta_list = new String[20];
+                }
+                else
+                {
+                    
+                }
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            } finally {
+                if(reader != null) {
+                    try {
+                        reader.close();     //Closing the
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+            return ta_list;
+        }
+
+        @Override
+        protected void onPostExecute(String[] ta_list) {
+            progressDialog.dismiss();
+            TaCallback.done(ta_list);
+            super.onPostExecute(ta_list);
+        }
+    }
 
 
 }

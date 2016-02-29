@@ -2,24 +2,15 @@ package quara.test_login;
 
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
-import android.app.Activity;
-import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Vibrator;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -30,9 +21,9 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.lang.reflect.Array;
+import com.pushbots.push.Pushbots;
+
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -43,6 +34,11 @@ import java.util.concurrent.TimeUnit;
 @SuppressLint("NewApi")
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+
+    private final String SERVER_API_KEY = "AIzaSyBxki27xuo5kB-7er64dN2t2mqtPnWZvio";
+    private final String SERVER_ID = "79491460392";
+
+    String Project_number = "470822730050";
 
     static Context tt;
     final Context temp = this;
@@ -109,6 +105,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         delete.setOnClickListener(this);
 
         userLocalStore = new UserLocalStore(this);
+
+        Pushbots.sharedInstance().init(this);
     }
 
     private boolean authenticate()
@@ -160,6 +158,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                 tv.setTextColor(Color.parseColor("#000000"));
                                 linearLayout.removeAllViews();
                                 linearLayout.addView(tv);
+                            }
+                        });
+
+                        TA ta = new TA("",selected);
+                        serverRequests = new ServerRequests(temp);
+                        serverRequests.getOnDutyTAInBackground(ta, new getOnDutyCallBack() {
+                            @Override
+                            public void done(String[] ta_list) {
+                                LinearLayout linearLayout = (LinearLayout) findViewById(R.id.couse_queue_form);
+                                TextView tv = new TextView(temp);
+                                tv.setText("On-Duty Staff:");
+                                tv.setTextColor(Color.parseColor("#000000"));
+                                linearLayout.addView(tv);
+                                linearLayout = (LinearLayout) findViewById(R.id.couse_queue_form);
+                                for (int i=0;i<5;i++) {
+                                    if (ta_list[i] != null && !ta_list[i].equals("null")) {
+                                        tv = new TextView(temp);
+                                        tv.setText(ta_list[i]);
+                                        tv.setTextColor(Color.parseColor("#000000"));
+                                        linearLayout.addView(tv);
+                                    }
+                                }
                             }
                         });
 
@@ -237,7 +257,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                                                                 LinearLayout layout = (LinearLayout) findViewById(R.id.user_info_form);
                                                                                 lyout1 = layout;
                                                                                 layout.removeAllViews();
-                                                                                LinearLayout linearLayout = (LinearLayout) findViewById(R.id.couse_queue_form);
+                                                                                LinearLayout linearLayout = (LinearLayout) findViewById(R.id.couse_student_form);
                                                                                 lyout2 = linearLayout;
                                                                                 linearLayout.removeAllViews();
                                                                                 Intent intent = new Intent(temp, MyReceiverDelete.class);
@@ -275,7 +295,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             @Override
                             public void done(ArrayList returnQueue) {
                                 Iterator<ArrayList> iterator = returnQueue.iterator();
-                                LinearLayout linearLayout = (LinearLayout) findViewById(R.id.couse_queue_form);
+                                LinearLayout linearLayout = (LinearLayout) findViewById(R.id.couse_student_form);
                                 while (iterator.hasNext()) {
                                     Map entry = (Map) iterator.next();
                                     TextView tv = new TextView(temp);
@@ -320,6 +340,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch(v.getId())
         {
             case R.id.bLogout:
+                TA ta = new TA(userLocalStore.getLoggedInUser().name,"");
+                ServerRequests serverRequest = new ServerRequests(temp);
+                serverRequest.setOffDutyInBackground(ta, new UpdateDutyCallBack() {
+                    @Override
+                    public void done(String returnTA) {
+                        return;
+                    }
+                });
                 userLocalStore.clearUserData();
                 userLocalStore.setUserLoggedIn(false);
                 startActivity(new Intent(this, Login.class));
@@ -379,7 +407,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                             layout.removeAllViews();
                                             Course selected_course = new Course(selected, "");
                                             Queue selected_queue = new Queue("", "", "", selected);
-                                            LinearLayout linearLayout = (LinearLayout) findViewById(R.id.couse_queue_form);
+                                            LinearLayout linearLayout = (LinearLayout) findViewById(R.id.couse_student_form);
                                             lyout2 = linearLayout;
                                             linearLayout.removeAllViews();
                                             Intent intent = new Intent(temp, MyReceiverAdd.class);
@@ -395,9 +423,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                             LinearLayout layout = (LinearLayout) findViewById(R.id.user_info_form);
                                             lyout1 = layout;
                                             layout.removeAllViews();
-                                            Course selected_course = new Course(selected, "");
-                                            Queue selected_queue = new Queue("", "", "", selected);
-                                            LinearLayout linearLayout = (LinearLayout) findViewById(R.id.couse_queue_form);
+                                            LinearLayout linearLayout = (LinearLayout) findViewById(R.id.couse_student_form);
                                             lyout2 = linearLayout;
                                             linearLayout.removeAllViews();
                                             Intent intent = new Intent(temp, MyReceiverAdd.class);
@@ -431,7 +457,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         LinearLayout layout = (LinearLayout) findViewById(R.id.user_info_form);
                         lyout1 = layout;
                         layout.removeAllViews();
-                        LinearLayout linearLayout = (LinearLayout) findViewById(R.id.couse_queue_form);
+                        LinearLayout linearLayout = (LinearLayout) findViewById(R.id.couse_student_form);
                         lyout2 = linearLayout;
                         linearLayout.removeAllViews();
                         Intent intent = new Intent(temp, MyReceiverDelete.class);
