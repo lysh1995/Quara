@@ -1,6 +1,7 @@
 package quara.test_login;
 
 import android.app.AlertDialog;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -25,6 +26,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     UserLocalStore userLocalStore;
 
     final Context temp = this;
+    View vt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +58,11 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
 
         userLocalStore.storeUserData(returnUser);
         userLocalStore.setUserLoggedIn(true);
+
+        //Intent registrationIntent = new Intent("com.google.android.c2dm.intent.REGISTRATION");
+        //registrationIntent.putExtra("app", PendingIntent.getBroadcast(vt.getContext(), 0, new Intent(), 0));
+        //registrationIntent.putExtra("sender","470822730050");
+        //startService(registrationIntent);
 
         startActivity(new Intent(this, MainActivity.class));
     }
@@ -93,7 +100,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                 String username = etUsername.getText().toString();
                 String password = etPassword.getText().toString();
                 User user = new User(username, password);
-
+                vt = v;
                 authenticate(user);
 
                 break;
