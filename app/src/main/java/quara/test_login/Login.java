@@ -88,7 +88,6 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                 }
             }
         });
-        serverRequests = new ServerRequests(this);
     }
 
     //Click will trigger this function
@@ -102,7 +101,6 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                 User user = new User(username, password);
                 vt = v;
                 authenticate(user);
-
                 break;
 
             case R.id.tvRegisterLink:
