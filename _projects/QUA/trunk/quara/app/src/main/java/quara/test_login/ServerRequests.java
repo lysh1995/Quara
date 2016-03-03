@@ -38,6 +38,24 @@ public class ServerRequests {
         progressDialog.setMessage("Please wait...");
     }
 
+    public String getEncodedData(Map<String,String> data) {
+        StringBuilder sb = new StringBuilder();
+        for(String key : data.keySet()) {
+            String value = null;
+            try {
+                value = URLEncoder.encode(data.get(key), "UTF-8");
+            } catch (UnsupportedEncodingException e) {
+                e.printStackTrace();
+            }
+
+            if(sb.length()>0)
+                sb.append("&");
+
+            sb.append(key + "=" + value);
+        }
+        return sb.toString();
+    }
+
     public void storeUserDataInBackground(User user, GetUserCallBack callBack)
     {
         progressDialog.show();
@@ -127,22 +145,26 @@ public class ServerRequests {
             this.userCallback = userCallback;
         }
 
+//        private String getEncodedData(Map<String,String> data) {
+//            StringBuilder sb = new StringBuilder();
+//            for(String key : data.keySet()) {
+//                String value = null;
+//                try {
+//                    value = URLEncoder.encode(data.get(key), "UTF-8");
+//                } catch (UnsupportedEncodingException e) {
+//                    e.printStackTrace();
+//                }
+//
+//                if(sb.length()>0)
+//                    sb.append("&");
+//
+//                sb.append(key + "=" + value);
+//            }
+//            return sb.toString();
+//        }
+
         private String getEncodedData(Map<String,String> data) {
-            StringBuilder sb = new StringBuilder();
-            for(String key : data.keySet()) {
-                String value = null;
-                try {
-                    value = URLEncoder.encode(data.get(key), "UTF-8");
-                } catch (UnsupportedEncodingException e) {
-                    e.printStackTrace();
-                }
-
-                if(sb.length()>0)
-                    sb.append("&");
-
-                sb.append(key + "=" + value);
-            }
-            return sb.toString();
+            return ServerRequests.this.getEncodedData(data);
         }
 
         @Override
@@ -214,22 +236,26 @@ public class ServerRequests {
             this.userCallback = userCallback;
         }
 
+//        private String getEncodedData(Map<String,String> data) {
+//            StringBuilder sb = new StringBuilder();
+//            for(String key : data.keySet()) {
+//                String value = null;
+//                try {
+//                    value = URLEncoder.encode(data.get(key), "UTF-8");
+//                } catch (UnsupportedEncodingException e) {
+//                    e.printStackTrace();
+//                }
+//
+//                if(sb.length()>0)
+//                    sb.append("&");
+//
+//                sb.append(key + "=" + value);
+//            }
+//            return sb.toString();
+//        }
+
         private String getEncodedData(Map<String,String> data) {
-            StringBuilder sb = new StringBuilder();
-            for(String key : data.keySet()) {
-                String value = null;
-                try {
-                    value = URLEncoder.encode(data.get(key), "UTF-8");
-                } catch (UnsupportedEncodingException e) {
-                    e.printStackTrace();
-                }
-
-                if(sb.length()>0)
-                    sb.append("&");
-
-                sb.append(key + "=" + value);
-            }
-            return sb.toString();
+            return ServerRequests.this.getEncodedData(data);
         }
 
         @Override
