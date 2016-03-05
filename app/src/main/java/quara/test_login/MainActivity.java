@@ -57,6 +57,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     EditText text1;
     EditText text2;
+    EditText notesText;
     String first;
     TextView text3;
     TextView countdown;
@@ -309,7 +310,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                     Map entry = (Map) iterator.next();
                                     TextView tv = new TextView(temp);
                                     Map result = entry;
-                                    tv.setText("student name: "+ result.get("user_name")+ " position: "+ result.get("user_pos")+ " topic: "+ result.get("user_topic"));
+                                    //tv.setText("student name: "+ result.get("user_name")+ " position: "+ result.get("user_pos")+ " topic: "+ result.get("user_topic"));
+                                    tv.setText("student name: "+ result.get("user_name")+ " position: "
+                                            + result.get("user_pos")+ " topic: "+ result.get("user_topic") + result.get("user_notes"));
                                     tv.setId(0);
                                     tv.setTextColor(Color.parseColor("#000000"));
                                     linearLayout.addView(tv);
@@ -400,6 +403,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 text2.setHint("user_topic");
                 layout.addView(text2);
 
+                notesText = new EditText(temp);
+                notesText.setLayoutParams(new AbsListView.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+                notesText.setHint("user_notes");
+                layout.addView(notesText);
+
                 //create new submit button
                 Button b = new Button(temp);
                 if (edit) {
@@ -417,7 +425,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                 lyout1 = layout;
                                 String pos = text1.getText().toString();
                                 String topic = text2.getText().toString();
-                                Queue queue = new Queue(name, pos, topic, selected);
+                                String notes = notesText.getText().toString();
+                                Queue queue = new Queue(name, pos, topic, selected, notes);
                                 ServerRequests serverRequests = new ServerRequests(temp);
 
                                 if (!edit) { //insert into queue

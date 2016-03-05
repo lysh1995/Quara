@@ -1,10 +1,14 @@
 [
     {
+        "merged": "/Users/DZ1/AndroidStudioProjects/quara/C:\\Users\\Jamie\\cs429\\quara\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v23\\abc_control_background_material.xml",
+        "source": "/Users/DZ1/AndroidStudioProjects/quara/C:\\Users\\Jamie\\cs429\\quara\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable-v23\\abc_control_background_material.xml"
+    },
+    {
         "merged": "/Users/DZ1/AndroidStudioProjects/quara/app/build/intermediates/res/merged/debug/drawable-v23/abc_control_background_material.xml",
         "source": "/Users/DZ1/AndroidStudioProjects/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/drawable-v23/abc_control_background_material.xml"
     },
     {
-        "merged": "/Users/DZ1/AndroidStudioProjects/quara/C:\\Users\\Jamie\\cs429\\quara\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v23\\abc_control_background_material.xml",
-        "source": "/Users/DZ1/AndroidStudioProjects/quara/C:\\Users\\Jamie\\cs429\\quara\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable-v23\\abc_control_background_material.xml"
+        "merged": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/res/merged/debug/drawable-v23/abc_control_background_material.xml",
+        "source": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/drawable-v23/abc_control_background_material.xml"
     }
 ]

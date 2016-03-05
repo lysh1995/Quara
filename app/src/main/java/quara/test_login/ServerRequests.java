@@ -676,6 +676,7 @@ public class ServerRequests {
             dataToSend.put("user_name", queue.user_name);
             dataToSend.put("user_pos", queue.user_pos);
             dataToSend.put("user_topic", queue.user_topic);
+            dataToSend.put("user_notes", queue.user_notes); // foobar
             dataToSend.put("course_name", queue.course_name);
 
             String encodedStr = getEncodedData(dataToSend);
@@ -757,6 +758,7 @@ public class ServerRequests {
             dataToSend.put("user_name", queue.user_name);
             dataToSend.put("user_pos", queue.user_pos);
             dataToSend.put("user_topic", queue.user_topic);
+            dataToSend.put("user_notes", queue.user_notes); // foobar
             dataToSend.put("course_name", queue.course_name);
 
             String encodedStr = getEncodedData(dataToSend);
