@@ -1,15 +1,23 @@
 [
     {
+        "merged": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/res/merged/debug/drawable-v21/abc_action_bar_item_background_material.xml",
+        "source": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/drawable-v21/abc_action_bar_item_background_material.xml"
+    },
+    {
         "merged": "/Users/DZ1/AndroidStudioProjects/quara/app/build/intermediates/res/merged/debug/drawable-v21/abc_action_bar_item_background_material.xml",
         "source": "/Users/DZ1/AndroidStudioProjects/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/drawable-v21/abc_action_bar_item_background_material.xml"
     },
     {
-        "merged": "/Users/DZ1/AndroidStudioProjects/quara/C:\\Users\\Jamie\\cs429\\quara\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_action_bar_item_background_material.xml",
-        "source": "/Users/DZ1/AndroidStudioProjects/quara/C:\\Users\\Jamie\\cs429\\quara\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable-v21\\abc_action_bar_item_background_material.xml"
+        "merged": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/res/merged/debug/drawable-v21/abc_btn_colored_material.xml",
+        "source": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/drawable-v21/abc_btn_colored_material.xml"
     },
     {
         "merged": "/Users/DZ1/AndroidStudioProjects/quara/app/build/intermediates/res/merged/debug/drawable-v21/abc_btn_colored_material.xml",
         "source": "/Users/DZ1/AndroidStudioProjects/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/drawable-v21/abc_btn_colored_material.xml"
+    },
+    {
+        "merged": "/Users/DZ1/AndroidStudioProjects/quara/C:\\Users\\Jamie\\cs429\\quara\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_action_bar_item_background_material.xml",
+        "source": "/Users/DZ1/AndroidStudioProjects/quara/C:\\Users\\Jamie\\cs429\\quara\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable-v21\\abc_action_bar_item_background_material.xml"
     },
     {
         "merged": "/Users/DZ1/AndroidStudioProjects/quara/C:\\Users\\Jamie\\cs429\\quara\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_btn_colored_material.xml",
