@@ -178,7 +178,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         dialogBuilder.show();
     }
 
-    private void logUserIn(User returnUser)
+    public void logUserIn(User returnUser)
     {
 
         userLocalStore.storeUserData(returnUser);
