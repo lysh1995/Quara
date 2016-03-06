@@ -34,4 +34,10 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
         assertEquals("",usl.getLoggedInUser().name);
     }
 
+    @SmallTest
+    public void testNotes() {
+        String notes = "How do we pipeline this code?";
+        Queue testQueue = new Queue("John", "1310", "Tomasulo", "CS433", notes);
+        assertEquals(testQueue.user_notes, notes);
+    }
 }
