@@ -2,6 +2,7 @@ package quara.test_login;
 
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -44,6 +45,7 @@ import java.util.concurrent.TimeUnit;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
+    final Activity act = this;
     static Context tt;
     final Context temp = this;
     public static Spinner cSpinner;
@@ -53,7 +55,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button add;
     Button delete;
     Button answer;
-
     Boolean TA_status = false;
 
     EditText text1;
@@ -77,28 +78,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     AsyncTask<Void, Void, String> shareRegidTask;
 
     static final String TAG = "Register Activity";
-
-    public class CounterClass extends CountDownTimer {
-
-        public CounterClass(long millisInFuture, long countDownInterval){
-            super(millisInFuture, countDownInterval);
-        }
-
-        public void onTick(long millisInFinished)
-        {
-            long mills = millisInFinished;
-            String hms = String.format("%02d:%02d:%02d", TimeUnit.MILLISECONDS.toHours(mills),
-                    TimeUnit.MILLISECONDS.toMinutes(mills) - TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(mills)),
-                    TimeUnit.MILLISECONDS.toSeconds(mills) - TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(mills)));
-            countdown.setText(hms);
-        }
-
-        public void onFinish(){
-            Vibrator v = (Vibrator) MainActivity.this.getSystemService(Context.VIBRATOR_SERVICE);
-            v.vibrate(1000);
-        }
-
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -281,7 +260,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                     countdown.setTextSize(20);
                                     countdown.setTextColor(Color.parseColor("#000000"));
 
-                                    final CounterClass timer = new CounterClass(480000/32,1000);
+                                    final CounterClass timer = new CounterClass(480000, 1000, act, countdown);
                                     timer.start();
 
                                     LinearLayout linelayout = (LinearLayout) findViewById(R.id.countdown);
