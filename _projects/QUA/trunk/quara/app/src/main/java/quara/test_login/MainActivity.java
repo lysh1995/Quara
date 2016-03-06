@@ -79,6 +79,27 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     static final String TAG = "Register Activity";
 
+    public EditText createEditText(String hint)
+    {
+        EditText text = new EditText(temp);
+        text.setLayoutParams(new AbsListView.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+        text.setHint(hint);
+        return text;
+    }
+
+    public void setView()
+    {
+        LinearLayout layout = (LinearLayout) findViewById(R.id.user_info_form);
+        lyout1 = layout;
+        layout.removeAllViews();
+        LinearLayout linearLayout = (LinearLayout) findViewById(R.id.couse_student_form);
+        lyout2 = linearLayout;
+        linearLayout.removeAllViews();
+        Intent intent = new Intent(temp, MyReceiverAdd.class);
+        intent.setAction("com.pycitup.BroadcastReceiverAdd");
+        sendBroadcast(intent);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -202,6 +223,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             public void done(ArrayList returnQueue) {
                                 Iterator<ArrayList> iterator = returnQueue.iterator();
                                 LinearLayout linearLayout = (LinearLayout) findViewById(R.id.couse_student_form);
+                                linearLayout.removeAllViews();
                                 while (iterator.hasNext()) {
                                     Map entry = (Map) iterator.next();
                                     TextView tv = new TextView(temp);
@@ -242,7 +264,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             @Override
                             public void done(ArrayList returnQueue) {
                                 Iterator<ArrayList> iterator = returnQueue.iterator();
-                                LinearLayout linlayout = (LinearLayout) findViewById(R.id.answer_form);
+                                LinearLayout lineLayout = (LinearLayout) findViewById(R.id.answer_form);
                                 if (iterator.hasNext()) {
                                     Map entry = (Map) iterator.next();
                                     Map res = entry;
@@ -252,8 +274,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                     text3.setText("Answering " + name + "'s Question.....");
                                     text3.setId(0);
                                     text3.setTextColor(Color.parseColor("#000000"));
-                                    linlayout.removeAllViews();
-                                    linlayout.addView(text3);
+                                    lineLayout.removeAllViews();
+                                    lineLayout.addView(text3);
 
                                     countdown = new TextView(temp);
                                     countdown.setText("00:08:00");
@@ -263,11 +285,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                     final CounterClass timer = new CounterClass(480000, 1000, act, countdown);
                                     timer.start();
 
-                                    LinearLayout linelayout = (LinearLayout) findViewById(R.id.countdown);
-                                    linelayout.addView(countdown);
+                                    LinearLayout lineLayout2 = (LinearLayout) findViewById(R.id.countdown);
+                                    lineLayout2.addView(countdown);
 
                                     Button b = createFinishAnsweringButton(name);
-                                    linlayout.addView(b);
+                                    lineLayout2.addView(b);
                                 } else {
                                     Toast toast = Toast.makeText(getApplicationContext(), "No Question in Queue.", Toast.LENGTH_LONG);
                                     toast.show();
@@ -277,9 +299,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     }
                 }
         );
-        LinearLayout linlayout = (LinearLayout) findViewById(R.id.answer_bottom);
-        linlayout.removeAllViews();
-        linlayout.addView(answer);
+        LinearLayout lineLayout = (LinearLayout) findViewById(R.id.answer_bottom);
+        lineLayout.removeAllViews();
+        lineLayout.addView(answer);
     }
 
     @NonNull
@@ -384,18 +406,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 tt = temp;
                 LinearLayout layout = (LinearLayout) findViewById(R.id.user_info_form);
                 layout.removeAllViews();
-                text1 = new EditText(temp);
-                text1.setLayoutParams(new AbsListView.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
-                text1.setHint("user_position");
+
+                text1 = createEditText("Location");
                 layout.addView(text1);
-                text2 = new EditText(temp);
-                text2.setLayoutParams(new AbsListView.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
-                text2.setHint("user_topic");
+
+                text2 = createEditText("Topic");
                 layout.addView(text2);
 
-                notesText = new EditText(temp);
-                notesText.setLayoutParams(new AbsListView.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
-                notesText.setHint("user_notes");
+                notesText = createEditText("Comment");
                 layout.addView(notesText);
 
                 //create new submit button
@@ -431,17 +449,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                     serverRequests.insertQueueInBackground(queue, new GetQueueCallBack() {
                                         @Override
                                         public void done(ArrayList returnQueue) {
-                                            LinearLayout layout = (LinearLayout) findViewById(R.id.user_info_form);
-                                            lyout1 = layout;
-                                            layout.removeAllViews();
-                                            Course selected_course = new Course(selected, "");
-                                            Queue selected_queue = new Queue("", "", "", selected);
-                                            LinearLayout linearLayout = (LinearLayout) findViewById(R.id.couse_student_form);
-                                            lyout2 = linearLayout;
-                                            linearLayout.removeAllViews();
-                                            Intent intent = new Intent(temp, MyReceiverAdd.class);
-                                            intent.setAction("com.pycitup.BroadcastReceiverAdd");
-                                            sendBroadcast(intent);
+                                            MainActivity.this.setView();
                                         }
                                     });
                                 }
@@ -449,15 +457,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                     serverRequests.editQueueInBackground(queue, new GetQueueCallBack() {
                                         @Override
                                         public void done(ArrayList returnQueue) {
-                                            LinearLayout layout = (LinearLayout) findViewById(R.id.user_info_form);
-                                            lyout1 = layout;
-                                            layout.removeAllViews();
-                                            LinearLayout linearLayout = (LinearLayout) findViewById(R.id.couse_student_form);
-                                            lyout2 = linearLayout;
-                                            linearLayout.removeAllViews();
-                                            Intent intent = new Intent(temp, MyReceiverAdd.class);
-                                            intent.setAction("com.pycitup.BroadcastReceiverAdd");
-                                            sendBroadcast(intent);
+                                            MainActivity.this.setView();
                                         }
                                     });
 
