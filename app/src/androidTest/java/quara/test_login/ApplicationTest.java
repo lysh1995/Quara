@@ -1,6 +1,7 @@
 package quara.test_login;
 
 import android.app.Application;
+import android.content.Intent;
 import android.test.ApplicationTestCase;
 import org.junit.*;
 
@@ -20,7 +21,7 @@ public class ApplicationTest extends ApplicationTestCase<Application> {
         Map<String, Boolean> names_on_queue = new HashMap<String, Boolean>();
         names_on_queue.put("ALBERT", true);
         boolean containsAlbert = names_on_queue.containsKey("ALBERT");
-        assertEquals(containsAlbert,true);
+        assertEquals(containsAlbert, true);
     }
 
     @Test
@@ -30,15 +31,6 @@ public class ApplicationTest extends ApplicationTestCase<Application> {
         names_on_queue.remove("ALBERT");
         boolean containsAlbert = names_on_queue.containsKey("ALBERT");
         assertEquals(containsAlbert,false);
-    }
-
-    @Test
-    public void testEditFromQueue() {
-        Map<String, Boolean> names_on_queue = new HashMap<String, Boolean>();
-        names_on_queue.put("ALBERT",true);
-        names_on_queue.put("ALBERT",false);
-        boolean containsFalse = names_on_queue.get("ALBERT");
-        assertEquals(containsFalse,false);
     }
 
 

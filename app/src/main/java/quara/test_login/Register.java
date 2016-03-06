@@ -39,7 +39,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
         dialogBuilder.show();
     }
 
-    private  void RegisterUser(User user)
+    public void RegisterUser(User user)
     {
         ServerRequests serverRequests = new ServerRequests(this);
         serverRequests.storeUserDataInBackground(user, new GetUserCallBack() {
@@ -50,7 +50,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
         });
     }
 
-    private void authenticate(User user)
+    public void authenticate(User user)
     {
         ServerRequests serverRequests = new ServerRequests(this);
         serverRequests.checkUserDataInBackground(user, new GetUserCallBack() {
