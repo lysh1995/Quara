@@ -37,7 +37,12 @@ public class MyReceiverAdd extends BroadcastReceiver {
                     Map entry = (Map) iterator.next();
                     TextView tv = new TextView(temp);
                     Map result = entry;
-                    tv.setText("student name: " + result.get("user_name") + " position: " + result.get("user_pos") + " topic: " + result.get("user_topic") + "notes: " + result.get("user_notes"));
+                    if (!result.get("user_notes").equals(""))
+                        tv.setText("student name: "+ result.get("user_name")+ " position: "
+                                + result.get("user_pos")+ " topic: "+ result.get("user_topic") + " notes: " + result.get("user_notes"));
+                    else
+                        tv.setText("student name: "+ result.get("user_name")+ " position: "
+                                + result.get("user_pos")+ " topic: "+ result.get("user_topic"));
                     tv.setId(0);
                     tv.setTextColor(Color.parseColor("#000000"));
                     linearLayout.addView(tv);
