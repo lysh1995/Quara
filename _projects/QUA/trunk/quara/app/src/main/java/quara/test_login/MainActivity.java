@@ -94,7 +94,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         public void onFinish(){
-            Vibrator v = (Vibrator) temp.getSystemService(Context.VIBRATOR_SERVICE);
+            Vibrator v = (Vibrator) MainActivity.this.getSystemService(Context.VIBRATOR_SERVICE);
             v.vibrate(1000);
         }
 
@@ -281,7 +281,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                     countdown.setTextSize(20);
                                     countdown.setTextColor(Color.parseColor("#000000"));
 
-                                    final CounterClass timer = new CounterClass(480000,1000);
+                                    final CounterClass timer = new CounterClass(480000/32,1000);
                                     timer.start();
 
                                     LinearLayout linelayout = (LinearLayout) findViewById(R.id.countdown);
