@@ -274,7 +274,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                     Map entry = (Map) iterator.next();
                                     Map res = entry;
                                     while (!res.get("ta_id").equals("")){
-                                        Log.i("ta_id from question:",(String) res.get("ta_id"));
                                         if (iterator.hasNext()){
                                             entry = (Map) iterator.next();
                                             res = entry;
@@ -282,9 +281,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                             return;
                                         }
                                     }
-                                    text3 = new TextView(temp);
+
                                     final String name = (String) res.get("user_name"); //name of first person in queue
                                     first = name;
+
+                                    Queue queue = new Queue(name, "", "", selected);
+                                    queue.setAnswering(ta_id);
+                                    ServerRequests serverRequests = new ServerRequests(temp);
+                                    serverRequests.answerQuestion(queue, new GetQueueCallBack() {
+                                        @Override
+                                        public void done(ArrayList returnQueue) {
+                                            MainActivity.this.setView();
+                                        }
+                                    });
+
+                                    text3 = new TextView(temp);
                                     text3.setText("Answering " + name + "'s Question.....");
                                     text3.setId(0);
                                     text3.setTextColor(Color.parseColor("#000000"));
@@ -301,17 +312,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                                     LinearLayout lineLayout2 = (LinearLayout) findViewById(R.id.countdown);
                                     lineLayout2.addView(countdown);
-
-                                    //adding in part for multiple TA answering. First update database with ta_id
-                                    Queue queue = new Queue(name, "", "", selected);
-                                    queue.setAnswering(ta_id);
-                                    ServerRequests serverRequests = new ServerRequests(temp);
-                                    serverRequests.answerQuestion(queue, new GetQueueCallBack() {
-                                        @Override
-                                        public void done(ArrayList returnQueue) {
-                                            MainActivity.this.setView();
-                                        }
-                                    });
 
                                     Button b = createFinishAnsweringButton(name);
                                     lineLayout2.addView(b);
