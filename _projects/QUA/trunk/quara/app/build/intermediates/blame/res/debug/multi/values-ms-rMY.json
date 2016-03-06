@@ -1,776 +1,6 @@
 [
     {
-        "outputFile": "/Users/DZ1/AndroidStudioProjects/quara/app/build/intermediates/res/merged/debug/values-ms-rMY/values-ms-rMY.xml",
-        "map": [
-            {
-                "to": {
-                    "startLine": 2,
-                    "startColumn": 4,
-                    "startOffset": 55,
-                    "endColumn": 110,
-                    "endOffset": 161
-                },
-                "from": {
-                    "file": "/Users/DZ1/AndroidStudioProjects/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ms-rMY/values-ms-rMY.xml",
-                    "position": {
-                        "startLine": 4,
-                        "startColumn": 4,
-                        "startOffset": 233,
-                        "endColumn": 110,
-                        "endOffset": 339
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 3,
-                    "startColumn": 4,
-                    "startOffset": 166,
-                    "endColumn": 107,
-                    "endOffset": 269
-                },
-                "from": {
-                    "file": "/Users/DZ1/AndroidStudioProjects/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ms-rMY/values-ms-rMY.xml",
-                    "position": {
-                        "startLine": 5,
-                        "startColumn": 4,
-                        "startOffset": 344,
-                        "endColumn": 107,
-                        "endOffset": 447
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 4,
-                    "startColumn": 4,
-                    "startOffset": 274,
-                    "endColumn": 122,
-                    "endOffset": 392
-                },
-                "from": {
-                    "file": "/Users/DZ1/AndroidStudioProjects/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ms-rMY/values-ms-rMY.xml",
-                    "position": {
-                        "startLine": 6,
-                        "startColumn": 4,
-                        "startOffset": 452,
-                        "endColumn": 122,
-                        "endOffset": 570
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 5,
-                    "startColumn": 4,
-                    "startOffset": 397,
-                    "endColumn": 104,
-                    "endOffset": 497
-                },
-                "from": {
-                    "file": "/Users/DZ1/AndroidStudioProjects/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ms-rMY/values-ms-rMY.xml",
-                    "position": {
-                        "startLine": 7,
-                        "startColumn": 4,
-                        "startOffset": 575,
-                        "endColumn": 104,
-                        "endOffset": 675
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 6,
-                    "startColumn": 4,
-                    "startOffset": 502,
-                    "endColumn": 107,
-                    "endOffset": 605
-                },
-                "from": {
-                    "file": "/Users/DZ1/AndroidStudioProjects/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ms-rMY/values-ms-rMY.xml",
-                    "position": {
-                        "startLine": 8,
-                        "startColumn": 4,
-                        "startOffset": 680,
-                        "endColumn": 107,
-                        "endOffset": 783
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 7,
-                    "startColumn": 4,
-                    "startOffset": 610,
-                    "endColumn": 86,
-                    "endOffset": 692
-                },
-                "from": {
-                    "file": "/Users/DZ1/AndroidStudioProjects/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ms-rMY/values-ms-rMY.xml",
-                    "position": {
-                        "startLine": 9,
-                        "startColumn": 4,
-                        "startOffset": 788,
-                        "endColumn": 86,
-                        "endOffset": 870
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 8,
-                    "startColumn": 4,
-                    "startOffset": 697,
-                    "endColumn": 103,
-                    "endOffset": 796
-                },
-                "from": {
-                    "file": "/Users/DZ1/AndroidStudioProjects/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ms-rMY/values-ms-rMY.xml",
-                    "position": {
-                        "startLine": 10,
-                        "startColumn": 4,
-                        "startOffset": 875,
-                        "endColumn": 103,
-                        "endOffset": 974
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 9,
-                    "startColumn": 4,
-                    "startOffset": 801,
-                    "endColumn": 110,
-                    "endOffset": 907
-                },
-                "from": {
-                    "file": "/Users/DZ1/AndroidStudioProjects/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ms-rMY/values-ms-rMY.xml",
-                    "position": {
-                        "startLine": 11,
-                        "startColumn": 4,
-                        "startOffset": 979,
-                        "endColumn": 110,
-                        "endOffset": 1085
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 10,
-                    "startColumn": 4,
-                    "startOffset": 912,
-                    "endColumn": 77,
-                    "endOffset": 985
-                },
-                "from": {
-                    "file": "/Users/DZ1/AndroidStudioProjects/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ms-rMY/values-ms-rMY.xml",
-                    "position": {
-                        "startLine": 12,
-                        "startColumn": 4,
-                        "startOffset": 1090,
-                        "endColumn": 77,
-                        "endOffset": 1163
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 11,
-                    "startColumn": 4,
-                    "startOffset": 990,
-                    "endColumn": 78,
-                    "endOffset": 1064
-                },
-                "from": {
-                    "file": "/Users/DZ1/AndroidStudioProjects/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ms-rMY/values-ms-rMY.xml",
-                    "position": {
-                        "startLine": 13,
-                        "startColumn": 4,
-                        "startOffset": 1168,
-                        "endColumn": 78,
-                        "endOffset": 1242
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 12,
-                    "startColumn": 4,
-                    "startOffset": 1069,
-                    "endColumn": 79,
-                    "endOffset": 1144
-                },
-                "from": {
-                    "file": "/Users/DZ1/AndroidStudioProjects/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ms-rMY/values-ms-rMY.xml",
-                    "position": {
-                        "startLine": 14,
-                        "startColumn": 4,
-                        "startOffset": 1247,
-                        "endColumn": 79,
-                        "endOffset": 1322
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 13,
-                    "startColumn": 4,
-                    "startOffset": 1149,
-                    "endColumn": 111,
-                    "endOffset": 1256
-                },
-                "from": {
-                    "file": "/Users/DZ1/AndroidStudioProjects/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ms-rMY/values-ms-rMY.xml",
-                    "position": {
-                        "startLine": 15,
-                        "startColumn": 4,
-                        "startOffset": 1327,
-                        "endColumn": 111,
-                        "endOffset": 1434
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 14,
-                    "startColumn": 4,
-                    "startOffset": 1261,
-                    "endColumn": 108,
-                    "endOffset": 1365
-                },
-                "from": {
-                    "file": "/Users/DZ1/AndroidStudioProjects/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ms-rMY/values-ms-rMY.xml",
-                    "position": {
-                        "startLine": 16,
-                        "startColumn": 4,
-                        "startOffset": 1439,
-                        "endColumn": 108,
-                        "endOffset": 1543
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 15,
-                    "startColumn": 4,
-                    "startOffset": 1370,
-                    "endColumn": 96,
-                    "endOffset": 1462
-                },
-                "from": {
-                    "file": "/Users/DZ1/AndroidStudioProjects/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ms-rMY/values-ms-rMY.xml",
-                    "position": {
-                        "startLine": 17,
-                        "startColumn": 4,
-                        "startOffset": 1548,
-                        "endColumn": 96,
-                        "endOffset": 1640
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 16,
-                    "startColumn": 4,
-                    "startOffset": 1467,
-                    "endColumn": 108,
-                    "endOffset": 1571
-                },
-                "from": {
-                    "file": "/Users/DZ1/AndroidStudioProjects/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ms-rMY/values-ms-rMY.xml",
-                    "position": {
-                        "startLine": 18,
-                        "startColumn": 4,
-                        "startOffset": 1645,
-                        "endColumn": 108,
-                        "endOffset": 1749
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 17,
-                    "startColumn": 4,
-                    "startOffset": 1576,
-                    "endColumn": 102,
-                    "endOffset": 1674
-                },
-                "from": {
-                    "file": "/Users/DZ1/AndroidStudioProjects/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ms-rMY/values-ms-rMY.xml",
-                    "position": {
-                        "startLine": 19,
-                        "startColumn": 4,
-                        "startOffset": 1754,
-                        "endColumn": 102,
-                        "endOffset": 1852
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 18,
-                    "startColumn": 4,
-                    "startOffset": 1679,
-                    "endColumn": 106,
-                    "endOffset": 1781
-                },
-                "from": {
-                    "file": "/Users/DZ1/AndroidStudioProjects/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ms-rMY/values-ms-rMY.xml",
-                    "position": {
-                        "startLine": 20,
-                        "startColumn": 4,
-                        "startOffset": 1857,
-                        "endColumn": 106,
-                        "endOffset": 1959
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 19,
-                    "startColumn": 4,
-                    "startOffset": 1786,
-                    "endColumn": 121,
-                    "endOffset": 1903
-                },
-                "from": {
-                    "file": "/Users/DZ1/AndroidStudioProjects/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ms-rMY/values-ms-rMY.xml",
-                    "position": {
-                        "startLine": 21,
-                        "startColumn": 4,
-                        "startOffset": 1964,
-                        "endColumn": 121,
-                        "endOffset": 2081
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 20,
-                    "startColumn": 4,
-                    "startOffset": 1908,
-                    "endColumn": 100,
-                    "endOffset": 2004
-                },
-                "from": {
-                    "file": "/Users/DZ1/AndroidStudioProjects/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ms-rMY/values-ms-rMY.xml",
-                    "position": {
-                        "startLine": 22,
-                        "startColumn": 4,
-                        "startOffset": 2086,
-                        "endColumn": 100,
-                        "endOffset": 2182
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 21,
-                    "startColumn": 4,
-                    "startOffset": 2009,
-                    "endColumn": 100,
-                    "endOffset": 2105
-                },
-                "from": {
-                    "file": "/Users/DZ1/AndroidStudioProjects/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ms-rMY/values-ms-rMY.xml",
-                    "position": {
-                        "startLine": 23,
-                        "startColumn": 4,
-                        "startOffset": 2187,
-                        "endColumn": 100,
-                        "endOffset": 2283
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "outputFile": "/Users/DZ1/AndroidStudioProjects/quara/C:\\Users\\Jamie\\cs429\\quara\\app\\build\\intermediates\\res\\merged\\debug\\values-ms-rMY\\values-ms-rMY.xml",
-        "map": [
-            {
-                "to": {
-                    "startLine": 2,
-                    "startColumn": 4,
-                    "startOffset": 55,
-                    "endColumn": 110,
-                    "endOffset": 161
-                },
-                "from": {
-                    "file": "/Users/DZ1/AndroidStudioProjects/quara/C:\\Users\\Jamie\\cs429\\quara\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ms-rMY\\values-ms-rMY.xml",
-                    "position": {
-                        "startLine": 4,
-                        "startColumn": 4,
-                        "startOffset": 233,
-                        "endColumn": 110,
-                        "endOffset": 339
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 3,
-                    "startColumn": 4,
-                    "startOffset": 166,
-                    "endColumn": 107,
-                    "endOffset": 269
-                },
-                "from": {
-                    "file": "/Users/DZ1/AndroidStudioProjects/quara/C:\\Users\\Jamie\\cs429\\quara\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ms-rMY\\values-ms-rMY.xml",
-                    "position": {
-                        "startLine": 5,
-                        "startColumn": 4,
-                        "startOffset": 344,
-                        "endColumn": 107,
-                        "endOffset": 447
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 4,
-                    "startColumn": 4,
-                    "startOffset": 274,
-                    "endColumn": 122,
-                    "endOffset": 392
-                },
-                "from": {
-                    "file": "/Users/DZ1/AndroidStudioProjects/quara/C:\\Users\\Jamie\\cs429\\quara\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ms-rMY\\values-ms-rMY.xml",
-                    "position": {
-                        "startLine": 6,
-                        "startColumn": 4,
-                        "startOffset": 452,
-                        "endColumn": 122,
-                        "endOffset": 570
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 5,
-                    "startColumn": 4,
-                    "startOffset": 397,
-                    "endColumn": 104,
-                    "endOffset": 497
-                },
-                "from": {
-                    "file": "/Users/DZ1/AndroidStudioProjects/quara/C:\\Users\\Jamie\\cs429\\quara\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ms-rMY\\values-ms-rMY.xml",
-                    "position": {
-                        "startLine": 7,
-                        "startColumn": 4,
-                        "startOffset": 575,
-                        "endColumn": 104,
-                        "endOffset": 675
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 6,
-                    "startColumn": 4,
-                    "startOffset": 502,
-                    "endColumn": 107,
-                    "endOffset": 605
-                },
-                "from": {
-                    "file": "/Users/DZ1/AndroidStudioProjects/quara/C:\\Users\\Jamie\\cs429\\quara\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ms-rMY\\values-ms-rMY.xml",
-                    "position": {
-                        "startLine": 8,
-                        "startColumn": 4,
-                        "startOffset": 680,
-                        "endColumn": 107,
-                        "endOffset": 783
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 7,
-                    "startColumn": 4,
-                    "startOffset": 610,
-                    "endColumn": 86,
-                    "endOffset": 692
-                },
-                "from": {
-                    "file": "/Users/DZ1/AndroidStudioProjects/quara/C:\\Users\\Jamie\\cs429\\quara\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ms-rMY\\values-ms-rMY.xml",
-                    "position": {
-                        "startLine": 9,
-                        "startColumn": 4,
-                        "startOffset": 788,
-                        "endColumn": 86,
-                        "endOffset": 870
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 8,
-                    "startColumn": 4,
-                    "startOffset": 697,
-                    "endColumn": 103,
-                    "endOffset": 796
-                },
-                "from": {
-                    "file": "/Users/DZ1/AndroidStudioProjects/quara/C:\\Users\\Jamie\\cs429\\quara\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ms-rMY\\values-ms-rMY.xml",
-                    "position": {
-                        "startLine": 10,
-                        "startColumn": 4,
-                        "startOffset": 875,
-                        "endColumn": 103,
-                        "endOffset": 974
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 9,
-                    "startColumn": 4,
-                    "startOffset": 801,
-                    "endColumn": 110,
-                    "endOffset": 907
-                },
-                "from": {
-                    "file": "/Users/DZ1/AndroidStudioProjects/quara/C:\\Users\\Jamie\\cs429\\quara\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ms-rMY\\values-ms-rMY.xml",
-                    "position": {
-                        "startLine": 11,
-                        "startColumn": 4,
-                        "startOffset": 979,
-                        "endColumn": 110,
-                        "endOffset": 1085
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 10,
-                    "startColumn": 4,
-                    "startOffset": 912,
-                    "endColumn": 77,
-                    "endOffset": 985
-                },
-                "from": {
-                    "file": "/Users/DZ1/AndroidStudioProjects/quara/C:\\Users\\Jamie\\cs429\\quara\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ms-rMY\\values-ms-rMY.xml",
-                    "position": {
-                        "startLine": 12,
-                        "startColumn": 4,
-                        "startOffset": 1090,
-                        "endColumn": 77,
-                        "endOffset": 1163
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 11,
-                    "startColumn": 4,
-                    "startOffset": 990,
-                    "endColumn": 78,
-                    "endOffset": 1064
-                },
-                "from": {
-                    "file": "/Users/DZ1/AndroidStudioProjects/quara/C:\\Users\\Jamie\\cs429\\quara\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ms-rMY\\values-ms-rMY.xml",
-                    "position": {
-                        "startLine": 13,
-                        "startColumn": 4,
-                        "startOffset": 1168,
-                        "endColumn": 78,
-                        "endOffset": 1242
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 12,
-                    "startColumn": 4,
-                    "startOffset": 1069,
-                    "endColumn": 79,
-                    "endOffset": 1144
-                },
-                "from": {
-                    "file": "/Users/DZ1/AndroidStudioProjects/quara/C:\\Users\\Jamie\\cs429\\quara\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ms-rMY\\values-ms-rMY.xml",
-                    "position": {
-                        "startLine": 14,
-                        "startColumn": 4,
-                        "startOffset": 1247,
-                        "endColumn": 79,
-                        "endOffset": 1322
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 13,
-                    "startColumn": 4,
-                    "startOffset": 1149,
-                    "endColumn": 111,
-                    "endOffset": 1256
-                },
-                "from": {
-                    "file": "/Users/DZ1/AndroidStudioProjects/quara/C:\\Users\\Jamie\\cs429\\quara\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ms-rMY\\values-ms-rMY.xml",
-                    "position": {
-                        "startLine": 15,
-                        "startColumn": 4,
-                        "startOffset": 1327,
-                        "endColumn": 111,
-                        "endOffset": 1434
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 14,
-                    "startColumn": 4,
-                    "startOffset": 1261,
-                    "endColumn": 108,
-                    "endOffset": 1365
-                },
-                "from": {
-                    "file": "/Users/DZ1/AndroidStudioProjects/quara/C:\\Users\\Jamie\\cs429\\quara\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ms-rMY\\values-ms-rMY.xml",
-                    "position": {
-                        "startLine": 16,
-                        "startColumn": 4,
-                        "startOffset": 1439,
-                        "endColumn": 108,
-                        "endOffset": 1543
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 15,
-                    "startColumn": 4,
-                    "startOffset": 1370,
-                    "endColumn": 96,
-                    "endOffset": 1462
-                },
-                "from": {
-                    "file": "/Users/DZ1/AndroidStudioProjects/quara/C:\\Users\\Jamie\\cs429\\quara\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ms-rMY\\values-ms-rMY.xml",
-                    "position": {
-                        "startLine": 17,
-                        "startColumn": 4,
-                        "startOffset": 1548,
-                        "endColumn": 96,
-                        "endOffset": 1640
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 16,
-                    "startColumn": 4,
-                    "startOffset": 1467,
-                    "endColumn": 108,
-                    "endOffset": 1571
-                },
-                "from": {
-                    "file": "/Users/DZ1/AndroidStudioProjects/quara/C:\\Users\\Jamie\\cs429\\quara\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ms-rMY\\values-ms-rMY.xml",
-                    "position": {
-                        "startLine": 18,
-                        "startColumn": 4,
-                        "startOffset": 1645,
-                        "endColumn": 108,
-                        "endOffset": 1749
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 17,
-                    "startColumn": 4,
-                    "startOffset": 1576,
-                    "endColumn": 102,
-                    "endOffset": 1674
-                },
-                "from": {
-                    "file": "/Users/DZ1/AndroidStudioProjects/quara/C:\\Users\\Jamie\\cs429\\quara\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ms-rMY\\values-ms-rMY.xml",
-                    "position": {
-                        "startLine": 19,
-                        "startColumn": 4,
-                        "startOffset": 1754,
-                        "endColumn": 102,
-                        "endOffset": 1852
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 18,
-                    "startColumn": 4,
-                    "startOffset": 1679,
-                    "endColumn": 106,
-                    "endOffset": 1781
-                },
-                "from": {
-                    "file": "/Users/DZ1/AndroidStudioProjects/quara/C:\\Users\\Jamie\\cs429\\quara\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ms-rMY\\values-ms-rMY.xml",
-                    "position": {
-                        "startLine": 20,
-                        "startColumn": 4,
-                        "startOffset": 1857,
-                        "endColumn": 106,
-                        "endOffset": 1959
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 19,
-                    "startColumn": 4,
-                    "startOffset": 1786,
-                    "endColumn": 121,
-                    "endOffset": 1903
-                },
-                "from": {
-                    "file": "/Users/DZ1/AndroidStudioProjects/quara/C:\\Users\\Jamie\\cs429\\quara\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ms-rMY\\values-ms-rMY.xml",
-                    "position": {
-                        "startLine": 21,
-                        "startColumn": 4,
-                        "startOffset": 1964,
-                        "endColumn": 121,
-                        "endOffset": 2081
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 20,
-                    "startColumn": 4,
-                    "startOffset": 1908,
-                    "endColumn": 100,
-                    "endOffset": 2004
-                },
-                "from": {
-                    "file": "/Users/DZ1/AndroidStudioProjects/quara/C:\\Users\\Jamie\\cs429\\quara\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ms-rMY\\values-ms-rMY.xml",
-                    "position": {
-                        "startLine": 22,
-                        "startColumn": 4,
-                        "startOffset": 2086,
-                        "endColumn": 100,
-                        "endOffset": 2182
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 21,
-                    "startColumn": 4,
-                    "startOffset": 2009,
-                    "endColumn": 100,
-                    "endOffset": 2105
-                },
-                "from": {
-                    "file": "/Users/DZ1/AndroidStudioProjects/quara/C:\\Users\\Jamie\\cs429\\quara\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ms-rMY\\values-ms-rMY.xml",
-                    "position": {
-                        "startLine": 23,
-                        "startColumn": 4,
-                        "startOffset": 2187,
-                        "endColumn": 100,
-                        "endOffset": 2283
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "outputFile": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/res/merged/debug/values-ms-rMY/values-ms-rMY.xml",
+        "outputFile": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/res/merged/debug/values-ms-rMY/values-ms-rMY.xml",
         "map": [
             {
                 "to": {
@@ -781,7 +11,7 @@
                     "endOffset": 211
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ms-rMY/values-ms-rMY.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ms-rMY/values-ms-rMY.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -800,7 +30,7 @@
                     "endOffset": 319
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ms-rMY/values-ms-rMY.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ms-rMY/values-ms-rMY.xml",
                     "position": {
                         "startLine": 5,
                         "startColumn": 4,
@@ -819,7 +49,7 @@
                     "endOffset": 442
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ms-rMY/values-ms-rMY.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ms-rMY/values-ms-rMY.xml",
                     "position": {
                         "startLine": 6,
                         "startColumn": 4,
@@ -838,7 +68,7 @@
                     "endOffset": 547
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ms-rMY/values-ms-rMY.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ms-rMY/values-ms-rMY.xml",
                     "position": {
                         "startLine": 7,
                         "startColumn": 4,
@@ -857,7 +87,7 @@
                     "endOffset": 655
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ms-rMY/values-ms-rMY.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ms-rMY/values-ms-rMY.xml",
                     "position": {
                         "startLine": 8,
                         "startColumn": 4,
@@ -876,7 +106,7 @@
                     "endOffset": 742
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ms-rMY/values-ms-rMY.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ms-rMY/values-ms-rMY.xml",
                     "position": {
                         "startLine": 9,
                         "startColumn": 4,
@@ -895,7 +125,7 @@
                     "endOffset": 846
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ms-rMY/values-ms-rMY.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ms-rMY/values-ms-rMY.xml",
                     "position": {
                         "startLine": 10,
                         "startColumn": 4,
@@ -914,7 +144,7 @@
                     "endOffset": 957
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ms-rMY/values-ms-rMY.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ms-rMY/values-ms-rMY.xml",
                     "position": {
                         "startLine": 11,
                         "startColumn": 4,
@@ -933,7 +163,7 @@
                     "endOffset": 1035
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ms-rMY/values-ms-rMY.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ms-rMY/values-ms-rMY.xml",
                     "position": {
                         "startLine": 12,
                         "startColumn": 4,
@@ -952,7 +182,7 @@
                     "endOffset": 1114
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ms-rMY/values-ms-rMY.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ms-rMY/values-ms-rMY.xml",
                     "position": {
                         "startLine": 13,
                         "startColumn": 4,
@@ -971,7 +201,7 @@
                     "endOffset": 1194
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ms-rMY/values-ms-rMY.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ms-rMY/values-ms-rMY.xml",
                     "position": {
                         "startLine": 14,
                         "startColumn": 4,
@@ -990,7 +220,7 @@
                     "endOffset": 1306
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ms-rMY/values-ms-rMY.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ms-rMY/values-ms-rMY.xml",
                     "position": {
                         "startLine": 15,
                         "startColumn": 4,
@@ -1009,7 +239,7 @@
                     "endOffset": 1415
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ms-rMY/values-ms-rMY.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ms-rMY/values-ms-rMY.xml",
                     "position": {
                         "startLine": 16,
                         "startColumn": 4,
@@ -1028,7 +258,7 @@
                     "endOffset": 1512
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ms-rMY/values-ms-rMY.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ms-rMY/values-ms-rMY.xml",
                     "position": {
                         "startLine": 17,
                         "startColumn": 4,
@@ -1047,7 +277,7 @@
                     "endOffset": 1621
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ms-rMY/values-ms-rMY.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ms-rMY/values-ms-rMY.xml",
                     "position": {
                         "startLine": 18,
                         "startColumn": 4,
@@ -1066,7 +296,7 @@
                     "endOffset": 1724
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ms-rMY/values-ms-rMY.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ms-rMY/values-ms-rMY.xml",
                     "position": {
                         "startLine": 19,
                         "startColumn": 4,
@@ -1085,7 +315,7 @@
                     "endOffset": 1831
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ms-rMY/values-ms-rMY.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ms-rMY/values-ms-rMY.xml",
                     "position": {
                         "startLine": 20,
                         "startColumn": 4,
@@ -1104,7 +334,7 @@
                     "endOffset": 1953
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ms-rMY/values-ms-rMY.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ms-rMY/values-ms-rMY.xml",
                     "position": {
                         "startLine": 21,
                         "startColumn": 4,
@@ -1123,7 +353,7 @@
                     "endOffset": 2054
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ms-rMY/values-ms-rMY.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ms-rMY/values-ms-rMY.xml",
                     "position": {
                         "startLine": 22,
                         "startColumn": 4,
@@ -1142,7 +372,7 @@
                     "endOffset": 2237
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ms-rMY/common_strings.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ms-rMY/common_strings.xml",
                     "position": {
                         "startLine": 5,
                         "startColumn": 4,
@@ -1161,7 +391,7 @@
                     "endOffset": 2429
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ms-rMY/common_strings.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ms-rMY/common_strings.xml",
                     "position": {
                         "startLine": 18,
                         "startColumn": 4,
@@ -1180,7 +410,7 @@
                     "endOffset": 2544
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ms-rMY/common_strings.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ms-rMY/common_strings.xml",
                     "position": {
                         "startLine": 16,
                         "startColumn": 4,
@@ -1199,7 +429,7 @@
                     "endOffset": 2822
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ms-rMY/common_strings.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ms-rMY/common_strings.xml",
                     "position": {
                         "startLine": 30,
                         "startColumn": 4,
@@ -1218,7 +448,7 @@
                     "endOffset": 2955
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ms-rMY/common_strings.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ms-rMY/common_strings.xml",
                     "position": {
                         "startLine": 14,
                         "startColumn": 4,
@@ -1237,7 +467,7 @@
                     "endOffset": 3158
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ms-rMY/common_strings.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ms-rMY/common_strings.xml",
                     "position": {
                         "startLine": 13,
                         "startColumn": 4,
@@ -1256,7 +486,7 @@
                     "endOffset": 3289
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ms-rMY/common_strings.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ms-rMY/common_strings.xml",
                     "position": {
                         "startLine": 12,
                         "startColumn": 4,
@@ -1275,7 +505,7 @@
                     "endOffset": 3458
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ms-rMY/common_strings.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ms-rMY/common_strings.xml",
                     "position": {
                         "startLine": 7,
                         "startColumn": 4,
@@ -1294,7 +524,7 @@
                     "endOffset": 3593
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ms-rMY/common_strings.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ms-rMY/common_strings.xml",
                     "position": {
                         "startLine": 11,
                         "startColumn": 4,
@@ -1313,7 +543,7 @@
                     "endOffset": 3830
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ms-rMY/common_strings.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ms-rMY/common_strings.xml",
                     "position": {
                         "startLine": 9,
                         "startColumn": 4,
@@ -1332,7 +562,7 @@
                     "endOffset": 4067
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ms-rMY/common_strings.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ms-rMY/common_strings.xml",
                     "position": {
                         "startLine": 10,
                         "startColumn": 4,
@@ -1351,7 +581,7 @@
                     "endOffset": 4199
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ms-rMY/common_strings.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ms-rMY/common_strings.xml",
                     "position": {
                         "startLine": 8,
                         "startColumn": 4,
@@ -1370,7 +600,7 @@
                     "endOffset": 4386
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ms-rMY/common_strings.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ms-rMY/common_strings.xml",
                     "position": {
                         "startLine": 24,
                         "startColumn": 4,
@@ -1389,7 +619,7 @@
                     "endOffset": 4510
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ms-rMY/common_strings.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ms-rMY/common_strings.xml",
                     "position": {
                         "startLine": 23,
                         "startColumn": 4,
@@ -1408,7 +638,7 @@
                     "endOffset": 4686
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ms-rMY/common_strings.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ms-rMY/common_strings.xml",
                     "position": {
                         "startLine": 6,
                         "startColumn": 4,
@@ -1427,7 +657,7 @@
                     "endOffset": 4863
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ms-rMY/common_strings.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ms-rMY/common_strings.xml",
                     "position": {
                         "startLine": 22,
                         "startColumn": 4,
@@ -1446,7 +676,7 @@
                     "endOffset": 4985
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ms-rMY/common_strings.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ms-rMY/common_strings.xml",
                     "position": {
                         "startLine": 21,
                         "startColumn": 4,
@@ -1465,7 +695,7 @@
                     "endOffset": 5173
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ms-rMY/common_strings.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ms-rMY/common_strings.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -1484,7 +714,7 @@
                     "endOffset": 5310
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ms-rMY/common_strings.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ms-rMY/common_strings.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
@@ -1503,7 +733,7 @@
                     "endOffset": 5491
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ms-rMY/common_strings.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ms-rMY/common_strings.xml",
                     "position": {
                         "startLine": 32,
                         "startColumn": 4,
@@ -1522,7 +752,7 @@
                     "endOffset": 5616
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ms-rMY/common_strings.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ms-rMY/common_strings.xml",
                     "position": {
                         "startLine": 31,
                         "startColumn": 4,
@@ -1541,7 +771,7 @@
                     "endOffset": 5769
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ms-rMY/common_strings.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ms-rMY/common_strings.xml",
                     "position": {
                         "startLine": 25,
                         "startColumn": 4,
@@ -1560,7 +790,7 @@
                     "endOffset": 6032
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ms-rMY/common_strings.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ms-rMY/common_strings.xml",
                     "position": {
                         "startLine": 27,
                         "startColumn": 4,
@@ -1579,7 +809,7 @@
                     "endOffset": 6161
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ms-rMY/common_strings.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ms-rMY/common_strings.xml",
                     "position": {
                         "startLine": 26,
                         "startColumn": 4,
@@ -1598,7 +828,7 @@
                     "endOffset": 6272
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ms-rMY/common_strings.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ms-rMY/common_strings.xml",
                     "position": {
                         "startLine": 28,
                         "startColumn": 4,
@@ -1617,7 +847,7 @@
                     "endOffset": 6478
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ms-rMY/common_strings.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ms-rMY/common_strings.xml",
                     "position": {
                         "startLine": 17,
                         "startColumn": 4,
@@ -1636,7 +866,7 @@
                     "endOffset": 6613
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ms-rMY/common_strings.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ms-rMY/common_strings.xml",
                     "position": {
                         "startLine": 15,
                         "startColumn": 4,
@@ -1655,7 +885,7 @@
                     "endOffset": 6841
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ms-rMY/common_strings.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ms-rMY/common_strings.xml",
                     "position": {
                         "startLine": 20,
                         "startColumn": 4,
@@ -1674,7 +904,7 @@
                     "endOffset": 6982
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ms-rMY/common_strings.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ms-rMY/common_strings.xml",
                     "position": {
                         "startLine": 19,
                         "startColumn": 4,
@@ -1693,7 +923,7 @@
                     "endOffset": 7078
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ms-rMY/common_strings.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ms-rMY/common_strings.xml",
                     "position": {
                         "startLine": 29,
                         "startColumn": 4,
@@ -1712,7 +942,7 @@
                     "endOffset": 7172
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.3.0/res/values-ms-rMY/base_strings.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.3.0/res/values-ms-rMY/base_strings.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
@@ -1731,7 +961,7 @@
                     "endOffset": 7285
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.3.0/res/values-ms-rMY/base_strings.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.3.0/res/values-ms-rMY/base_strings.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -1750,7 +980,7 @@
                     "endOffset": 7398
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/22.2.0/res/values-ms-rMY/values-ms-rMY.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/22.2.0/res/values-ms-rMY/values-ms-rMY.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -1769,7 +999,7 @@
                     "endOffset": 7508
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/22.2.0/res/values-ms-rMY/values-ms-rMY.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/22.2.0/res/values-ms-rMY/values-ms-rMY.xml",
                     "position": {
                         "startLine": 5,
                         "startColumn": 4,
@@ -1788,7 +1018,7 @@
                     "endOffset": 7618
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/22.2.0/res/values-ms-rMY/values-ms-rMY.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/22.2.0/res/values-ms-rMY/values-ms-rMY.xml",
                     "position": {
                         "startLine": 6,
                         "startColumn": 4,
@@ -1807,7 +1037,7 @@
                     "endOffset": 7731
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/22.2.0/res/values-ms-rMY/values-ms-rMY.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/22.2.0/res/values-ms-rMY/values-ms-rMY.xml",
                     "position": {
                         "startLine": 7,
                         "startColumn": 4,
@@ -1826,7 +1056,7 @@
                     "endOffset": 7817
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/22.2.0/res/values-ms-rMY/values-ms-rMY.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/22.2.0/res/values-ms-rMY/values-ms-rMY.xml",
                     "position": {
                         "startLine": 8,
                         "startColumn": 4,
@@ -1845,7 +1075,7 @@
                     "endOffset": 7911
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/22.2.0/res/values-ms-rMY/values-ms-rMY.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/22.2.0/res/values-ms-rMY/values-ms-rMY.xml",
                     "position": {
                         "startLine": 9,
                         "startColumn": 4,
@@ -1864,7 +1094,7 @@
                     "endOffset": 8012
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ms-rMY/values-ms-rMY.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ms-rMY/values-ms-rMY.xml",
                     "position": {
                         "startLine": 23,
                         "startColumn": 4,
@@ -1883,7 +1113,7 @@
                     "endOffset": 8120
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wallet/8.3.0/res/values-ms-rMY/wallet_strings.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wallet/8.3.0/res/values-ms-rMY/wallet_strings.xml",
                     "position": {
                         "startLine": 5,
                         "startColumn": 4,

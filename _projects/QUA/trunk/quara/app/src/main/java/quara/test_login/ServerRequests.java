@@ -678,6 +678,7 @@ public class ServerRequests {
             dataToSend.put("user_topic", queue.user_topic);
             dataToSend.put("user_notes", queue.user_notes); // foobar
             dataToSend.put("course_name", queue.course_name);
+            dataToSend.put("ta_id", queue.ta_id);
 
             String encodedStr = getEncodedData(dataToSend);
 
@@ -760,6 +761,7 @@ public class ServerRequests {
             dataToSend.put("user_topic", queue.user_topic);
             dataToSend.put("user_notes", queue.user_notes); // foobar
             dataToSend.put("course_name", queue.course_name);
+            dataToSend.put("ta_id", queue.ta_id);
 
             String encodedStr = getEncodedData(dataToSend);
 
