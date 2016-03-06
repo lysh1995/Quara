@@ -22,6 +22,10 @@ public class Queue {
         this.user_pos = user_pos;
         this.user_topic = user_topic;
         this.user_notes = notes;
-        this.ta_id = "test";
+        this.ta_id = "";
+    }
+
+    public void setAnswering(String ta_id){
+        this.ta_id = ta_id;
     }
 }

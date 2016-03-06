@@ -23,6 +23,9 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -53,6 +56,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     TextView text3;
     TextView countdown;
     String selected;
+    HashMap<String, String> taMap;
 
     final String MODIFY_QUEUE_STRING = "Modify Queue";
 
@@ -190,12 +194,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             public void done(String ta_info) {
                                 System.out.println("ta_info "+ ta_info);
                                 //this is the place that can be used to create question queue
-                                if (!ta_info.equals(""))
+                                if (!ta_info.equals("")) {
                                     TA_status = true;
+                                }
                                 else
                                     TA_status = false;
                                 if (TA_status) {
-                                    displayTaOptions();
+                                    try {
+                                        taMap = jsonToMap(ta_info);
+                                    } catch (JSONException e) {
+                                        e.printStackTrace();
+                                    }
+                                    displayTaOptions(taMap.get("ta_id"));
+
                                 }
                                 else
                                 {
@@ -241,7 +252,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
-    private void displayTaOptions() {
+    private void displayTaOptions(final String ta_id) {
         Button answer = new Button(temp);
         answer.setText("ANSWER QUESTION");
         answer.setOnClickListener(
@@ -253,6 +264,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         //get the name of the person who is at front of queue so we can answer his question
                         Queue sel_queue = new Queue("", "", "", selected);
                         ServerRequests serverRequests = new ServerRequests(temp);
+                        Log.i("before server req", "");
                         serverRequests.getQueueInBackground(sel_queue, new GetQueueCallBack() {
                             @Override
                             public void done(ArrayList returnQueue) {
@@ -261,6 +273,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                 if (iterator.hasNext()) {
                                     Map entry = (Map) iterator.next();
                                     Map res = entry;
+                                    while (!res.get("ta_id").equals("")){
+                                        Log.i("ta_id from question:",(String) res.get("ta_id"));
+                                        if (iterator.hasNext()){
+                                            entry = (Map) iterator.next();
+                                            res = entry;
+                                        }else{
+                                            return;
+                                        }
+                                    }
                                     text3 = new TextView(temp);
                                     final String name = (String) res.get("user_name"); //name of first person in queue
                                     first = name;
@@ -280,6 +301,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                                     LinearLayout lineLayout2 = (LinearLayout) findViewById(R.id.countdown);
                                     lineLayout2.addView(countdown);
+
+                                    //adding in part for multiple TA answering. First update database with ta_id
+                                    Queue queue = new Queue(name, "", "", selected);
+                                    queue.setAnswering(ta_id);
+                                    ServerRequests serverRequests = new ServerRequests(temp);
+                                    serverRequests.answerQuestion(queue, new GetQueueCallBack() {
+                                        @Override
+                                        public void done(ArrayList returnQueue) {
+                                            MainActivity.this.setView();
+                                        }
+                                    });
 
                                     Button b = createFinishAnsweringButton(name);
                                     lineLayout2.addView(b);
@@ -489,6 +521,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 });
                 break;
         }
+    }
+
+    public static HashMap<String, String> jsonToMap(String t) throws JSONException {
+
+        HashMap<String, String> map = new HashMap<String, String>();
+        JSONObject jObject = new JSONObject(t);
+        Iterator<?> keys = jObject.keys();
+
+        while (keys.hasNext()) {
+            String key = (String) keys.next();
+            String value = jObject.getString(key);
+            map.put(key, value);
+
+        }
+        return map;
     }
 
 }
