@@ -110,6 +110,12 @@ public class ServerRequests {
         new EditQueueAsyncTask(queue, callBack).execute();
     }
 
+    public void answerQuestion(Queue queue, GetQueueCallBack callBack)
+    {
+        progressDialog.show();
+        new answerQuestionAsyncTask(queue, callBack).execute();
+    }
+
     public void CheckAuthorisationInBackground(TA ta, CheckAuthorisationCallBack callBack)
     {
         progressDialog.show();
@@ -980,6 +986,79 @@ public class ServerRequests {
         }
     }
 
+    public class answerQuestionAsyncTask extends AsyncTask<Void, Void, ArrayList> {
+        Queue question;
+        GetQueueCallBack QueueCallBack;
+
+        public answerQuestionAsyncTask(Queue question, GetQueueCallBack QueueCallBack) {
+            this.question = question;
+            this.QueueCallBack = QueueCallBack;
+        }
+
+        private String getEncodedData(Map<String,String> data) {
+            return ServerRequests.this.getEncodedData(data);
+        }
+
+        @Override
+        protected ArrayList doInBackground(Void... params) {
+            Map dataToSend = new HashMap();
+            dataToSend.put("user_name", question.user_name);
+            dataToSend.put("course_name", question.course_name);
+            dataToSend.put("ta_id", question.ta_id);
+            String encodedStr = getEncodedData(dataToSend);
+
+            BufferedReader reader = null;
+
+            ArrayList question = new ArrayList();
+
+            try {
+
+                URL url = new URL(SERVER_ADDRESS + "answer.php");
+
+                HttpURLConnection con = (HttpURLConnection) url.openConnection();
+
+                con.setRequestMethod("POST");
+
+                con.setDoOutput(true);
+                OutputStreamWriter writer = new OutputStreamWriter(con.getOutputStream());
+
+                writer.write(encodedStr);
+                writer.flush();
+
+                StringBuilder sb = new StringBuilder();
+                reader = new BufferedReader(new InputStreamReader(con.getInputStream()));
+
+                String line;
+                while((line = reader.readLine()) != null) {
+                    sb.append(line);
+                }
+                line = sb.toString();
+
+                Log.i("custom_check","The values received in the store part are as follows:");
+                Log.i("custom_check",line);
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            } finally {
+                if(reader != null) {
+                    try {
+                        reader.close();     //Closing the
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+            return question;
+        }
+
+        @Override
+        protected void onPostExecute(ArrayList returnQueue) {
+            progressDialog.dismiss();
+            QueueCallBack.done(returnQueue);
+            super.onPostExecute(returnQueue);
+        }
+    }
+
     public class setOnDutyAsyncTask extends AsyncTask<Void, Void, String> {
         TA ta;
         UpdateDutyCallBack TaCallback;
@@ -1221,6 +1300,5 @@ public class ServerRequests {
             super.onPostExecute(ta_list);
         }
     }
-
 
 }
