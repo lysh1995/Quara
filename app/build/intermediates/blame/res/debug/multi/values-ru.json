@@ -1,776 +1,6 @@
 [
     {
-        "outputFile": "/Users/DZ1/AndroidStudioProjects/quara/C:\\Users\\Jamie\\cs429\\quara\\app\\build\\intermediates\\res\\merged\\debug\\values-ru\\values-ru.xml",
-        "map": [
-            {
-                "to": {
-                    "startLine": 2,
-                    "startColumn": 4,
-                    "startOffset": 55,
-                    "endColumn": 114,
-                    "endOffset": 165
-                },
-                "from": {
-                    "file": "/Users/DZ1/AndroidStudioProjects/quara/C:\\Users\\Jamie\\cs429\\quara\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ru\\values-ru.xml",
-                    "position": {
-                        "startLine": 4,
-                        "startColumn": 4,
-                        "startOffset": 229,
-                        "endColumn": 114,
-                        "endOffset": 339
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 3,
-                    "startColumn": 4,
-                    "startOffset": 170,
-                    "endColumn": 107,
-                    "endOffset": 273
-                },
-                "from": {
-                    "file": "/Users/DZ1/AndroidStudioProjects/quara/C:\\Users\\Jamie\\cs429\\quara\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ru\\values-ru.xml",
-                    "position": {
-                        "startLine": 5,
-                        "startColumn": 4,
-                        "startOffset": 344,
-                        "endColumn": 107,
-                        "endOffset": 447
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 4,
-                    "startColumn": 4,
-                    "startOffset": 278,
-                    "endColumn": 122,
-                    "endOffset": 396
-                },
-                "from": {
-                    "file": "/Users/DZ1/AndroidStudioProjects/quara/C:\\Users\\Jamie\\cs429\\quara\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ru\\values-ru.xml",
-                    "position": {
-                        "startLine": 6,
-                        "startColumn": 4,
-                        "startOffset": 452,
-                        "endColumn": 122,
-                        "endOffset": 570
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 5,
-                    "startColumn": 4,
-                    "startOffset": 401,
-                    "endColumn": 101,
-                    "endOffset": 498
-                },
-                "from": {
-                    "file": "/Users/DZ1/AndroidStudioProjects/quara/C:\\Users\\Jamie\\cs429\\quara\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ru\\values-ru.xml",
-                    "position": {
-                        "startLine": 7,
-                        "startColumn": 4,
-                        "startOffset": 575,
-                        "endColumn": 101,
-                        "endOffset": 672
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 6,
-                    "startColumn": 4,
-                    "startOffset": 503,
-                    "endColumn": 111,
-                    "endOffset": 610
-                },
-                "from": {
-                    "file": "/Users/DZ1/AndroidStudioProjects/quara/C:\\Users\\Jamie\\cs429\\quara\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ru\\values-ru.xml",
-                    "position": {
-                        "startLine": 8,
-                        "startColumn": 4,
-                        "startOffset": 677,
-                        "endColumn": 111,
-                        "endOffset": 784
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 7,
-                    "startColumn": 4,
-                    "startOffset": 615,
-                    "endColumn": 85,
-                    "endOffset": 696
-                },
-                "from": {
-                    "file": "/Users/DZ1/AndroidStudioProjects/quara/C:\\Users\\Jamie\\cs429\\quara\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ru\\values-ru.xml",
-                    "position": {
-                        "startLine": 9,
-                        "startColumn": 4,
-                        "startOffset": 789,
-                        "endColumn": 85,
-                        "endOffset": 870
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 8,
-                    "startColumn": 4,
-                    "startOffset": 701,
-                    "endColumn": 104,
-                    "endOffset": 801
-                },
-                "from": {
-                    "file": "/Users/DZ1/AndroidStudioProjects/quara/C:\\Users\\Jamie\\cs429\\quara\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ru\\values-ru.xml",
-                    "position": {
-                        "startLine": 10,
-                        "startColumn": 4,
-                        "startOffset": 875,
-                        "endColumn": 104,
-                        "endOffset": 975
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 9,
-                    "startColumn": 4,
-                    "startOffset": 806,
-                    "endColumn": 119,
-                    "endOffset": 921
-                },
-                "from": {
-                    "file": "/Users/DZ1/AndroidStudioProjects/quara/C:\\Users\\Jamie\\cs429\\quara\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ru\\values-ru.xml",
-                    "position": {
-                        "startLine": 11,
-                        "startColumn": 4,
-                        "startOffset": 980,
-                        "endColumn": 119,
-                        "endOffset": 1095
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 10,
-                    "startColumn": 4,
-                    "startOffset": 926,
-                    "endColumn": 78,
-                    "endOffset": 1000
-                },
-                "from": {
-                    "file": "/Users/DZ1/AndroidStudioProjects/quara/C:\\Users\\Jamie\\cs429\\quara\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ru\\values-ru.xml",
-                    "position": {
-                        "startLine": 12,
-                        "startColumn": 4,
-                        "startOffset": 1100,
-                        "endColumn": 78,
-                        "endOffset": 1174
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 11,
-                    "startColumn": 4,
-                    "startOffset": 1005,
-                    "endColumn": 77,
-                    "endOffset": 1078
-                },
-                "from": {
-                    "file": "/Users/DZ1/AndroidStudioProjects/quara/C:\\Users\\Jamie\\cs429\\quara\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ru\\values-ru.xml",
-                    "position": {
-                        "startLine": 13,
-                        "startColumn": 4,
-                        "startOffset": 1179,
-                        "endColumn": 77,
-                        "endOffset": 1252
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 12,
-                    "startColumn": 4,
-                    "startOffset": 1083,
-                    "endColumn": 79,
-                    "endOffset": 1158
-                },
-                "from": {
-                    "file": "/Users/DZ1/AndroidStudioProjects/quara/C:\\Users\\Jamie\\cs429\\quara\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ru\\values-ru.xml",
-                    "position": {
-                        "startLine": 14,
-                        "startColumn": 4,
-                        "startOffset": 1257,
-                        "endColumn": 79,
-                        "endOffset": 1332
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 13,
-                    "startColumn": 4,
-                    "startOffset": 1163,
-                    "endColumn": 105,
-                    "endOffset": 1264
-                },
-                "from": {
-                    "file": "/Users/DZ1/AndroidStudioProjects/quara/C:\\Users\\Jamie\\cs429\\quara\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ru\\values-ru.xml",
-                    "position": {
-                        "startLine": 15,
-                        "startColumn": 4,
-                        "startOffset": 1337,
-                        "endColumn": 105,
-                        "endOffset": 1438
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 14,
-                    "startColumn": 4,
-                    "startOffset": 1269,
-                    "endColumn": 107,
-                    "endOffset": 1372
-                },
-                "from": {
-                    "file": "/Users/DZ1/AndroidStudioProjects/quara/C:\\Users\\Jamie\\cs429\\quara\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ru\\values-ru.xml",
-                    "position": {
-                        "startLine": 16,
-                        "startColumn": 4,
-                        "startOffset": 1443,
-                        "endColumn": 107,
-                        "endOffset": 1546
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 15,
-                    "startColumn": 4,
-                    "startOffset": 1377,
-                    "endColumn": 97,
-                    "endOffset": 1470
-                },
-                "from": {
-                    "file": "/Users/DZ1/AndroidStudioProjects/quara/C:\\Users\\Jamie\\cs429\\quara\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ru\\values-ru.xml",
-                    "position": {
-                        "startLine": 17,
-                        "startColumn": 4,
-                        "startOffset": 1551,
-                        "endColumn": 97,
-                        "endOffset": 1644
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 16,
-                    "startColumn": 4,
-                    "startOffset": 1475,
-                    "endColumn": 108,
-                    "endOffset": 1579
-                },
-                "from": {
-                    "file": "/Users/DZ1/AndroidStudioProjects/quara/C:\\Users\\Jamie\\cs429\\quara\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ru\\values-ru.xml",
-                    "position": {
-                        "startLine": 18,
-                        "startColumn": 4,
-                        "startOffset": 1649,
-                        "endColumn": 108,
-                        "endOffset": 1753
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 17,
-                    "startColumn": 4,
-                    "startOffset": 1584,
-                    "endColumn": 105,
-                    "endOffset": 1685
-                },
-                "from": {
-                    "file": "/Users/DZ1/AndroidStudioProjects/quara/C:\\Users\\Jamie\\cs429\\quara\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ru\\values-ru.xml",
-                    "position": {
-                        "startLine": 19,
-                        "startColumn": 4,
-                        "startOffset": 1758,
-                        "endColumn": 105,
-                        "endOffset": 1859
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 18,
-                    "startColumn": 4,
-                    "startOffset": 1690,
-                    "endColumn": 107,
-                    "endOffset": 1793
-                },
-                "from": {
-                    "file": "/Users/DZ1/AndroidStudioProjects/quara/C:\\Users\\Jamie\\cs429\\quara\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ru\\values-ru.xml",
-                    "position": {
-                        "startLine": 20,
-                        "startColumn": 4,
-                        "startOffset": 1864,
-                        "endColumn": 107,
-                        "endOffset": 1967
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 19,
-                    "startColumn": 4,
-                    "startOffset": 1798,
-                    "endColumn": 135,
-                    "endOffset": 1929
-                },
-                "from": {
-                    "file": "/Users/DZ1/AndroidStudioProjects/quara/C:\\Users\\Jamie\\cs429\\quara\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ru\\values-ru.xml",
-                    "position": {
-                        "startLine": 21,
-                        "startColumn": 4,
-                        "startOffset": 1972,
-                        "endColumn": 135,
-                        "endOffset": 2103
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 20,
-                    "startColumn": 4,
-                    "startOffset": 1934,
-                    "endColumn": 99,
-                    "endOffset": 2029
-                },
-                "from": {
-                    "file": "/Users/DZ1/AndroidStudioProjects/quara/C:\\Users\\Jamie\\cs429\\quara\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ru\\values-ru.xml",
-                    "position": {
-                        "startLine": 22,
-                        "startColumn": 4,
-                        "startOffset": 2108,
-                        "endColumn": 99,
-                        "endOffset": 2203
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 21,
-                    "startColumn": 4,
-                    "startOffset": 2034,
-                    "endColumn": 100,
-                    "endOffset": 2130
-                },
-                "from": {
-                    "file": "/Users/DZ1/AndroidStudioProjects/quara/C:\\Users\\Jamie\\cs429\\quara\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ru\\values-ru.xml",
-                    "position": {
-                        "startLine": 23,
-                        "startColumn": 4,
-                        "startOffset": 2208,
-                        "endColumn": 100,
-                        "endOffset": 2304
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "outputFile": "/Users/DZ1/AndroidStudioProjects/quara/app/build/intermediates/res/merged/debug/values-ru/values-ru.xml",
-        "map": [
-            {
-                "to": {
-                    "startLine": 2,
-                    "startColumn": 4,
-                    "startOffset": 55,
-                    "endColumn": 114,
-                    "endOffset": 165
-                },
-                "from": {
-                    "file": "/Users/DZ1/AndroidStudioProjects/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ru/values-ru.xml",
-                    "position": {
-                        "startLine": 4,
-                        "startColumn": 4,
-                        "startOffset": 229,
-                        "endColumn": 114,
-                        "endOffset": 339
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 3,
-                    "startColumn": 4,
-                    "startOffset": 170,
-                    "endColumn": 107,
-                    "endOffset": 273
-                },
-                "from": {
-                    "file": "/Users/DZ1/AndroidStudioProjects/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ru/values-ru.xml",
-                    "position": {
-                        "startLine": 5,
-                        "startColumn": 4,
-                        "startOffset": 344,
-                        "endColumn": 107,
-                        "endOffset": 447
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 4,
-                    "startColumn": 4,
-                    "startOffset": 278,
-                    "endColumn": 122,
-                    "endOffset": 396
-                },
-                "from": {
-                    "file": "/Users/DZ1/AndroidStudioProjects/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ru/values-ru.xml",
-                    "position": {
-                        "startLine": 6,
-                        "startColumn": 4,
-                        "startOffset": 452,
-                        "endColumn": 122,
-                        "endOffset": 570
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 5,
-                    "startColumn": 4,
-                    "startOffset": 401,
-                    "endColumn": 101,
-                    "endOffset": 498
-                },
-                "from": {
-                    "file": "/Users/DZ1/AndroidStudioProjects/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ru/values-ru.xml",
-                    "position": {
-                        "startLine": 7,
-                        "startColumn": 4,
-                        "startOffset": 575,
-                        "endColumn": 101,
-                        "endOffset": 672
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 6,
-                    "startColumn": 4,
-                    "startOffset": 503,
-                    "endColumn": 111,
-                    "endOffset": 610
-                },
-                "from": {
-                    "file": "/Users/DZ1/AndroidStudioProjects/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ru/values-ru.xml",
-                    "position": {
-                        "startLine": 8,
-                        "startColumn": 4,
-                        "startOffset": 677,
-                        "endColumn": 111,
-                        "endOffset": 784
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 7,
-                    "startColumn": 4,
-                    "startOffset": 615,
-                    "endColumn": 85,
-                    "endOffset": 696
-                },
-                "from": {
-                    "file": "/Users/DZ1/AndroidStudioProjects/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ru/values-ru.xml",
-                    "position": {
-                        "startLine": 9,
-                        "startColumn": 4,
-                        "startOffset": 789,
-                        "endColumn": 85,
-                        "endOffset": 870
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 8,
-                    "startColumn": 4,
-                    "startOffset": 701,
-                    "endColumn": 104,
-                    "endOffset": 801
-                },
-                "from": {
-                    "file": "/Users/DZ1/AndroidStudioProjects/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ru/values-ru.xml",
-                    "position": {
-                        "startLine": 10,
-                        "startColumn": 4,
-                        "startOffset": 875,
-                        "endColumn": 104,
-                        "endOffset": 975
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 9,
-                    "startColumn": 4,
-                    "startOffset": 806,
-                    "endColumn": 119,
-                    "endOffset": 921
-                },
-                "from": {
-                    "file": "/Users/DZ1/AndroidStudioProjects/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ru/values-ru.xml",
-                    "position": {
-                        "startLine": 11,
-                        "startColumn": 4,
-                        "startOffset": 980,
-                        "endColumn": 119,
-                        "endOffset": 1095
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 10,
-                    "startColumn": 4,
-                    "startOffset": 926,
-                    "endColumn": 78,
-                    "endOffset": 1000
-                },
-                "from": {
-                    "file": "/Users/DZ1/AndroidStudioProjects/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ru/values-ru.xml",
-                    "position": {
-                        "startLine": 12,
-                        "startColumn": 4,
-                        "startOffset": 1100,
-                        "endColumn": 78,
-                        "endOffset": 1174
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 11,
-                    "startColumn": 4,
-                    "startOffset": 1005,
-                    "endColumn": 77,
-                    "endOffset": 1078
-                },
-                "from": {
-                    "file": "/Users/DZ1/AndroidStudioProjects/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ru/values-ru.xml",
-                    "position": {
-                        "startLine": 13,
-                        "startColumn": 4,
-                        "startOffset": 1179,
-                        "endColumn": 77,
-                        "endOffset": 1252
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 12,
-                    "startColumn": 4,
-                    "startOffset": 1083,
-                    "endColumn": 79,
-                    "endOffset": 1158
-                },
-                "from": {
-                    "file": "/Users/DZ1/AndroidStudioProjects/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ru/values-ru.xml",
-                    "position": {
-                        "startLine": 14,
-                        "startColumn": 4,
-                        "startOffset": 1257,
-                        "endColumn": 79,
-                        "endOffset": 1332
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 13,
-                    "startColumn": 4,
-                    "startOffset": 1163,
-                    "endColumn": 105,
-                    "endOffset": 1264
-                },
-                "from": {
-                    "file": "/Users/DZ1/AndroidStudioProjects/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ru/values-ru.xml",
-                    "position": {
-                        "startLine": 15,
-                        "startColumn": 4,
-                        "startOffset": 1337,
-                        "endColumn": 105,
-                        "endOffset": 1438
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 14,
-                    "startColumn": 4,
-                    "startOffset": 1269,
-                    "endColumn": 107,
-                    "endOffset": 1372
-                },
-                "from": {
-                    "file": "/Users/DZ1/AndroidStudioProjects/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ru/values-ru.xml",
-                    "position": {
-                        "startLine": 16,
-                        "startColumn": 4,
-                        "startOffset": 1443,
-                        "endColumn": 107,
-                        "endOffset": 1546
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 15,
-                    "startColumn": 4,
-                    "startOffset": 1377,
-                    "endColumn": 97,
-                    "endOffset": 1470
-                },
-                "from": {
-                    "file": "/Users/DZ1/AndroidStudioProjects/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ru/values-ru.xml",
-                    "position": {
-                        "startLine": 17,
-                        "startColumn": 4,
-                        "startOffset": 1551,
-                        "endColumn": 97,
-                        "endOffset": 1644
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 16,
-                    "startColumn": 4,
-                    "startOffset": 1475,
-                    "endColumn": 108,
-                    "endOffset": 1579
-                },
-                "from": {
-                    "file": "/Users/DZ1/AndroidStudioProjects/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ru/values-ru.xml",
-                    "position": {
-                        "startLine": 18,
-                        "startColumn": 4,
-                        "startOffset": 1649,
-                        "endColumn": 108,
-                        "endOffset": 1753
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 17,
-                    "startColumn": 4,
-                    "startOffset": 1584,
-                    "endColumn": 105,
-                    "endOffset": 1685
-                },
-                "from": {
-                    "file": "/Users/DZ1/AndroidStudioProjects/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ru/values-ru.xml",
-                    "position": {
-                        "startLine": 19,
-                        "startColumn": 4,
-                        "startOffset": 1758,
-                        "endColumn": 105,
-                        "endOffset": 1859
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 18,
-                    "startColumn": 4,
-                    "startOffset": 1690,
-                    "endColumn": 107,
-                    "endOffset": 1793
-                },
-                "from": {
-                    "file": "/Users/DZ1/AndroidStudioProjects/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ru/values-ru.xml",
-                    "position": {
-                        "startLine": 20,
-                        "startColumn": 4,
-                        "startOffset": 1864,
-                        "endColumn": 107,
-                        "endOffset": 1967
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 19,
-                    "startColumn": 4,
-                    "startOffset": 1798,
-                    "endColumn": 135,
-                    "endOffset": 1929
-                },
-                "from": {
-                    "file": "/Users/DZ1/AndroidStudioProjects/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ru/values-ru.xml",
-                    "position": {
-                        "startLine": 21,
-                        "startColumn": 4,
-                        "startOffset": 1972,
-                        "endColumn": 135,
-                        "endOffset": 2103
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 20,
-                    "startColumn": 4,
-                    "startOffset": 1934,
-                    "endColumn": 99,
-                    "endOffset": 2029
-                },
-                "from": {
-                    "file": "/Users/DZ1/AndroidStudioProjects/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ru/values-ru.xml",
-                    "position": {
-                        "startLine": 22,
-                        "startColumn": 4,
-                        "startOffset": 2108,
-                        "endColumn": 99,
-                        "endOffset": 2203
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 21,
-                    "startColumn": 4,
-                    "startOffset": 2034,
-                    "endColumn": 100,
-                    "endOffset": 2130
-                },
-                "from": {
-                    "file": "/Users/DZ1/AndroidStudioProjects/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ru/values-ru.xml",
-                    "position": {
-                        "startLine": 23,
-                        "startColumn": 4,
-                        "startOffset": 2208,
-                        "endColumn": 100,
-                        "endOffset": 2304
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "outputFile": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/res/merged/debug/values-ru/values-ru.xml",
+        "outputFile": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/res/merged/debug/values-ru/values-ru.xml",
         "map": [
             {
                 "to": {
@@ -781,7 +11,7 @@
                     "endOffset": 215
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ru/values-ru.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ru/values-ru.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -800,7 +30,7 @@
                     "endOffset": 323
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ru/values-ru.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ru/values-ru.xml",
                     "position": {
                         "startLine": 5,
                         "startColumn": 4,
@@ -819,7 +49,7 @@
                     "endOffset": 446
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ru/values-ru.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ru/values-ru.xml",
                     "position": {
                         "startLine": 6,
                         "startColumn": 4,
@@ -838,7 +68,7 @@
                     "endOffset": 548
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ru/values-ru.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ru/values-ru.xml",
                     "position": {
                         "startLine": 7,
                         "startColumn": 4,
@@ -857,7 +87,7 @@
                     "endOffset": 660
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ru/values-ru.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ru/values-ru.xml",
                     "position": {
                         "startLine": 8,
                         "startColumn": 4,
@@ -876,7 +106,7 @@
                     "endOffset": 746
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ru/values-ru.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ru/values-ru.xml",
                     "position": {
                         "startLine": 9,
                         "startColumn": 4,
@@ -895,7 +125,7 @@
                     "endOffset": 851
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ru/values-ru.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ru/values-ru.xml",
                     "position": {
                         "startLine": 10,
                         "startColumn": 4,
@@ -914,7 +144,7 @@
                     "endOffset": 971
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ru/values-ru.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ru/values-ru.xml",
                     "position": {
                         "startLine": 11,
                         "startColumn": 4,
@@ -933,7 +163,7 @@
                     "endOffset": 1050
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ru/values-ru.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ru/values-ru.xml",
                     "position": {
                         "startLine": 12,
                         "startColumn": 4,
@@ -952,7 +182,7 @@
                     "endOffset": 1128
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ru/values-ru.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ru/values-ru.xml",
                     "position": {
                         "startLine": 13,
                         "startColumn": 4,
@@ -971,7 +201,7 @@
                     "endOffset": 1208
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ru/values-ru.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ru/values-ru.xml",
                     "position": {
                         "startLine": 14,
                         "startColumn": 4,
@@ -990,7 +220,7 @@
                     "endOffset": 1314
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ru/values-ru.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ru/values-ru.xml",
                     "position": {
                         "startLine": 15,
                         "startColumn": 4,
@@ -1009,7 +239,7 @@
                     "endOffset": 1422
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ru/values-ru.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ru/values-ru.xml",
                     "position": {
                         "startLine": 16,
                         "startColumn": 4,
@@ -1028,7 +258,7 @@
                     "endOffset": 1520
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ru/values-ru.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ru/values-ru.xml",
                     "position": {
                         "startLine": 17,
                         "startColumn": 4,
@@ -1047,7 +277,7 @@
                     "endOffset": 1629
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ru/values-ru.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ru/values-ru.xml",
                     "position": {
                         "startLine": 18,
                         "startColumn": 4,
@@ -1066,7 +296,7 @@
                     "endOffset": 1735
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ru/values-ru.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ru/values-ru.xml",
                     "position": {
                         "startLine": 19,
                         "startColumn": 4,
@@ -1085,7 +315,7 @@
                     "endOffset": 1843
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ru/values-ru.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ru/values-ru.xml",
                     "position": {
                         "startLine": 20,
                         "startColumn": 4,
@@ -1104,7 +334,7 @@
                     "endOffset": 1979
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ru/values-ru.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ru/values-ru.xml",
                     "position": {
                         "startLine": 21,
                         "startColumn": 4,
@@ -1123,7 +353,7 @@
                     "endOffset": 2079
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ru/values-ru.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ru/values-ru.xml",
                     "position": {
                         "startLine": 22,
                         "startColumn": 4,
@@ -1142,7 +372,7 @@
                     "endOffset": 2287
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ru/common_strings.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ru/common_strings.xml",
                     "position": {
                         "startLine": 5,
                         "startColumn": 4,
@@ -1161,7 +391,7 @@
                     "endOffset": 2466
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ru/common_strings.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ru/common_strings.xml",
                     "position": {
                         "startLine": 18,
                         "startColumn": 4,
@@ -1180,7 +410,7 @@
                     "endOffset": 2579
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ru/common_strings.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ru/common_strings.xml",
                     "position": {
                         "startLine": 16,
                         "startColumn": 4,
@@ -1199,7 +429,7 @@
                     "endOffset": 2826
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ru/common_strings.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ru/common_strings.xml",
                     "position": {
                         "startLine": 30,
                         "startColumn": 4,
@@ -1218,7 +448,7 @@
                     "endOffset": 2935
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ru/common_strings.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ru/common_strings.xml",
                     "position": {
                         "startLine": 14,
                         "startColumn": 4,
@@ -1237,7 +467,7 @@
                     "endOffset": 3129
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ru/common_strings.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ru/common_strings.xml",
                     "position": {
                         "startLine": 13,
                         "startColumn": 4,
@@ -1256,7 +486,7 @@
                     "endOffset": 3256
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ru/common_strings.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ru/common_strings.xml",
                     "position": {
                         "startLine": 12,
                         "startColumn": 4,
@@ -1275,7 +505,7 @@
                     "endOffset": 3430
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ru/common_strings.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ru/common_strings.xml",
                     "position": {
                         "startLine": 7,
                         "startColumn": 4,
@@ -1294,7 +524,7 @@
                     "endOffset": 3542
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ru/common_strings.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ru/common_strings.xml",
                     "position": {
                         "startLine": 11,
                         "startColumn": 4,
@@ -1313,7 +543,7 @@
                     "endOffset": 3777
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ru/common_strings.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ru/common_strings.xml",
                     "position": {
                         "startLine": 9,
                         "startColumn": 4,
@@ -1332,7 +562,7 @@
                     "endOffset": 4012
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ru/common_strings.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ru/common_strings.xml",
                     "position": {
                         "startLine": 10,
                         "startColumn": 4,
@@ -1351,7 +581,7 @@
                     "endOffset": 4141
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ru/common_strings.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ru/common_strings.xml",
                     "position": {
                         "startLine": 8,
                         "startColumn": 4,
@@ -1370,7 +600,7 @@
                     "endOffset": 4299
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ru/common_strings.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ru/common_strings.xml",
                     "position": {
                         "startLine": 24,
                         "startColumn": 4,
@@ -1389,7 +619,7 @@
                     "endOffset": 4432
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ru/common_strings.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ru/common_strings.xml",
                     "position": {
                         "startLine": 23,
                         "startColumn": 4,
@@ -1408,7 +638,7 @@
                     "endOffset": 4600
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ru/common_strings.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ru/common_strings.xml",
                     "position": {
                         "startLine": 6,
                         "startColumn": 4,
@@ -1427,7 +657,7 @@
                     "endOffset": 4760
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ru/common_strings.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ru/common_strings.xml",
                     "position": {
                         "startLine": 22,
                         "startColumn": 4,
@@ -1446,7 +676,7 @@
                     "endOffset": 4878
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ru/common_strings.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ru/common_strings.xml",
                     "position": {
                         "startLine": 21,
                         "startColumn": 4,
@@ -1465,7 +695,7 @@
                     "endOffset": 5057
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ru/common_strings.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ru/common_strings.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -1484,7 +714,7 @@
                     "endOffset": 5191
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ru/common_strings.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ru/common_strings.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
@@ -1503,7 +733,7 @@
                     "endOffset": 5370
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ru/common_strings.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ru/common_strings.xml",
                     "position": {
                         "startLine": 32,
                         "startColumn": 4,
@@ -1522,7 +752,7 @@
                     "endOffset": 5490
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ru/common_strings.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ru/common_strings.xml",
                     "position": {
                         "startLine": 31,
                         "startColumn": 4,
@@ -1541,7 +771,7 @@
                     "endOffset": 5634
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ru/common_strings.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ru/common_strings.xml",
                     "position": {
                         "startLine": 25,
                         "startColumn": 4,
@@ -1560,7 +790,7 @@
                     "endOffset": 5905
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ru/common_strings.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ru/common_strings.xml",
                     "position": {
                         "startLine": 27,
                         "startColumn": 4,
@@ -1579,7 +809,7 @@
                     "endOffset": 6029
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ru/common_strings.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ru/common_strings.xml",
                     "position": {
                         "startLine": 26,
                         "startColumn": 4,
@@ -1598,7 +828,7 @@
                     "endOffset": 6138
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ru/common_strings.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ru/common_strings.xml",
                     "position": {
                         "startLine": 28,
                         "startColumn": 4,
@@ -1617,7 +847,7 @@
                     "endOffset": 6332
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ru/common_strings.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ru/common_strings.xml",
                     "position": {
                         "startLine": 17,
                         "startColumn": 4,
@@ -1636,7 +866,7 @@
                     "endOffset": 6460
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ru/common_strings.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ru/common_strings.xml",
                     "position": {
                         "startLine": 15,
                         "startColumn": 4,
@@ -1655,7 +885,7 @@
                     "endOffset": 6689
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ru/common_strings.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ru/common_strings.xml",
                     "position": {
                         "startLine": 20,
                         "startColumn": 4,
@@ -1674,7 +904,7 @@
                     "endOffset": 6822
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ru/common_strings.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ru/common_strings.xml",
                     "position": {
                         "startLine": 19,
                         "startColumn": 4,
@@ -1693,7 +923,7 @@
                     "endOffset": 6920
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ru/common_strings.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.3.0/res/values-ru/common_strings.xml",
                     "position": {
                         "startLine": 29,
                         "startColumn": 4,
@@ -1712,7 +942,7 @@
                     "endOffset": 7010
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.3.0/res/values-ru/base_strings.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.3.0/res/values-ru/base_strings.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
@@ -1731,7 +961,7 @@
                     "endOffset": 7126
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.3.0/res/values-ru/base_strings.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.3.0/res/values-ru/base_strings.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -1750,7 +980,7 @@
                     "endOffset": 7259
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/22.2.0/res/values-ru/values-ru.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/22.2.0/res/values-ru/values-ru.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -1769,7 +999,7 @@
                     "endOffset": 7367
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/22.2.0/res/values-ru/values-ru.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/22.2.0/res/values-ru/values-ru.xml",
                     "position": {
                         "startLine": 5,
                         "startColumn": 4,
@@ -1788,7 +1018,7 @@
                     "endOffset": 7479
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/22.2.0/res/values-ru/values-ru.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/22.2.0/res/values-ru/values-ru.xml",
                     "position": {
                         "startLine": 6,
                         "startColumn": 4,
@@ -1807,7 +1037,7 @@
                     "endOffset": 7583
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/22.2.0/res/values-ru/values-ru.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/22.2.0/res/values-ru/values-ru.xml",
                     "position": {
                         "startLine": 7,
                         "startColumn": 4,
@@ -1826,7 +1056,7 @@
                     "endOffset": 7670
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/22.2.0/res/values-ru/values-ru.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/22.2.0/res/values-ru/values-ru.xml",
                     "position": {
                         "startLine": 8,
                         "startColumn": 4,
@@ -1845,7 +1075,7 @@
                     "endOffset": 7767
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/22.2.0/res/values-ru/values-ru.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/22.2.0/res/values-ru/values-ru.xml",
                     "position": {
                         "startLine": 9,
                         "startColumn": 4,
@@ -1864,7 +1094,7 @@
                     "endOffset": 7868
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ru/values-ru.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-ru/values-ru.xml",
                     "position": {
                         "startLine": 23,
                         "startColumn": 4,
@@ -1883,7 +1113,7 @@
                     "endOffset": 7977
                 },
                 "from": {
-                    "file": "/Users/patrickchu/Desktop/m316/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wallet/8.3.0/res/values-ru/wallet_strings.xml",
+                    "file": "/Users/Shitiz/cs429/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wallet/8.3.0/res/values-ru/wallet_strings.xml",
                     "position": {
                         "startLine": 5,
                         "startColumn": 4,

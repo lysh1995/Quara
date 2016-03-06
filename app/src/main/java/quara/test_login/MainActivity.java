@@ -13,6 +13,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Vibrator;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.Log;
@@ -205,91 +206,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                 else
                                     TA_status = false;
                                 if (TA_status) {
-                                    Button answer = new Button(temp);
-                                    answer.setText("ANSWER QUESTION");
-                                    answer.setOnClickListener(
-                                            new View.OnClickListener(){
-                                                @Override
-                                                public void onClick(View v) {
-                                                    tt = temp;
-                                                    LinearLayout layout = (LinearLayout) findViewById(R.id.answer_form);
-                                                    //get the name of the person who is at front of queue so we can answer his question
-                                                    Queue sel_queue = new Queue("", "", "", selected);
-                                                    ServerRequests serverRequests = new ServerRequests(temp);
-                                                    serverRequests.getQueueInBackground(sel_queue, new GetQueueCallBack() {
-                                                        @Override
-                                                        public void done(ArrayList returnQueue) {
-                                                            Iterator<ArrayList> iterator = returnQueue.iterator();
-                                                            LinearLayout linlayout = (LinearLayout) findViewById(R.id.answer_form);
-                                                            if (iterator.hasNext()) {
-                                                                Map entry = (Map) iterator.next();
-                                                                Map res = entry;
-                                                                text3 = new TextView(temp);
-                                                                final String name = (String) res.get("user_name"); //name of first person in queue
-                                                                first = name;
-                                                                text3.setText("Answering " + name + "'s Question.....");
-                                                                text3.setId(0);
-                                                                text3.setTextColor(Color.parseColor("#000000"));
-                                                                linlayout.removeAllViews();
-                                                                linlayout.addView(text3);
-
-                                                                countdown = new TextView(temp);
-                                                                countdown.setText("00:08:00");
-                                                                countdown.setTextSize(20);
-                                                                countdown.setTextColor(Color.parseColor("#000000"));
-
-                                                                final CounterClass timer = new CounterClass(480000,1000);
-                                                                timer.start();
-
-                                                                LinearLayout linelayout = (LinearLayout) findViewById(R.id.countdown);
-                                                                linelayout.addView(countdown);
-
-                                                                Button b = new Button(temp);
-                                                                b.setText("Finish Answering");
-                                                                b.setOnClickListener(new View.OnClickListener() {
-                                                                    @Override
-                                                                    public void onClick(View v) {
-                                                                        // we remove the first question in Queue if T.A. has answered it.
-                                                                        LinearLayout linelayout = (LinearLayout) findViewById(R.id.countdown);
-                                                                        linelayout.removeAllViews();
-
-                                                                        names_on_queue.remove(name);
-                                                                        LinearLayout layout = (LinearLayout) findViewById(R.id.user_info_form);
-                                                                        layout.removeAllViews();
-                                                                        Queue queue = new Queue(name, "", "", selected);
-
-                                                                        ServerRequests serverRequests = new ServerRequests(temp);
-                                                                        serverRequests.deleteQueueInBackground(queue, new GetQueueCallBack() {
-                                                                            @Override
-                                                                            public void done(ArrayList returnQueue) {
-                                                                                LinearLayout answer_layout = (LinearLayout) findViewById(R.id.answer_form);
-                                                                                answer_layout.removeAllViews();
-                                                                                LinearLayout layout = (LinearLayout) findViewById(R.id.user_info_form);
-                                                                                lyout1 = layout;
-                                                                                layout.removeAllViews();
-                                                                                LinearLayout linearLayout = (LinearLayout) findViewById(R.id.couse_student_form);
-                                                                                lyout2 = linearLayout;
-                                                                                linearLayout.removeAllViews();
-                                                                                Intent intent = new Intent(temp, MyReceiverDelete.class);
-                                                                                intent.setAction("com.pycitup.BroadcastReceiverDelete");
-                                                                                sendBroadcast(intent);
-                                                                            }
-                                                                        });
-                                                                    }
-                                                                });
-                                                                linlayout.addView(b);
-                                                            } else {
-                                                                Toast toast = Toast.makeText(getApplicationContext(), "No Question in Queue.", Toast.LENGTH_LONG);
-                                                                toast.show();
-                                                            }
-                                                        }
-                                                    });
-                                                }
-                                            }
-                                    );
-                                    LinearLayout linlayout = (LinearLayout) findViewById(R.id.answer_bottom);
-                                    linlayout.removeAllViews();
-                                    linlayout.addView(answer);
+                                    displayTaOptions();
                                 }
                                 else
                                 {
@@ -328,6 +245,100 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 });
         cSpinner.setAdapter(adapter);
 
+    }
+
+    private void displayTaOptions() {
+        Button answer = new Button(temp);
+        answer.setText("ANSWER QUESTION");
+        answer.setOnClickListener(
+                new View.OnClickListener(){
+                    @Override
+                    public void onClick(View v) {
+                        tt = temp;
+                        LinearLayout layout = (LinearLayout) findViewById(R.id.answer_form);
+                        //get the name of the person who is at front of queue so we can answer his question
+                        Queue sel_queue = new Queue("", "", "", selected);
+                        ServerRequests serverRequests = new ServerRequests(temp);
+                        serverRequests.getQueueInBackground(sel_queue, new GetQueueCallBack() {
+                            @Override
+                            public void done(ArrayList returnQueue) {
+                                Iterator<ArrayList> iterator = returnQueue.iterator();
+                                LinearLayout linlayout = (LinearLayout) findViewById(R.id.answer_form);
+                                if (iterator.hasNext()) {
+                                    Map entry = (Map) iterator.next();
+                                    Map res = entry;
+                                    text3 = new TextView(temp);
+                                    final String name = (String) res.get("user_name"); //name of first person in queue
+                                    first = name;
+                                    text3.setText("Answering " + name + "'s Question.....");
+                                    text3.setId(0);
+                                    text3.setTextColor(Color.parseColor("#000000"));
+                                    linlayout.removeAllViews();
+                                    linlayout.addView(text3);
+
+                                    countdown = new TextView(temp);
+                                    countdown.setText("00:08:00");
+                                    countdown.setTextSize(20);
+                                    countdown.setTextColor(Color.parseColor("#000000"));
+
+                                    final CounterClass timer = new CounterClass(480000,1000);
+                                    timer.start();
+
+                                    LinearLayout linelayout = (LinearLayout) findViewById(R.id.countdown);
+                                    linelayout.addView(countdown);
+
+                                    Button b = createFinishAnsweringButton(name);
+                                    linlayout.addView(b);
+                                } else {
+                                    Toast toast = Toast.makeText(getApplicationContext(), "No Question in Queue.", Toast.LENGTH_LONG);
+                                    toast.show();
+                                }
+                            }
+                        });
+                    }
+                }
+        );
+        LinearLayout linlayout = (LinearLayout) findViewById(R.id.answer_bottom);
+        linlayout.removeAllViews();
+        linlayout.addView(answer);
+    }
+
+    @NonNull
+    private Button createFinishAnsweringButton(final String name) {
+        Button b = new Button(temp);
+        b.setText("Finish Answering");
+        b.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // we remove the first question in Queue if T.A. has answered it.
+                LinearLayout linelayout = (LinearLayout) findViewById(R.id.countdown);
+                linelayout.removeAllViews();
+
+                names_on_queue.remove(name);
+                LinearLayout layout = (LinearLayout) findViewById(R.id.user_info_form);
+                layout.removeAllViews();
+                Queue queue = new Queue(name, "", "", selected);
+
+                ServerRequests serverRequests = new ServerRequests(temp);
+                serverRequests.deleteQueueInBackground(queue, new GetQueueCallBack() {
+                    @Override
+                    public void done(ArrayList returnQueue) {
+                        LinearLayout answer_layout = (LinearLayout) findViewById(R.id.answer_form);
+                        answer_layout.removeAllViews();
+                        LinearLayout layout = (LinearLayout) findViewById(R.id.user_info_form);
+                        lyout1 = layout;
+                        layout.removeAllViews();
+                        LinearLayout linearLayout = (LinearLayout) findViewById(R.id.couse_student_form);
+                        lyout2 = linearLayout;
+                        linearLayout.removeAllViews();
+                        Intent intent = new Intent(temp, MyReceiverDelete.class);
+                        intent.setAction("com.pycitup.BroadcastReceiverDelete");
+                        sendBroadcast(intent);
+                    }
+                });
+            }
+        });
+        return b;
     }
 
     @Override
