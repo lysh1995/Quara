@@ -91,9 +91,8 @@ public class grade extends AppCompatActivity implements View.OnClickListener{
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         /*add for drawer*/
-        mNavItems.add(new NavItem("Quara_test", "Make request for OH", R.drawable.ic_launcher));
-        mNavItems.add(new NavItem("Grade", "Check grades", R.drawable.ic_launcher));
-        mNavItems.add(new NavItem("Profile", "Check user info", R.drawable.ic_launcher));
+        mNavItems.add(new NavItem("Quara", "Make request for OH", R.drawable.ic_launcher));
+        mNavItems.add(new NavItem("Grade Center", "Check grades", R.drawable.ic_grade));
 
         // DrawerLayout
         mDrawerLayout = (DrawerLayout) findViewById(R.id.grade_form);

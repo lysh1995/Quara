@@ -87,6 +87,8 @@
 
         <service android:name="quara.test_login.GCMNotificationIntentService" />
 
+        <activity android:name="quara.test_login.grade" />
+
         <provider
             android:name="com.google.android.gms.measurement.AppMeasurementContentProvider"
             android:authorities="quara.test_login.google_measurement_service"

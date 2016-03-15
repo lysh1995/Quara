@@ -192,6 +192,10 @@
         "source": "/Users/Maddie/Desktop/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/notification_template_big_media_narrow.xml"
     },
     {
+        "merged": "/Users/Maddie/Desktop/QUA/trunk/quara/app/build/intermediates/res/merged/debug/layout/activity_grade.xml",
+        "source": "/Users/Maddie/Desktop/QUA/trunk/quara/app/src/main/res/layout/activity_grade.xml"
+    },
+    {
         "merged": "/Users/Maddie/Desktop/QUA/trunk/quara/app/build/intermediates/res/merged/debug/layout/abc_screen_toolbar.xml",
         "source": "/Users/Maddie/Desktop/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/abc_screen_toolbar.xml"
     },
