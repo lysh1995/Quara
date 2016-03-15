@@ -168,15 +168,6 @@ public class grade extends AppCompatActivity implements View.OnClickListener{
         mDrawerLayout.closeDrawer(mDrawerPane);
     }
 
-    private boolean authenticate()
-    {
-        return userLocalStore.getUserLoggedIn();
-    }
-
-    void showToast(CharSequence msg) {
-        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
-    }
-
     @Override
     protected void onStart()
     {
