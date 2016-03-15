@@ -1,2 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
+
+    <item
+        jar="/Users/Maddie/Desktop/QUA/trunk/quara/app/build/intermediates/transforms/instantRunSlicer/debug/jars/1/5/main_slice.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="71802f9a024f68a8998de43ec834e73ee1742765">
+        <dex dex="/Users/Maddie/Desktop/QUA/trunk/quara/app/build/intermediates/transforms/dex/debug/folders/1000/5/main_slice_cfb9003ba7f4b2e807e846a03da886f864d0b482/classes.dex" />
+    </item>
+    <item
+        jar="/Users/Maddie/Desktop/QUA/trunk/quara/app/build/intermediates/transforms/instantRunSlicer/debug/jars/1/5/main_sliceb.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="648afb972fb3e6ffc0cbde73da9f984f0b62fb29">
+        <dex dex="/Users/Maddie/Desktop/QUA/trunk/quara/app/build/intermediates/transforms/dex/debug/folders/1000/5/main_sliceb_017d20757a854916722faa1de82a7610342c1966/classes.dex" />
+    </item>
+    <item
+        jar="/Users/Maddie/Desktop/QUA/trunk/quara/app/build/intermediates/transforms/instantRunSlicer/debug/jars/1/1a/dependencies.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="935afbb98ea9dbab9ffc0ba76c5236c651f96383">
+        <dex dex="/Users/Maddie/Desktop/QUA/trunk/quara/app/build/intermediates/transforms/dex/debug/folders/1000/1a/dependencies_4ecefea842a4b4545004d167d041f1461544b518/classes.dex" />
+    </item>
+
+</items>

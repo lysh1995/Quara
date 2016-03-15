@@ -244,12 +244,12 @@
         "source": "/Users/Maddie/Desktop/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.3.0/res/drawable-xhdpi/common_plus_signin_btn_icon_light_normal.9.png"
     },
     {
-        "merged": "/Users/Maddie/Desktop/QUA/trunk/quara/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_plusone_small_off_client.png",
-        "source": "/Users/Maddie/Desktop/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-plus/8.3.0/res/drawable-xhdpi/ic_plusone_small_off_client.png"
-    },
-    {
         "merged": "/Users/Maddie/Desktop/QUA/trunk/quara/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_list_longpressed_holo.9.png",
         "source": "/Users/Maddie/Desktop/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/drawable-xhdpi/abc_list_longpressed_holo.9.png"
+    },
+    {
+        "merged": "/Users/Maddie/Desktop/QUA/trunk/quara/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_plusone_small_off_client.png",
+        "source": "/Users/Maddie/Desktop/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-plus/8.3.0/res/drawable-xhdpi/ic_plusone_small_off_client.png"
     },
     {
         "merged": "/Users/Maddie/Desktop/QUA/trunk/quara/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_cast_on_2_light.png",
@@ -390,6 +390,10 @@
     {
         "merged": "/Users/Maddie/Desktop/QUA/trunk/quara/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_scrubber_track_mtrl_alpha.9.png",
         "source": "/Users/Maddie/Desktop/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/drawable-xhdpi/abc_scrubber_track_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Users/Maddie/Desktop/QUA/trunk/quara/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_grade.png",
+        "source": "/Users/Maddie/Desktop/QUA/trunk/quara/app/src/main/res/drawable-xhdpi/ic_grade.png"
     },
     {
         "merged": "/Users/Maddie/Desktop/QUA/trunk/quara/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_media_route_off_mono_dark.png",

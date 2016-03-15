@@ -362,6 +362,8 @@
     <string name="create_calendar_message">Allow Ad to create a calendar event?</string>
     <string name="create_calendar_title">Create calendar event</string>
     <string name="decline">Decline</string>
+    <string name="drawer_close">1</string>
+    <string name="drawer_open">0</string>
     <string name="gcm_defaultSenderId" translatable="false">470822730050</string>
     <string name="google_app_id">1:470822730050:android:aea4bcfdad8ee5bd</string>
     <string name="mr_media_route_button_content_description">Cast</string>

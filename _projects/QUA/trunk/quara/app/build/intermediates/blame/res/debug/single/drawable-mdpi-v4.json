@@ -84,6 +84,10 @@
         "source": "/Users/Maddie/Desktop/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast/8.3.0/res/drawable-mdpi/cast_ic_notification_0.png"
     },
     {
+        "merged": "/Users/Maddie/Desktop/QUA/trunk/quara/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/ic_grade.png",
+        "source": "/Users/Maddie/Desktop/QUA/trunk/quara/app/src/main/res/drawable-mdpi/ic_grade.png"
+    },
+    {
         "merged": "/Users/Maddie/Desktop/QUA/trunk/quara/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/ic_plusone_medium_off_client.png",
         "source": "/Users/Maddie/Desktop/QUA/trunk/quara/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-plus/8.3.0/res/drawable-mdpi/ic_plusone_medium_off_client.png"
     },
