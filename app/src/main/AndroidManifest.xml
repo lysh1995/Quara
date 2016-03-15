@@ -3,11 +3,15 @@
     package="quara.test_login">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <permission android:name="quara.test_login.permission.C2D_MESSAGE" android:protectionLevel="signature" />
+
+    <permission
+        android:name="quara.test_login.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+
     <uses-permission android:name="quara.test_login.permission.C2D_MESSAGE" />
     <!-- This app has permission to register and receive dataf message. -->
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
@@ -26,12 +30,11 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
             <intent-filter>
                 <action android:name="quara.test_login.MESSAGE" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-
         </activity>
         <activity
             android:name=".Login"
@@ -41,28 +44,27 @@
             android:label="@string/title_activity_register" />
         <activity
             android:name=".Register"
-            android:label="@string/title_activity_register"></activity>
+            android:label="@string/title_activity_register" />
+
         <receiver
-            android:name="MyReceiverAdd"
+            android:name=".MyReceiverAdd"
             android:enabled="true"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="com.pycitup.BroadcastReceiverAdd" />
             </intent-filter>
         </receiver>
-
         <receiver
-            android:name="MyReceiverDelete"
+            android:name=".MyReceiverDelete"
             android:enabled="true"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="com.pycitup.BroadcastReceiverDelete" />
             </intent-filter>
         </receiver>
-
         <receiver
             android:name=".GcmBroadcastReceiver"
-            android:permission="com.google.android.c2dm.permission.SEND" >
+            android:permission="com.google.android.c2dm.permission.SEND">
             <intent-filter>
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
                 <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
@@ -73,6 +75,7 @@
 
         <service android:name=".GCMNotificationIntentService" />
 
+        <activity android:name=".grade"></activity>
     </application>
 
 </manifest>
