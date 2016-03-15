@@ -3,6 +3,7 @@ package quara.test_login;
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.Activity;
+import android.app.Fragment;
 import android.app.FragmentManager;
 import android.content.Context;
 import android.content.Intent;
@@ -11,7 +12,6 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.v4.app.Fragment;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -125,7 +125,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      //   mNavItems.add(new NavItem("About", "Get to know about us", R.drawable.ic_action_about));
 
         // DrawerLayout
-        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.login_form);
 
         // Populate the Navigtion Drawer with options
         mDrawerPane = (RelativeLayout) findViewById(R.id.drawerPane);
@@ -167,7 +167,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         FragmentManager fragmentManager = getFragmentManager();
         fragmentManager.beginTransaction()
-                .replace(R.id.mainContent, fragment)
+                .replace(R.id.user_login_form, fragment)
                 .commit();
 
         mDrawerList.setItemChecked(position, true);
