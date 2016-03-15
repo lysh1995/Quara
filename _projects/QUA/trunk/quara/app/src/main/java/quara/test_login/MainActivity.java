@@ -218,7 +218,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 .commit();
 
         mDrawerList.setItemChecked(position, true);
-        setTitle(mNavItems.get(position).mTitle);
+        String temp = mNavItems.get(position).mTitle;
+        if (temp.equals("Grade"))
+        {
+            mDrawerLayout.closeDrawer(mDrawerPane);
+            startActivity(new Intent(MainActivity.this, grade.class));
+        }
+        else if (temp.equals("Quara_test"))
+        {
+            mDrawerLayout.closeDrawer(mDrawerPane);
+        }
 
         // Close the drawer
         mDrawerLayout.closeDrawer(mDrawerPane);
