@@ -17,6 +17,8 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
@@ -114,15 +116,42 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         sendBroadcast(intent);
     }
 
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        // If the nav drawer is open, hide action items related to the content view
+
+        return super.onPrepareOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Pass the event to ActionBarDrawerToggle
+        // If it returns true, then it has handled
+        // the nav drawer indicator touch event
+        if (mDrawerToggle.onOptionsItemSelected(item)) {
+            return true;
+        }
+
+        // Handle your other action bar items...
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onPostCreate(Bundle savedInstanceState) {
+        super.onPostCreate(savedInstanceState);
+        mDrawerToggle.syncState();
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         /*add for drawer*/
-        mNavItems.add(new NavItem("Home", "Meetup destination", R.drawable.ic_launcher));
-     //   mNavItems.add(new NavItem("Preferences", "Change your preferences", R.drawable.ic_action_settings));
-     //   mNavItems.add(new NavItem("About", "Get to know about us", R.drawable.ic_action_about));
+        mNavItems.add(new NavItem("Quara_test", "Make request for OH", R.drawable.ic_launcher));
+        mNavItems.add(new NavItem("Grade", "Check grades", R.drawable.ic_launcher));
+        mNavItems.add(new NavItem("Profile", "Check user info", R.drawable.ic_launcher));
 
         // DrawerLayout
         mDrawerLayout = (DrawerLayout) findViewById(R.id.login_form);
@@ -141,6 +170,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
 
+        mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.drawer_open, R.string.drawer_close) {
+            @Override
+            public void onDrawerOpened(View drawerView) {
+                super.onDrawerOpened(drawerView);
+
+                invalidateOptionsMenu();
+            }
+
+            @Override
+            public void onDrawerClosed(View drawerView) {
+                super.onDrawerClosed(drawerView);
+                Log.d(TAG, "onDrawerClosed: " + getTitle());
+
+                invalidateOptionsMenu();
+            }
+        };
+
+        mDrawerLayout.setDrawerListener(mDrawerToggle);
 
         /*add for drawer end*/
         context = getApplicationContext();
@@ -460,6 +507,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             };
             shareRegidTask.execute(null, null, null);
+
+            TextView userName = (TextView) findViewById(R.id.userName);
+            TextView Name = (TextView) findViewById(R.id.desc);
+            userName.setText(userLocalStore.getLoggedInUser().name);
+            Name.setText(userLocalStore.getLoggedInUser().username);
+
         }
         else
         {
