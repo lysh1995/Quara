@@ -223,7 +223,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             mDrawerLayout.closeDrawer(mDrawerPane);
             startActivity(new Intent(MainActivity.this, grade.class));
         }
-        else if (temp.equals("Quara_test"))
+        else if (temp.equals("Quara"))
         {
             mDrawerLayout.closeDrawer(mDrawerPane);
         }

@@ -158,7 +158,7 @@ public class grade extends AppCompatActivity implements View.OnClickListener{
         {
             mDrawerLayout.closeDrawer(mDrawerPane);
         }
-        else if (temp.equals("Quara_test"))
+        else if (temp.equals("Quara"))
         {
             mDrawerLayout.closeDrawer(mDrawerPane);
             startActivity(new Intent(grade.this, MainActivity.class));
