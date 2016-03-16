@@ -98,6 +98,11 @@ public class ServerRequests {
         new InsertQueueAsyncTask(queue, callBack).execute();
     }
 
+    public void insertGradeInBackground(Queue queue, GetQueueCallBack callBack)
+    {
+        progressDialog.show();
+        new InsertQueueAsyncTask(queue, callBack).execute();
+    }
     public void deleteQueueInBackground(Queue queue, GetQueueCallBack callBack)
     {
         progressDialog.show();
@@ -903,6 +908,85 @@ public class ServerRequests {
             progressDialog.dismiss();
             QueueCallback.done(returnQueue);
             super.onPostExecute(returnQueue);
+        }
+    }
+
+    public class InsertGradeAsyncTask extends AsyncTask<Void, Void, ArrayList> {
+        Grade grade;
+        GetGradeCallBack GradeCallback;
+
+        public InsertGradeAsyncTask(Grade grade, GetGradeCallBack GradeCallback) {
+            this.grade = grade;
+            this.GradeCallback = GradeCallback;
+        }
+
+        private String getEncodedData(Map<String,String> data) {
+            return ServerRequests.this.getEncodedData(data);
+        }
+
+        @Override
+        protected ArrayList doInBackground(Void... params) {
+            Map dataToSend = new HashMap();
+            dataToSend.put("username", grade.username);
+            dataToSend.put("score", grade.score);
+            dataToSend.put("description", grade.description);
+
+            String encodedStr = getEncodedData(dataToSend);
+
+            BufferedReader reader = null;
+
+            ArrayList grade = new ArrayList(); //TODO fix it!
+
+            try {
+
+                URL url = new URL(SERVER_ADDRESS + "AddGrade.php");
+
+                HttpURLConnection con = (HttpURLConnection) url.openConnection();
+
+                con.setRequestMethod("POST");
+
+                con.setDoOutput(true);
+                OutputStreamWriter writer = new OutputStreamWriter(con.getOutputStream());
+
+                writer.write(encodedStr);
+                writer.flush();
+
+                StringBuilder sb = new StringBuilder();
+                reader = new BufferedReader(new InputStreamReader(con.getInputStream()));
+
+                String line;
+                while((line = reader.readLine()) != null) {
+                    sb.append(line);
+                }
+                line = sb.toString();
+
+                Log.i("custom_check","The values received in the store part are as follows:");
+                Log.i("custom_check",line);
+
+                if (!line.equals("null"))
+                {
+
+                }
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            } finally {
+                if(reader != null) {
+                    try {
+                        reader.close();     //Closing the
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+            return grade;
+        }
+
+        @Override
+        protected void onPostExecute(ArrayList returnGrade) {
+            progressDialog.dismiss();
+            GradeCallback.done(returnGrade);
+            super.onPostExecute(returnGrade);
         }
     }
 
