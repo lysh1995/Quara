@@ -221,7 +221,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (temp.equals("Grade Center"))
         {
             mDrawerLayout.closeDrawer(mDrawerPane);
-            startActivity(new Intent(MainActivity.this, grade.class));
+            startActivity(new Intent(MainActivity.this, GradeActivity.class));
         }
         else if (temp.equals("Quara"))
         {
