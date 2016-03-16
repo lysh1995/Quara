@@ -75,7 +75,7 @@
 
         <service android:name=".GCMNotificationIntentService" />
 
-        <activity android:name=".grade"></activity>
+        <activity android:name=".GradeActivity"></activity>
     </application>
 
 </manifest>
