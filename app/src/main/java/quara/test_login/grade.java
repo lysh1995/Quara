@@ -154,7 +154,7 @@ public class grade extends AppCompatActivity implements View.OnClickListener{
 
         mDrawerList.setItemChecked(position, true);
         String temp = mNavItems.get(position).mTitle;
-        if (temp.equals("Grade"))
+        if (temp.equals("Grade Center"))
         {
             mDrawerLayout.closeDrawer(mDrawerPane);
         }
