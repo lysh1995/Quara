@@ -98,6 +98,12 @@ public class ServerRequests {
         new InsertQueueAsyncTask(queue, callBack).execute();
     }
 
+    public void AddGradeInBackground(Queue queue, GetQueueCallBack callBack)
+    {
+        progressDialog.show();
+        new AddGradeAsyncTask(queue, callBack).execute();
+    }
+
     public void deleteQueueInBackground(Queue queue, GetQueueCallBack callBack)
     {
         progressDialog.show();
@@ -746,6 +752,85 @@ public class ServerRequests {
     }
 
 
+    public class AddGradeAsyncTask extends AsyncTask<Void, Void, ArrayList> {
+        Queue queue;
+        GetQueueCallBack QueueCallback;
+
+        public AddGradeAsyncTask(Queue queue, GetQueueCallBack QueueCallback) {
+            this.queue = queue;
+            this.QueueCallback = QueueCallback;
+        }
+
+        private String getEncodedData(Map<String,String> data) {
+            return ServerRequests.this.getEncodedData(data);
+        }
+
+        @Override
+        protected ArrayList doInBackground(Void... params) {
+            Map dataToSend = new HashMap();
+            dataToSend.put("username", queue.user_name);
+            dataToSend.put("score", queue.score);
+            dataToSend.put("description", queue.description);
+
+            String encodedStr = getEncodedData(dataToSend);
+
+            BufferedReader reader = null;
+
+            ArrayList queue = new ArrayList();
+
+            try {
+
+                URL url = new URL(SERVER_ADDRESS + "AddGrade.php");
+
+                HttpURLConnection con = (HttpURLConnection) url.openConnection();
+
+                con.setRequestMethod("POST");
+
+                con.setDoOutput(true);
+                OutputStreamWriter writer = new OutputStreamWriter(con.getOutputStream());
+
+                writer.write(encodedStr);
+                writer.flush();
+
+                StringBuilder sb = new StringBuilder();
+                reader = new BufferedReader(new InputStreamReader(con.getInputStream()));
+
+                String line;
+                while((line = reader.readLine()) != null) {
+                    sb.append(line);
+                }
+                line = sb.toString();
+
+                Log.i("custom_check","The values received in the store part are as follows:");
+                Log.i("custom_check",line);
+
+                if (!line.equals("null"))
+                {
+
+                }
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            } finally {
+                if(reader != null) {
+                    try {
+                        reader.close();     //Closing the
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+            return queue;
+        }
+
+        @Override
+        protected void onPostExecute(ArrayList returnQueue) {
+            progressDialog.dismiss();
+            QueueCallback.done(returnQueue);
+            super.onPostExecute(returnQueue);
+        }
+    }
+
     public class EditQueueAsyncTask extends AsyncTask<Void, Void, ArrayList> {
         Queue queue;
         GetQueueCallBack QueueCallback;
@@ -827,7 +912,6 @@ public class ServerRequests {
             super.onPostExecute(returnQueue);
         }
     }
-
 
 
     public class DeleteQueueAsyncTask extends AsyncTask<Void, Void, ArrayList> {
