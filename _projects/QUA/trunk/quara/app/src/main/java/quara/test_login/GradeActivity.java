@@ -4,6 +4,7 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -18,11 +19,15 @@ import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.Map;
 
 public class GradeActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -30,6 +35,7 @@ public class GradeActivity extends AppCompatActivity implements View.OnClickList
     Button bLogout;
     UserLocalStore userLocalStore;
     Context context;
+    ServerRequests serverRequests;
 
     static final String TAG = "Register Activity";
 
@@ -121,6 +127,40 @@ public class GradeActivity extends AppCompatActivity implements View.OnClickList
 
         userLocalStore = new UserLocalStore(this);
 
+        initGradeList();
+    }
+
+    /**
+     * Initialize the listView showing the grades for all users
+     */
+    protected void initGradeList() {
+        serverRequests = new ServerRequests(temp);
+        UserLocalStore uls = new UserLocalStore(temp);
+        User curUser = uls.getLoggedInUser();
+//        if (curUser != null)
+//            Toast.makeText(this, "username = "+ curUser.username, Toast.LENGTH_LONG).show();
+//        else
+//            Toast.makeText(this, "No user logged in!", Toast.LENGTH_LONG).show();
+        serverRequests.getGradeInBackground(curUser, new GetGradeCallBack() {
+            @Override
+            public void done(ArrayList returnGrades) {
+                Iterator<ArrayList> iterator = returnGrades.iterator();
+//                Toast.makeText(temp, returnGrades.size(), Toast.LENGTH_LONG).show();
+                LinearLayout linearLayout = (LinearLayout) findViewById(R.id.user_grade_form);
+                //linearLayout.removeAllViews();
+                while (iterator.hasNext()) {
+                    Map entry = (Map) iterator.next();
+                    TextView tv = new TextView(temp);
+                    Map result = entry;
+                    tv.setText("username: "+ result.get("username")+ " score: "
+                                + result.get("score")+ " description: "+ result.get("description"));
+                    tv.setId(0);
+                    tv.setTextColor(Color.parseColor("#000000"));
+                    linearLayout.addView(tv);
+//                    Toast.makeText(temp, tv.getText().toString(), Toast.LENGTH_LONG).show();
+                }
+            }
+        });
     }
 
     /*

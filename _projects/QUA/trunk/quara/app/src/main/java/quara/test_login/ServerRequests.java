@@ -104,10 +104,10 @@ public class ServerRequests {
         new InsertGradeAsyncTask(grade, callBack).execute();
     }
 
-    public void getGradeInBackground(ArrayList grades, GetGradeCallBack callBack)
+    public void getGradeInBackground(User user, GetGradeCallBack callBack)
     {
         progressDialog.show();
-        new GetGradeAsyncTask(grades, callBack).execute();
+        new GetGradeAsyncTask(user, callBack).execute();
     }
 
     public void deleteQueueInBackground(Queue queue, GetQueueCallBack callBack)
@@ -594,6 +594,7 @@ public class ServerRequests {
             dataToSend.put("course_name", queue.course_name);
 
             String encodedStr = getEncodedData(dataToSend);
+            Log.i("send_check", "the data sent is: " + encodedStr);
 
             BufferedReader reader = null;
 
@@ -1085,11 +1086,11 @@ public class ServerRequests {
      * Get a list of all grades from the DB. TODO fix me
      */
     public class GetGradeAsyncTask extends AsyncTask<Void, Void, ArrayList> {
-        ArrayList grades;
+        User user;
         GetGradeCallBack GradeCallback;
 
-        public GetGradeAsyncTask(ArrayList grades, GetGradeCallBack GradeCallback) {
-            this.grades = grades;
+        public GetGradeAsyncTask(User user, GetGradeCallBack GradeCallback) {
+            this.user = user;
             this.GradeCallback = GradeCallback;
         }
 
@@ -1100,8 +1101,11 @@ public class ServerRequests {
         @Override
         protected ArrayList doInBackground(Void... params) {
             Map dataToSend = new HashMap();
+            dataToSend.put("username", user.username);
 
             String encodedStr = getEncodedData(dataToSend);
+
+            Log.i("user_check", "the data sent is: " + encodedStr);
 
             BufferedReader reader = null;
 
@@ -1109,7 +1113,7 @@ public class ServerRequests {
 
             try {
 
-                URL url = new URL(SERVER_ADDRESS + "GetAllGrades.php");
+                URL url = new URL(SERVER_ADDRESS + "GetUserGrades.php");
 
                 HttpURLConnection con = (HttpURLConnection) url.openConnection();
 
@@ -1135,35 +1139,35 @@ public class ServerRequests {
 
                 if (!line.equals("null"))
                 {
-//                    line = line.substring(1);
-//                    line = line.substring(0, line.length() - 1);
-//                    String[] temp_list = line.split("],");
-//                    for (int i = 0; i < temp_list.length; i++)
-//                    {
-//                        String new_element = temp_list[i];
-//                        if (new_element.charAt(0) == '[')
-//                            new_element = new_element.substring(1);
-//                        if (new_element.charAt(new_element.length()-1) == ']')
-//                            new_element = new_element.substring(0, new_element.length() - 1);
-//                        new_element = new_element.substring(1);
-//                        new_element = new_element.substring(0, new_element.length() - 1);
-//                        String temp_info[] = new_element.split(",");
-//                        Map user_info = new HashMap();
-//                        for (int j = 0; j < temp_info.length; j++)
-//                        {
-//                            String new_info = temp_info[j];
-//                            String temp[] = new_info.split(":");
-//                            String key = temp[0];
-//                            key = key.substring(1);
-//                            key = key.substring(0, key.length() - 1);
-//                            String value = temp[1];
-//                            value = value.substring(1);
-//                            value = value.substring(0, value.length() - 1);
-//                            user_info.put(key, value);
-//                        }
-//
-//                        queue.add(user_info);
-//                    }
+                    line = line.substring(1);
+                    line = line.substring(0, line.length() - 1);
+                    String[] temp_list = line.split("],");
+                    for (int i = 0; i < temp_list.length; i++)
+                    {
+                        String new_element = temp_list[i];
+                        if (new_element.charAt(0) == '[')
+                            new_element = new_element.substring(1);
+                        if (new_element.charAt(new_element.length()-1) == ']')
+                            new_element = new_element.substring(0, new_element.length() - 1);
+                        new_element = new_element.substring(1);
+                        new_element = new_element.substring(0, new_element.length() - 1);
+                        String temp_info[] = new_element.split(",");
+                        Map user_info = new HashMap();
+                        for (int j = 0; j < temp_info.length; j++)
+                        {
+                            String new_info = temp_info[j];
+                            String temp[] = new_info.split(":");
+                            String key = temp[0];
+                            key = key.substring(1);
+                            key = key.substring(0, key.length() - 1);
+                            String value = temp[1];
+                            value = value.substring(1);
+                            value = value.substring(0, value.length() - 1);
+                            user_info.put(key, value);
+                        }
+
+                        grades.add(user_info);
+                    }
                 }
 
             } catch (Exception e) {
@@ -1171,7 +1175,7 @@ public class ServerRequests {
             } finally {
                 if(reader != null) {
                     try {
-                        reader.close();     //Closing the
+                        reader.close();     //Closing the reader
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
