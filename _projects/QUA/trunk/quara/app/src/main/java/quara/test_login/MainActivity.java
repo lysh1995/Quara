@@ -383,7 +383,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         //get the name of the person who is at front of queue so we can answer his question
                         Queue sel_queue = new Queue("", "", "", selected);
                         ServerRequests serverRequests = new ServerRequests(temp);
-                        Log.i("before server req", "");
+                        //Log.i("before server req", "");
                         serverRequests.getQueueInBackground(sel_queue, new GetQueueCallBack() {
                             @Override
                             public void done(ArrayList returnQueue) {
@@ -443,9 +443,39 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     }
                 }
         );
+        //Create button for clearing queue
+        Button clear = new Button(temp);
+        clear.setText("Clear Queue");
+        clear.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                names_on_queue.clear();
+                tt = temp;
+                Queue queue = new Queue("","","",selected);
+                ServerRequests serverRequests = new ServerRequests(temp);
+                serverRequests.clearQueue(queue, new GetQueueCallBack() {
+                    @Override
+                    public void done(ArrayList returnQueue) {
+                        LinearLayout layout = (LinearLayout) findViewById(R.id.user_info_form);
+                        lyout1 = layout;
+                        layout.removeAllViews();
+                        LinearLayout linearLayout = (LinearLayout) findViewById(R.id.couse_student_form);
+                        lyout2 = linearLayout;
+                        linearLayout.removeAllViews();
+                        Intent intent = new Intent(temp, MyReceiverDelete.class);
+                        intent.setAction("com.pycitup.BroadcastReceiverDelete");
+                        sendBroadcast(intent);
+                    }
+                });
+            }
+        });
+
+
         LinearLayout lineLayout = (LinearLayout) findViewById(R.id.answer_bottom);
         lineLayout.removeAllViews();
         lineLayout.addView(answer);
+        lineLayout.addView(clear);
     }
 
     @NonNull
