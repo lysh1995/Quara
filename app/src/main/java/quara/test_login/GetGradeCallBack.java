@@ -4,6 +4,6 @@ import java.util.ArrayList;
 import java.util.Map;
 
 interface GetGradeCallBack {
-    public abstract void done(ArrayList Grades);
+    public abstract void done(ArrayList returnGrade);
 }
 
