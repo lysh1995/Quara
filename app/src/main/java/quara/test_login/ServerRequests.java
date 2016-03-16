@@ -98,11 +98,18 @@ public class ServerRequests {
         new InsertQueueAsyncTask(queue, callBack).execute();
     }
 
-    public void insertGradeInBackground(Queue queue, GetQueueCallBack callBack)
+    public void insertGradeInBackground(Grade grade, GetGradeCallBack callBack)
     {
         progressDialog.show();
-        new InsertQueueAsyncTask(queue, callBack).execute();
+        new InsertGradeAsyncTask(grade, callBack).execute();
     }
+
+    public void getGradeInBackground(ArrayList grades, GetGradeCallBack callBack)
+    {
+        progressDialog.show();
+        new GetGradeAsyncTask(grades, callBack).execute();
+    }
+
     public void deleteQueueInBackground(Queue queue, GetQueueCallBack callBack)
     {
         progressDialog.show();
@@ -911,6 +918,9 @@ public class ServerRequests {
         }
     }
 
+    /**
+     * Insert a grade into the DB. TODO fix me
+     */
     public class InsertGradeAsyncTask extends AsyncTask<Void, Void, ArrayList> {
         Grade grade;
         GetGradeCallBack GradeCallback;
@@ -980,6 +990,113 @@ public class ServerRequests {
                 }
             }
             return grade;
+        }
+
+        @Override
+        protected void onPostExecute(ArrayList returnGrade) {
+            progressDialog.dismiss();
+            GradeCallback.done(returnGrade);
+            super.onPostExecute(returnGrade);
+        }
+    }
+
+    /**
+     * Get a list of all grades from the DB. TODO fix me
+     */
+    public class GetGradeAsyncTask extends AsyncTask<Void, Void, ArrayList> {
+        ArrayList grades;
+        GetGradeCallBack GradeCallback;
+
+        public GetGradeAsyncTask(ArrayList grades, GetGradeCallBack GradeCallback) {
+            this.grades = grades;
+            this.GradeCallback = GradeCallback;
+        }
+
+        private String getEncodedData(Map<String,String> data) {
+            return ServerRequests.this.getEncodedData(data);
+        }
+
+        @Override
+        protected ArrayList doInBackground(Void... params) {
+            Map dataToSend = new HashMap();
+
+            String encodedStr = getEncodedData(dataToSend);
+
+            BufferedReader reader = null;
+
+            ArrayList grades = new ArrayList();
+
+            try {
+
+                URL url = new URL(SERVER_ADDRESS + "GetAllGrades.php");
+
+                HttpURLConnection con = (HttpURLConnection) url.openConnection();
+
+                con.setRequestMethod("POST");
+
+                con.setDoOutput(true);
+                OutputStreamWriter writer = new OutputStreamWriter(con.getOutputStream());
+
+                writer.write(encodedStr);
+                writer.flush();
+
+                StringBuilder sb = new StringBuilder();
+                reader = new BufferedReader(new InputStreamReader(con.getInputStream()));
+
+                String line;
+                while((line = reader.readLine()) != null) {
+                    sb.append(line);
+                }
+                line = sb.toString();
+
+                Log.i("custom_check","The values received in the store part are as follows:");
+                Log.i("custom_check",line);
+
+                if (!line.equals("null"))
+                {
+//                    line = line.substring(1);
+//                    line = line.substring(0, line.length() - 1);
+//                    String[] temp_list = line.split("],");
+//                    for (int i = 0; i < temp_list.length; i++)
+//                    {
+//                        String new_element = temp_list[i];
+//                        if (new_element.charAt(0) == '[')
+//                            new_element = new_element.substring(1);
+//                        if (new_element.charAt(new_element.length()-1) == ']')
+//                            new_element = new_element.substring(0, new_element.length() - 1);
+//                        new_element = new_element.substring(1);
+//                        new_element = new_element.substring(0, new_element.length() - 1);
+//                        String temp_info[] = new_element.split(",");
+//                        Map user_info = new HashMap();
+//                        for (int j = 0; j < temp_info.length; j++)
+//                        {
+//                            String new_info = temp_info[j];
+//                            String temp[] = new_info.split(":");
+//                            String key = temp[0];
+//                            key = key.substring(1);
+//                            key = key.substring(0, key.length() - 1);
+//                            String value = temp[1];
+//                            value = value.substring(1);
+//                            value = value.substring(0, value.length() - 1);
+//                            user_info.put(key, value);
+//                        }
+//
+//                        queue.add(user_info);
+//                    }
+                }
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            } finally {
+                if(reader != null) {
+                    try {
+                        reader.close();     //Closing the
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+            return grades;
         }
 
         @Override
