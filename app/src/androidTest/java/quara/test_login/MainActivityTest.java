@@ -3,6 +3,8 @@ package quara.test_login;
 import android.test.ActivityInstrumentationTestCase2;
 import android.test.suitebuilder.annotation.SmallTest;
 
+import java.util.ArrayList;
+
 public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActivity> {
     public MainActivityTest(){
         super(MainActivity.class);
@@ -39,5 +41,29 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
         String notes = "How do we pipeline this code?";
         Queue testQueue = new Queue("John", "1310", "Tomasulo", "CS433", notes);
         assertEquals(testQueue.user_notes, notes);
+    }
+
+    @SmallTest
+    public void testGetNavItemCount() {
+        MainActivity.NavItem item1 = new MainActivity().new NavItem("Test1", "Test1 content", 0);
+        MainActivity.NavItem item2 = new MainActivity().new NavItem("Test2", "Test2 content", 1);
+        ArrayList<MainActivity.NavItem> list = new ArrayList<MainActivity.NavItem>();
+        list.add(item1);
+        list.add(item2);
+        MainActivity.DrawerListAdapter adapter = new MainActivity().new DrawerListAdapter(getActivity(), list);
+        assertEquals(adapter.getCount(), 2);
+
+    }
+
+    @SmallTest
+    public void testGetNavItem() {
+        MainActivity.NavItem item1 = new MainActivity().new NavItem("Test1", "Test1 content", 0);
+        MainActivity.NavItem item2 = new MainActivity().new NavItem("Test2", "Test2 content", 1);
+        ArrayList<MainActivity.NavItem> list = new ArrayList<MainActivity.NavItem>();
+        list.add(item1);
+        list.add(item2);
+        MainActivity.DrawerListAdapter adapter = new MainActivity().new DrawerListAdapter(getActivity(), list);
+        assertEquals(adapter.getItem(0), item1);
+        assertEquals(adapter.getItem(1), item2);
     }
 }
