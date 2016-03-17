@@ -136,28 +136,23 @@ public class GradeActivity extends AppCompatActivity implements View.OnClickList
     protected void initGradeList() {
         serverRequests = new ServerRequests(temp);
         UserLocalStore uls = new UserLocalStore(temp);
-        User curUser = uls.getLoggedInUser();
-//        if (curUser != null)
-//            Toast.makeText(this, "username = "+ curUser.username, Toast.LENGTH_LONG).show();
-//        else
-//            Toast.makeText(this, "No user logged in!", Toast.LENGTH_LONG).show();
+        final User curUser = uls.getLoggedInUser();
+
         serverRequests.getGradeInBackground(curUser, new GetGradeCallBack() {
             @Override
             public void done(ArrayList returnGrades) {
                 Iterator<ArrayList> iterator = returnGrades.iterator();
-//                Toast.makeText(temp, returnGrades.size(), Toast.LENGTH_LONG).show();
                 LinearLayout linearLayout = (LinearLayout) findViewById(R.id.user_grade_form);
                 //linearLayout.removeAllViews();
                 while (iterator.hasNext()) {
                     Map entry = (Map) iterator.next();
                     TextView tv = new TextView(temp);
                     Map result = entry;
-                    tv.setText("username: "+ result.get("username")+ " score: "
-                                + result.get("score")+ " description: "+ result.get("description"));
+//                    Grade grade = new Grade(curUser.username, (double) result.get("score"), (String) result.get("description"));
+                    tv.setText(result.get("description") + ": "+ result.get("score"));
                     tv.setId(0);
                     tv.setTextColor(Color.parseColor("#000000"));
                     linearLayout.addView(tv);
-//                    Toast.makeText(temp, tv.getText().toString(), Toast.LENGTH_LONG).show();
                 }
             }
         });

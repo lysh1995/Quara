@@ -6,10 +6,10 @@ package quara.test_login;
 public class Grade {
 
     String username;
-    float score;
+    double score; //stored in SQL as float, equivalent to Java double (not float)
     String description;
 
-    public Grade(String username, float score, String description)
+    public Grade(String username, double score, String description)
     {
         this.username = username;
         this.score = score;
