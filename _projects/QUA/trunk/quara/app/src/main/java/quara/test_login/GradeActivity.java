@@ -148,7 +148,6 @@ public class GradeActivity extends AppCompatActivity implements View.OnClickList
                     Map entry = (Map) iterator.next();
                     TextView tv = new TextView(temp);
                     Map result = entry;
-//                    Grade grade = new Grade(curUser.username, (double) result.get("score"), (String) result.get("description"));
                     tv.setText(result.get("description") + ": "+ result.get("score"));
                     tv.setId(0);
                     tv.setTextColor(Color.parseColor("#000000"));

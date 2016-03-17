@@ -1161,8 +1161,13 @@ public class ServerRequests {
                             key = key.substring(1);
                             key = key.substring(0, key.length() - 1);
                             String value = temp[1];
-//                            value = value.substring(1);
-//                            value = value.substring(0, value.length() - 1);
+
+                            // If it's not a number, take off the " characters at the beginning and end
+                            if (!key.equals("score")) {
+                                value = value.substring(1);
+                                value = value.substring(0, value.length() - 1);
+                            }
+
                             user_info.put(key, value);
                         }
 
