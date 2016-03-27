@@ -268,7 +268,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         layout.removeAllViews();
                         selected = parent.getItemAtPosition(position).toString();
                         Course selected_course = new Course(selected, "");
-                        Queue selected_queue = new Queue("","","",selected);
+                        Question selected_queue = new Question("","","",selected);
                         ServerRequests serverRequests = new ServerRequests(temp);
                         serverRequests.getCourseDescriptionInBackground(selected_course, new GetDescriptionCallBack() {
                             @Override
@@ -381,7 +381,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         tt = temp;
                         LinearLayout layout = (LinearLayout) findViewById(R.id.answer_form);
                         //get the name of the person who is at front of queue so we can answer his question
-                        Queue sel_queue = new Queue("", "", "", selected);
+                        Question sel_queue = new Question("", "", "", selected);
                         ServerRequests serverRequests = new ServerRequests(temp);
                         //Log.i("before server req", "");
                         serverRequests.getQueueInBackground(sel_queue, new GetQueueCallBack() {
@@ -404,7 +404,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                     final String name = (String) res.get("user_name"); //name of first person in queue
                                     first = name;
 
-                                    Queue queue = new Queue(name, "", "", selected);
+                                    Question queue = new Question(name, "", "", selected);
                                     queue.setAnswering(ta_id);
                                     ServerRequests serverRequests = new ServerRequests(temp);
                                     serverRequests.answerQuestion(queue, new GetQueueCallBack() {
@@ -452,7 +452,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             public void onClick(View v) {
                 names_on_queue.clear();
                 tt = temp;
-                Queue queue = new Queue("","","",selected);
+                Question queue = new Question("","","",selected);
                 ServerRequests serverRequests = new ServerRequests(temp);
                 serverRequests.clearQueue(queue, new GetQueueCallBack() {
                     @Override
@@ -492,7 +492,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 names_on_queue.remove(name);
                 LinearLayout layout = (LinearLayout) findViewById(R.id.user_info_form);
                 layout.removeAllViews();
-                Queue queue = new Queue(name, "", "", selected);
+                Question queue = new Question(name, "", "", selected);
 
                 ServerRequests serverRequests = new ServerRequests(temp);
                 serverRequests.deleteQueueInBackground(queue, new GetQueueCallBack() {
@@ -614,7 +614,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                 String pos = text1.getText().toString();
                                 String topic = text2.getText().toString();
                                 String notes = notesText.getText().toString();
-                                Queue queue = new Queue(name, pos, topic, selected, notes);
+                                Question queue = new Question(name, pos, topic, selected, notes);
                                 ServerRequests serverRequests = new ServerRequests(temp);
 
                                 if (!edit) { //insert into queue
@@ -658,7 +658,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 layout = (LinearLayout) findViewById(R.id.user_info_form);
                 layout.removeAllViews();
                 String name = userLocalStore.getLoggedInUser().name;
-                Queue queue = new Queue(name,"","",selected);
+                Question queue = new Question(name,"","",selected);
                 ServerRequests serverRequests = new ServerRequests(temp);
                 serverRequests.deleteQueueInBackground(queue, new GetQueueCallBack() {
                     @Override

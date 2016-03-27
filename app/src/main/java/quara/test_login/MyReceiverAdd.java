@@ -25,7 +25,7 @@ public class MyReceiverAdd extends BroadcastReceiver {
         LinearLayout layout = MainActivity.lyout1;
         layout.removeAllViews();
         String selected = spinner1.getSelectedItem().toString();
-        Queue selected_queue = new Queue("","","",selected);
+        Question selected_queue = new Question("","","",selected);
         ServerRequests serverRequests;
         serverRequests = new ServerRequests(temp);
         serverRequests.getQueueInBackground(selected_queue, new GetQueueCallBack() {

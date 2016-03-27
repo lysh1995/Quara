@@ -5,6 +5,8 @@ import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
 
+import com.google.android.gms.games.quest.Quest;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -86,13 +88,13 @@ public class ServerRequests {
         new getAllCourseDescriptionAsyncTask(course, callBack).execute();
     }
 
-    public void getQueueInBackground(Queue queue, GetQueueCallBack callBack)
+    public void getQueueInBackground(Question queue, GetQueueCallBack callBack)
     {
         progressDialog.show();
         new getAllQueueAsyncTask(queue, callBack).execute();
     }
 
-    public void insertQueueInBackground(Queue queue, GetQueueCallBack callBack)
+    public void insertQueueInBackground(Question queue, GetQueueCallBack callBack)
     {
         progressDialog.show();
         new InsertQueueAsyncTask(queue, callBack).execute();
@@ -110,24 +112,24 @@ public class ServerRequests {
         new GetGradeAsyncTask(user, callBack).execute();
     }
 
-    public void deleteQueueInBackground(Queue queue, GetQueueCallBack callBack)
+    public void deleteQueueInBackground(Question queue, GetQueueCallBack callBack)
     {
         progressDialog.show();
         new DeleteQueueAsyncTask(queue, callBack).execute();
     }
 
-    public void clearQueue(Queue queue, GetQueueCallBack callBack){
+    public void clearQueue(Question queue, GetQueueCallBack callBack){
         progressDialog.show();
         new ClearQueueAsyncTask(queue, callBack).execute();
 
     }
-    public void editQueueInBackground(Queue queue, GetQueueCallBack callBack)
+    public void editQueueInBackground(Question queue, GetQueueCallBack callBack)
     {
         progressDialog.show();
         new EditQueueAsyncTask(queue, callBack).execute();
     }
 
-    public void answerQuestion(Queue queue, GetQueueCallBack callBack)
+    public void answerQuestion(Question queue, GetQueueCallBack callBack)
     {
         progressDialog.show();
         new answerQuestionAsyncTask(queue, callBack).execute();
@@ -576,11 +578,11 @@ public class ServerRequests {
     }
 
     public class getAllQueueAsyncTask extends AsyncTask<Void, Void, ArrayList> {
-        Queue queue;
+        Question question;
         GetQueueCallBack QueueCallback;
 
-        public getAllQueueAsyncTask(Queue queue, GetQueueCallBack QueueCallback) {
-            this.queue = queue;
+        public getAllQueueAsyncTask(Question question, GetQueueCallBack QueueCallback) {
+            this.question = question;
             this.QueueCallback = QueueCallback;
         }
 
@@ -591,7 +593,7 @@ public class ServerRequests {
         @Override
         protected ArrayList doInBackground(Void... params) {
             Map dataToSend = new HashMap();
-            dataToSend.put("course_name", queue.course_name);
+            dataToSend.put("course_name", question.course_name);
 
             String encodedStr = getEncodedData(dataToSend);
             Log.i("send_check", "the data sent is: " + encodedStr);
@@ -682,11 +684,11 @@ public class ServerRequests {
     }
 
     public class InsertQueueAsyncTask extends AsyncTask<Void, Void, ArrayList> {
-        Queue queue;
+        Question question;
         GetQueueCallBack QueueCallback;
 
-        public InsertQueueAsyncTask(Queue queue, GetQueueCallBack QueueCallback) {
-            this.queue = queue;
+        public InsertQueueAsyncTask(Question question, GetQueueCallBack QueueCallback) {
+            this.question = question;
             this.QueueCallback = QueueCallback;
         }
 
@@ -697,12 +699,12 @@ public class ServerRequests {
         @Override
         protected ArrayList doInBackground(Void... params) {
             Map dataToSend = new HashMap();
-            dataToSend.put("user_name", queue.user_name);
-            dataToSend.put("user_pos", queue.user_pos);
-            dataToSend.put("user_topic", queue.user_topic);
-            dataToSend.put("user_notes", queue.user_notes); // foobar
-            dataToSend.put("course_name", queue.course_name);
-            dataToSend.put("ta_id", queue.ta_id);
+            dataToSend.put("user_name", question.user_name);
+            dataToSend.put("user_pos", question.user_pos);
+            dataToSend.put("user_topic", question.user_topic);
+            dataToSend.put("user_notes", question.user_notes); // foobar
+            dataToSend.put("course_name", question.course_name);
+            dataToSend.put("ta_id", question.ta_id);
 
             String encodedStr = getEncodedData(dataToSend);
 
@@ -764,11 +766,11 @@ public class ServerRequests {
     }
 
     public class EditQueueAsyncTask extends AsyncTask<Void, Void, ArrayList> {
-        Queue queue;
+        Question question;
         GetQueueCallBack QueueCallback;
 
-        public EditQueueAsyncTask(Queue queue, GetQueueCallBack QueueCallback) {
-            this.queue = queue;
+        public EditQueueAsyncTask(Question question, GetQueueCallBack QueueCallback) {
+            this.question = question;
             this.QueueCallback = QueueCallback;
         }
 
@@ -779,12 +781,12 @@ public class ServerRequests {
         @Override
         protected ArrayList doInBackground(Void... params) {
             Map dataToSend = new HashMap();
-            dataToSend.put("user_name", queue.user_name);
-            dataToSend.put("user_pos", queue.user_pos);
-            dataToSend.put("user_topic", queue.user_topic);
-            dataToSend.put("user_notes", queue.user_notes); // foobar
-            dataToSend.put("course_name", queue.course_name);
-            dataToSend.put("ta_id", queue.ta_id);
+            dataToSend.put("user_name", question.user_name);
+            dataToSend.put("user_pos", question.user_pos);
+            dataToSend.put("user_topic", question.user_topic);
+            dataToSend.put("user_notes", question.user_notes); // foobar
+            dataToSend.put("course_name", question.course_name);
+            dataToSend.put("ta_id", question.ta_id);
 
             String encodedStr = getEncodedData(dataToSend);
 
@@ -846,11 +848,11 @@ public class ServerRequests {
     }
 
     public class ClearQueueAsyncTask extends AsyncTask<Void, Void, ArrayList> {
-        Queue queue;
+        Question question;
         GetQueueCallBack QueueCallback;
 
-        public ClearQueueAsyncTask(Queue queue, GetQueueCallBack QueueCallback) {
-            this.queue = queue;
+        public ClearQueueAsyncTask(Question question, GetQueueCallBack QueueCallback) {
+            this.question = question;
             this.QueueCallback = QueueCallback;
         }
 
@@ -861,7 +863,7 @@ public class ServerRequests {
         @Override
         protected ArrayList doInBackground(Void... params) {
             Map dataToSend = new HashMap();
-            dataToSend.put("course_name", queue.course_name);
+            dataToSend.put("course_name", question.course_name);
 
             String encodedStr = getEncodedData(dataToSend);
 
@@ -923,11 +925,11 @@ public class ServerRequests {
     }
 
     public class DeleteQueueAsyncTask extends AsyncTask<Void, Void, ArrayList> {
-        Queue queue;
+        Question question;
         GetQueueCallBack QueueCallback;
 
-        public DeleteQueueAsyncTask(Queue queue, GetQueueCallBack QueueCallback) {
-            this.queue = queue;
+        public DeleteQueueAsyncTask(Question question, GetQueueCallBack QueueCallback) {
+            this.question = question;
             this.QueueCallback = QueueCallback;
         }
 
@@ -938,8 +940,8 @@ public class ServerRequests {
         @Override
         protected ArrayList doInBackground(Void... params) {
             Map dataToSend = new HashMap();
-            dataToSend.put("user_name", queue.user_name);
-            dataToSend.put("course_name", queue.course_name);
+            dataToSend.put("user_name", question.user_name);
+            dataToSend.put("course_name", question.course_name);
 
             String encodedStr = getEncodedData(dataToSend);
 
@@ -1276,10 +1278,10 @@ public class ServerRequests {
     }
 
     public class answerQuestionAsyncTask extends AsyncTask<Void, Void, ArrayList> {
-        Queue question;
+        Question question;
         GetQueueCallBack QueueCallBack;
 
-        public answerQuestionAsyncTask(Queue question, GetQueueCallBack QueueCallBack) {
+        public answerQuestionAsyncTask(Question question, GetQueueCallBack QueueCallBack) {
             this.question = question;
             this.QueueCallBack = QueueCallBack;
         }
