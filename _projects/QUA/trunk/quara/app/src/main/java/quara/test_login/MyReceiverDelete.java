@@ -26,7 +26,7 @@ public class MyReceiverDelete extends BroadcastReceiver {
         layout.removeAllViews();
         String selected = spinner1.getSelectedItem().toString();
         Course selected_course = new Course(selected, "");
-        Queue selected_queue = new Queue("","","",selected);
+        Question selected_queue = new Question("","","",selected);
         ServerRequests serverRequests;
         serverRequests = new ServerRequests(temp);
         serverRequests.getQueueInBackground(selected_queue, new GetQueueCallBack() {
