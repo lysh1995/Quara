@@ -18,12 +18,18 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.GridLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.github.mikephil.charting.charts.LineChart;
+import com.github.mikephil.charting.data.Entry;
+import com.github.mikephil.charting.data.LineData;
+import com.github.mikephil.charting.data.LineDataSet;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -141,18 +147,36 @@ public class GradeActivity extends AppCompatActivity implements View.OnClickList
         serverRequests.getGradeInBackground(curUser, new GetGradeCallBack() {
             @Override
             public void done(ArrayList returnGrades) {
+                ArrayList<Entry> entries = new ArrayList<>();
+                ArrayList<String> labels = new ArrayList<String>();
+
                 Iterator<ArrayList> iterator = returnGrades.iterator();
-                LinearLayout linearLayout = (LinearLayout) findViewById(R.id.user_grade_form);
+                LinearLayout linearLayout = (LinearLayout) findViewById(R.id.course_grade_form);
                 //linearLayout.removeAllViews();
+                int i = 0;
                 while (iterator.hasNext()) {
                     Map entry = (Map) iterator.next();
                     TextView tv = new TextView(temp);
                     Map result = entry;
-                    tv.setText(result.get("description") + ": "+ result.get("score"));
+                    tv.setText(result.get("description") + ": " + result.get("score"));
                     tv.setId(0);
                     tv.setTextColor(Color.parseColor("#000000"));
                     linearLayout.addView(tv);
+                    int score = Integer.parseInt(result.get("score").toString());
+                    entries.add(new Entry(score, i));
+                    labels.add(result.get("description").toString());
+                    i++;
                 }
+                LineChart lineChart = new LineChart(temp);
+                lineChart.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+                LineDataSet dataset = new LineDataSet(entries, "");
+                LineData data = new LineData(labels, dataset);
+                lineChart.setData(data);
+                lineChart.setDescription("Description");
+                lineChart.animateX(2000);
+                LinearLayout layout = (LinearLayout) findViewById(R.id.grade_chart_form);
+                layout.removeAllViews();
+                layout.addView(lineChart);
             }
         });
     }
