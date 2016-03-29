@@ -36,6 +36,22 @@ tools:context=".GradeActivity">
             android:textSize="30dp"
             android:textColor= "@color/black" />
 
+        <LinearLayout
+            android:id="@+id/grade_chart_form"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/course_grade_form"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
+        </LinearLayout>
+
         <Button
             android:layout_width="match_parent"
             android:id="@+id/bLogout"
