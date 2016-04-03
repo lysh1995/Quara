@@ -144,11 +144,21 @@ public class GradeActivity extends AppCompatActivity implements View.OnClickList
         userLocalStore = new UserLocalStore(this);
 
         initGradeList();
-        if (temp_index > 0)
+        System.out.print("index: "+ temp_index);
         {
-
+            LinearLayout linearLayout = (LinearLayout) findViewById(R.id.course_recover_form);
+            Button recover = new Button(this);
+            recover.setText("Refresh Grade");
+            recover.setOnClickListener(
+                    new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            initGradeList();
+                        }
+                    });
+            linearLayout.removeAllViews();
+            linearLayout.addView(recover);
         }
-
     }
 
     public void redraw()
@@ -182,7 +192,7 @@ public class GradeActivity extends AppCompatActivity implements View.OnClickList
                 LineChart lineChart = new LineChart(temp);
                 lineChart.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
                 lineChartGraph = lineChart;
-                //linearLayout.removeAllViews();
+                linearLayout.removeAllViews();
                 int i = 0;
                 while (iterator.hasNext()) {
                     temp_index = i;
@@ -218,7 +228,6 @@ public class GradeActivity extends AppCompatActivity implements View.OnClickList
                         @Override
                         public void onStopTrackingTouch(SeekBar seekBar) {
                             temp_tv.get(id).setText(temp_title.get(id) + " socre: " + progress + "/" + seekBar.getMax());
-                            Toast.makeText(getApplicationContext(), "Stopped tracking seekbar", Toast.LENGTH_SHORT).show();
                             temp_score.set(id, progress);
                             entries.get(id).setVal(progress);
                             redraw();
