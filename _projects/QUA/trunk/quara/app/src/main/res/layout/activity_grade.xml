@@ -19,6 +19,9 @@ tools:context=".GradeActivity">
     android:id="@+id/grade_form"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
     <LinearLayout
         android:id="@+id/user_grade_form"
         android:layout_width="match_parent"
@@ -48,6 +51,13 @@ tools:context=".GradeActivity">
             android:id="@+id/course_grade_form"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:orientation="vertical">
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/course_recover_form"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:orientation="vertical">
         </LinearLayout>
@@ -60,6 +70,7 @@ tools:context=".GradeActivity">
             android:layout_height="wrap_content" />
 
     </LinearLayout>
+    </ScrollView>>
 
     <!-- The navigation drawer -->
     <RelativeLayout

@@ -19,6 +19,9 @@ tools:context="quara.test_login.MainActivity">
     android:id="@+id/login_form"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
     <LinearLayout
         android:id="@+id/user_login_form"
         android:layout_width="match_parent"
@@ -123,6 +126,7 @@ tools:context="quara.test_login.MainActivity">
             android:layout_gravity="center_horizontal" />
 
     </LinearLayout>
+    </ScrollView>>
 
     <!-- The navigation drawer -->
     <RelativeLayout
