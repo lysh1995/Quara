@@ -23,6 +23,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
+import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -55,6 +56,15 @@ public class GradeActivity extends AppCompatActivity implements View.OnClickList
 
     ArrayList<NavItem> mNavItems = new ArrayList<NavItem>();
 
+    ArrayList<TextView> temp_tv;
+    ArrayList<Integer> temp_score;
+    ArrayList<String> temp_title;
+    int temp_index;
+
+    ArrayList<Entry> entries;
+    ArrayList<String> labels;
+
+    LineChart lineChartGraph;
 
     public boolean onPrepareOptionsMenu(Menu menu) {
         // If the nav drawer is open, hide action items related to the content view
@@ -134,6 +144,19 @@ public class GradeActivity extends AppCompatActivity implements View.OnClickList
         userLocalStore = new UserLocalStore(this);
 
         initGradeList();
+        if (temp_index > 0)
+        {
+
+        }
+
+    }
+
+    public void redraw()
+    {
+        LineDataSet dataset = new LineDataSet(entries, "");
+        LineData data = new LineData(labels, dataset);
+        lineChartGraph.setData(data);
+        lineChartGraph.invalidate();
     }
 
     /**
@@ -147,28 +170,64 @@ public class GradeActivity extends AppCompatActivity implements View.OnClickList
         serverRequests.getGradeInBackground(curUser, new GetGradeCallBack() {
             @Override
             public void done(ArrayList returnGrades) {
-                ArrayList<Entry> entries = new ArrayList<>();
-                ArrayList<String> labels = new ArrayList<String>();
+                entries = new ArrayList<>();
+                labels = new ArrayList<String>();
+
+                temp_score = new ArrayList<Integer>();
+                temp_title = new ArrayList<String>();
+                temp_tv = new ArrayList<TextView>();
 
                 Iterator<ArrayList> iterator = returnGrades.iterator();
                 LinearLayout linearLayout = (LinearLayout) findViewById(R.id.course_grade_form);
+                LineChart lineChart = new LineChart(temp);
+                lineChart.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+                lineChartGraph = lineChart;
                 //linearLayout.removeAllViews();
                 int i = 0;
                 while (iterator.hasNext()) {
+                    temp_index = i;
                     Map entry = (Map) iterator.next();
                     TextView tv = new TextView(temp);
+                    SeekBar seekBar = new SeekBar(temp);
                     Map result = entry;
                     tv.setText(result.get("description") + ": " + result.get("score"));
                     tv.setId(0);
                     tv.setTextColor(Color.parseColor("#000000"));
-                    linearLayout.addView(tv);
+                    System.out.print(tv);
+                    temp_tv.add(tv);
                     int score = Integer.parseInt(result.get("score").toString());
                     entries.add(new Entry(score, i));
                     labels.add(result.get("description").toString());
+                    temp_score.add(score);
+                    temp_title.add(result.get("description").toString());
+                    seekBar.setMax(100);
+                    seekBar.setProgress(score);
+                    seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+                        int progress = temp_score.get(temp_index);
+                        int id = temp_index;
+
+                        @Override
+                        public void onProgressChanged(SeekBar seekBar, int progresValue, boolean fromUser) {
+                            progress = progresValue;
+                        }
+
+                        @Override
+                        public void onStartTrackingTouch(SeekBar seekBar) {
+                        }
+
+                        @Override
+                        public void onStopTrackingTouch(SeekBar seekBar) {
+                            temp_tv.get(id).setText(temp_title.get(id) + " socre: " + progress + "/" + seekBar.getMax());
+                            Toast.makeText(getApplicationContext(), "Stopped tracking seekbar", Toast.LENGTH_SHORT).show();
+                            temp_score.set(id, progress);
+                            entries.get(id).setVal(progress);
+                            redraw();
+                        }
+                    });
+                    linearLayout.addView(tv);
+                    linearLayout.addView(seekBar);
                     i++;
                 }
-                LineChart lineChart = new LineChart(temp);
-                lineChart.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
                 LineDataSet dataset = new LineDataSet(entries, "");
                 LineData data = new LineData(labels, dataset);
                 lineChart.setData(data);
@@ -224,11 +283,11 @@ public class GradeActivity extends AppCompatActivity implements View.OnClickList
         TA ta = new TA(userLocalStore.getLoggedInUser().name,"");
         ServerRequests serverRequest = new ServerRequests(temp);
         serverRequest.setOffDutyInBackground(ta, new UpdateDutyCallBack() {
-                    @Override
-                    public void done(String returnTA) {
-                        return;
-                    }
-                });
+            @Override
+            public void done(String returnTA) {
+                return;
+            }
+        });
         userLocalStore.clearUserData();
         userLocalStore.setUserLoggedIn(false);
         startActivity(new Intent(this, Login.class));
