@@ -22,4 +22,34 @@ public class Grade {
         this.score = -1;
         this.description = "";
     }
+
+    public String getUsername()
+    {
+        return this.username;
+    }
+
+    public double getScore()
+    {
+        return this.score;
+    }
+
+    public String getDescription()
+    {
+        return this.description;
+    }
+
+    public void setUsername(String username)
+    {
+        this.username = username;
+    }
+
+    public void setScore(double score)
+    {
+        this.score = score;
+    }
+
+    public void setDescription(String description)
+    {
+        this.description = description;
+    }
 }

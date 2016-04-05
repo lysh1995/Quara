@@ -292,11 +292,11 @@ public class GradeActivity extends AppCompatActivity implements View.OnClickList
         TA ta = new TA(userLocalStore.getLoggedInUser().name,"");
         ServerRequests serverRequest = new ServerRequests(temp);
         serverRequest.setOffDutyInBackground(ta, new UpdateDutyCallBack() {
-            @Override
-            public void done(String returnTA) {
-                return;
-            }
-        });
+                    @Override
+                    public void done(String returnTA) {
+                        return;
+                    }
+                });
         userLocalStore.clearUserData();
         userLocalStore.setUserLoggedIn(false);
         startActivity(new Intent(this, Login.class));
