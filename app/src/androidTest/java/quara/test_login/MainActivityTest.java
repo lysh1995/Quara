@@ -39,7 +39,7 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
     @SmallTest
     public void testNotes() {
         String notes = "How do we pipeline this code?";
-        Queue testQueue = new Queue("John", "1310", "Tomasulo", "CS433", notes);
+        Question testQueue = new Question("John", "1310", "Tomasulo", "CS433", notes);
         assertEquals(testQueue.user_notes, notes);
     }
 
