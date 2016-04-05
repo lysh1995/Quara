@@ -16,4 +16,19 @@ public class User {
         this.password = password;
         this.name = "";
     }
+
+    public String getName()
+    {
+        return this.name;
+    }
+
+    public String getUsername()
+    {
+        return this.username;
+    }
+
+    public String getPassword()
+    {
+        return this.password;
+    }
 }

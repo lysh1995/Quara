@@ -12,4 +12,14 @@ public class Course {
         this.description = description;
     }
 
+    public String getCourse_name()
+    {
+        return this.course_name;
+    }
+
+    public String getDescription()
+    {
+        return this.description;
+    }
+
 }
