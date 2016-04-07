@@ -26,6 +26,7 @@ import android.widget.Toast;
 import com.google.android.gms.gcm.GoogleCloudMessaging;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Handler;
 
@@ -113,6 +114,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                     msg = "Device registered, registration ID=" + regId;
 
                     storeRegistrationId(context, regId);
+
                 } catch (IOException ex) {
                     msg = "Error :" + ex.getMessage();
                     Log.d("RegisterActivity", "Error: " + msg);

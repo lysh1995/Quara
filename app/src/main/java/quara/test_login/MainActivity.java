@@ -527,6 +527,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             appUtil = new ShareExternalServer();
 
             regId = getIntent().getStringExtra("regId");
+            //Add the regId to our database as well
+            if (regId.length() != 0) {
+                ServerRequests req = new ServerRequests(temp);
+
+                req.insertRegIdInBackground(regId, new GetRegIdCallBack() {
+                    @Override
+                    public void done(String regId) {
+                        //do nothing
+                    }
+                });
+            }
+
             Log.d("MainActivity", "regId: " + regId);
             final Context context1 = this;
             shareRegidTask = new AsyncTask<Void, Void, String>() {
