@@ -324,6 +324,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                     } catch (JSONException e) {
                                         e.printStackTrace();
                                     }
+                                    ServerRequests serverRequests = new ServerRequests(temp);
+                                    String message = selected + "TA " + userLocalStore.getLoggedInUser().name + " is on Quara";
+                                    serverRequests.sendTALogInInBackground(message, new SendTALogInCallBack() {
+                                        @Override
+                                        public void done(String str) {
+                                        }
+                                    });
                                     displayTaOptions(taMap.get("ta_id"));
 
                                 }
@@ -528,7 +535,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             regId = getIntent().getStringExtra("regId");
             //Add the regId to our database as well
-            if (regId.length() != 0) {
+            if (regId != null && regId.length() != 0) {
                 ServerRequests req = new ServerRequests(temp);
 
                 req.insertRegIdInBackground(regId, new GetRegIdCallBack() {
