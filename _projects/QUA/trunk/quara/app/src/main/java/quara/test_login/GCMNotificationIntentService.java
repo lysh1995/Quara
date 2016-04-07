@@ -70,8 +70,10 @@ public class GCMNotificationIntentService extends IntentService {
         PendingIntent contentIntent = PendingIntent.getActivity(this, 0,
                 new Intent(this, MainActivity.class), 0);
 
+        int icon = R.mipmap.ic_launcher;
         NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(
                 this)
+                .setSmallIcon(icon)
                 .setContentTitle("GCM Notification")
                 .setStyle(new NotificationCompat.BigTextStyle().bigText(msg))
                 .setContentText(msg);
