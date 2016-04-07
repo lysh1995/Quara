@@ -159,6 +159,11 @@ public class ServerRequests {
         new getOnDutyTAAsyncTask(ta, callBack).execute();
     }
 
+    public void insertRegIdInBackground(String regId, GetRegIdCallBack callBack) {
+        progressDialog.show();
+        new insertRegIdAsyncTask(regId, callBack).execute();
+    }
+
     public class StoreUserDateAsyncTask extends AsyncTask<Void, Void, Void>
     {
         User user;
@@ -1003,7 +1008,7 @@ public class ServerRequests {
     }
 
     /**
-     * Insert a grade into the DB. TODO fix me
+     * Insert a grade into the DB.
      */
     public class InsertGradeAsyncTask extends AsyncTask<Void, Void, ArrayList> {
         Grade grade;
@@ -1085,7 +1090,7 @@ public class ServerRequests {
     }
 
     /**
-     * Get a list of all grades from the DB. TODO fix me
+     * Get a list of all grades from the DB.
      */
     public class GetGradeAsyncTask extends AsyncTask<Void, Void, ArrayList> {
         User user;
@@ -1589,6 +1594,81 @@ public class ServerRequests {
             progressDialog.dismiss();
             TaCallback.done(ta_list);
             super.onPostExecute(ta_list);
+        }
+    }
+
+    /**
+     * Insert a grade into the DB.
+     */
+    public class insertRegIdAsyncTask extends AsyncTask<Void, Void, ArrayList> {
+        String id;
+        GetRegIdCallBack RegIdCallback;
+
+        public insertRegIdAsyncTask(String id, GetRegIdCallBack RegIdCallback) {
+            this.id = id;
+            this.RegIdCallback = RegIdCallback;
+        }
+
+        private String getEncodedData(Map<String,String> data) {
+            return ServerRequests.this.getEncodedData(data);
+        }
+
+        @Override
+        protected ArrayList doInBackground(Void... params) {
+            Map dataToSend = new HashMap();
+            dataToSend.put("id", id);
+
+            String encodedStr = getEncodedData(dataToSend);
+
+            BufferedReader reader = null;
+
+            ArrayList id = new ArrayList();
+
+            try {
+
+                URL url = new URL(SERVER_ADDRESS + "AddRegId.php");
+
+                HttpURLConnection con = (HttpURLConnection) url.openConnection();
+
+                con.setRequestMethod("POST");
+
+                con.setDoOutput(true);
+                OutputStreamWriter writer = new OutputStreamWriter(con.getOutputStream());
+
+                writer.write(encodedStr);
+                writer.flush();
+
+                StringBuilder sb = new StringBuilder();
+                reader = new BufferedReader(new InputStreamReader(con.getInputStream()));
+
+                String line;
+                while((line = reader.readLine()) != null) {
+                    sb.append(line);
+                }
+                line = sb.toString();
+
+                Log.i("custom_check","The values received in the store part are as follows:");
+                Log.i("custom_check",line);
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            } finally {
+                if(reader != null) {
+                    try {
+                        reader.close();     //Closing the reader
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+            return id;
+        }
+
+        @Override
+        protected void onPostExecute(ArrayList returnRegId) {
+            progressDialog.dismiss();
+            RegIdCallback.done("");
+            super.onPostExecute(returnRegId);
         }
     }
 
