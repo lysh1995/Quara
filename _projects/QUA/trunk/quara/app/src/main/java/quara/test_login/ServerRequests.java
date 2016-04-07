@@ -164,6 +164,11 @@ public class ServerRequests {
         new insertRegIdAsyncTask(regId, callBack).execute();
     }
 
+    public void sendTALogInInBackground(String message, SendTALogInCallBack callBack) {
+        progressDialog.show();
+        new sendTALogInAsyncTask(message, callBack).execute();
+    }
+
     public class StoreUserDateAsyncTask extends AsyncTask<Void, Void, Void>
     {
         User user;
@@ -1598,7 +1603,7 @@ public class ServerRequests {
     }
 
     /**
-     * Insert a grade into the DB.
+     * Insert a regid into the DB.
      */
     public class insertRegIdAsyncTask extends AsyncTask<Void, Void, ArrayList> {
         String id;
@@ -1669,6 +1674,76 @@ public class ServerRequests {
             progressDialog.dismiss();
             RegIdCallback.done("");
             super.onPostExecute(returnRegId);
+        }
+    }
+
+    public class sendTALogInAsyncTask extends AsyncTask<Void, Void, String> {
+        String message;
+        SendTALogInCallBack sendLoginCallback;
+
+        public sendTALogInAsyncTask(String message, SendTALogInCallBack sendLoginCallback) {
+            this.message = message;
+            this.sendLoginCallback = sendLoginCallback;
+        }
+
+        private String getEncodedData(Map<String,String> data) {
+            return ServerRequests.this.getEncodedData(data);
+        }
+
+        @Override
+        protected String doInBackground(Void... params) {
+            Map dataToSend = new HashMap();
+            dataToSend.put("message", message);
+
+            String encodedStr = getEncodedData(dataToSend);
+
+            BufferedReader reader = null;
+
+            try {
+
+                URL url = new URL(SERVER_ADDRESS + "gcm_ta_login.php");
+
+                HttpURLConnection con = (HttpURLConnection) url.openConnection();
+
+                con.setRequestMethod("POST");
+
+                con.setDoOutput(true);
+                OutputStreamWriter writer = new OutputStreamWriter(con.getOutputStream());
+
+                writer.write(encodedStr);
+                writer.flush();
+
+                StringBuilder sb = new StringBuilder();
+                reader = new BufferedReader(new InputStreamReader(con.getInputStream()));
+
+                String line;
+                while((line = reader.readLine()) != null) {
+                    sb.append(line);
+                }
+                line = sb.toString();
+
+                Log.i("custom_check","The values received in the store part are as follows:");
+                Log.i("custom_check",line);
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            } finally {
+                if(reader != null) {
+                    try {
+                        reader.close();     //Closing the reader
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+            return "";
+        }
+
+        @Override
+        protected void onPostExecute(String str) {
+            progressDialog.dismiss();
+            sendLoginCallback.done("");
+            super.onPostExecute(str);
         }
     }
 
