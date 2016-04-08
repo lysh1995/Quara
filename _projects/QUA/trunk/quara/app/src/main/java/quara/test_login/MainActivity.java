@@ -580,11 +580,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             appUtil = new ShareExternalServer();
 
             regId = getIntent().getStringExtra("regId");
+            String username = "";
+            if (userLocalStore.getUserLoggedIn()) {
+                username = userLocalStore.getLoggedInUser().getUsername();
+            }
             //Add the regId to our database as well
             if (regId != null && regId.length() != 0) {
                 ServerRequests req = new ServerRequests(temp);
 
-                req.insertRegIdInBackground(regId, new GetRegIdCallBack() {
+                req.insertRegIdInBackground(regId, username, new GetRegIdCallBack() {
                     @Override
                     public void done(String regId) {
                         //do nothing
