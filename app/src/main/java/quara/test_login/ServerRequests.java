@@ -164,9 +164,9 @@ public class ServerRequests {
         new getOnDutyTAAsyncTask(ta, callBack).execute();
     }
 
-    public void insertRegIdInBackground(String regId, GetRegIdCallBack callBack) {
+    public void insertRegIdInBackground(String regId, String username, GetRegIdCallBack callBack) {
         progressDialog.show();
-        new insertRegIdAsyncTask(regId, callBack).execute();
+        new insertRegIdAsyncTask(regId, username, callBack).execute();
     }
 
     public void sendTALogInInBackground(String message, SendTALogInCallBack callBack) {
@@ -1690,10 +1690,12 @@ public class ServerRequests {
      */
     public class insertRegIdAsyncTask extends AsyncTask<Void, Void, ArrayList> {
         String id;
+        String username;
         GetRegIdCallBack RegIdCallback;
 
-        public insertRegIdAsyncTask(String id, GetRegIdCallBack RegIdCallback) {
+        public insertRegIdAsyncTask(String id, String username, GetRegIdCallBack RegIdCallback) {
             this.id = id;
+            this.username = username;
             this.RegIdCallback = RegIdCallback;
         }
 
@@ -1705,6 +1707,7 @@ public class ServerRequests {
         protected ArrayList doInBackground(Void... params) {
             Map dataToSend = new HashMap();
             dataToSend.put("id", id);
+            dataToSend.put("username", username);
 
             String encodedStr = getEncodedData(dataToSend);
 
