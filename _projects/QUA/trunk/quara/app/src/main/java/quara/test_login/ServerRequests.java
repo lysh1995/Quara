@@ -76,6 +76,11 @@ public class ServerRequests {
         new checkUserDateAsyncTask(user, callBack).execute();
     }
 
+    public void createQueue(Queue queue, GetActualQueueCallBack callback){
+        progressDialog.show();
+        new CreateQueueAsyncTask(queue, callback).execute();
+    }
+
     public void getAllCourseInBackground(User user, GetCourseCallBack callBack)
     {
         progressDialog.show();
@@ -584,6 +589,84 @@ public class ServerRequests {
             progressDialog.dismiss();
             DescriptionCallback.done(returnDescription);
             super.onPostExecute(returnDescription);
+        }
+    }
+    public class CreateQueueAsyncTask extends AsyncTask<Void, Void, ArrayList> {
+        Queue queue;
+        GetActualQueueCallBack ActualQueueCallback;
+
+        public CreateQueueAsyncTask(Queue queue, GetActualQueueCallBack ActualQueueCallback) {
+            this.queue = queue;
+            this.ActualQueueCallback = ActualQueueCallback;
+        }
+
+        private String getEncodedData(Map<String,String> data) {
+            return ServerRequests.this.getEncodedData(data);
+        }
+
+        @Override
+        protected ArrayList doInBackground(Void... params) {
+            Map dataToSend = new HashMap();
+
+            dataToSend.put("course_name", queue.course_name);
+            dataToSend.put("queue_name", queue.queue_name);
+
+            String encodedStr = getEncodedData(dataToSend);
+
+            BufferedReader reader = null;
+
+            ArrayList queue = new ArrayList();
+
+            try {
+
+                URL url = new URL(SERVER_ADDRESS + "CreateQueue.php");
+
+                HttpURLConnection con = (HttpURLConnection) url.openConnection();
+
+                con.setRequestMethod("POST");
+
+                con.setDoOutput(true);
+                OutputStreamWriter writer = new OutputStreamWriter(con.getOutputStream());
+
+                writer.write(encodedStr);
+                writer.flush();
+
+                StringBuilder sb = new StringBuilder();
+                reader = new BufferedReader(new InputStreamReader(con.getInputStream()));
+
+                String line;
+                while((line = reader.readLine()) != null) {
+                    sb.append(line);
+                }
+                line = sb.toString();
+
+                Log.i("custom_check","The values received in the store part are as follows:");
+                Log.i("custom_check",line);
+
+                if (!line.equals("null"))
+                {
+
+                }
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            } finally {
+                if(reader != null) {
+                    try {
+                        reader.close();     //Closing the
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+            return queue;
+        }
+
+        @Override
+        protected void onPostExecute(ArrayList returnQueue) {
+            progressDialog.dismiss();
+            ActualQueueCallback.done(returnQueue);
+            super.onPostExecute(returnQueue);
         }
     }
 
