@@ -58,6 +58,18 @@ public class ServerRequests {
         return sb.toString();
     }
 
+    HttpURLConnection setupServer(String filename, String encodedStr) throws Exception {
+        URL url = new URL(SERVER_ADDRESS + filename);
+        HttpURLConnection con = (HttpURLConnection) url.openConnection();
+        con.setRequestMethod("POST");
+        con.setDoOutput(true);
+
+        OutputStreamWriter writer = new OutputStreamWriter(con.getOutputStream());
+        writer.write(encodedStr);
+        writer.flush();
+        return con;
+    }
+
     public void storeUserDataInBackground(User user, GetUserCallBack callBack)
     {
         progressDialog.show();
@@ -198,23 +210,11 @@ public class ServerRequests {
             dataToSend.put("password", user.password);
 
             String encodedStr = getEncodedData(dataToSend);
-
             BufferedReader reader = null;
+            String filename = "Register.php";
 
             try {
-                URL url = new URL(SERVER_ADDRESS + "Register.php");
-
-                HttpURLConnection con = (HttpURLConnection) url.openConnection();
-
-                con.setRequestMethod("POST");
-
-                con.setDoOutput(true);
-                OutputStreamWriter writer = new OutputStreamWriter(con.getOutputStream());
-
-                writer.write(encodedStr);
-
-                writer.flush();
-
+                HttpURLConnection con = setupServer(filename, encodedStr);
                 StringBuilder sb = new StringBuilder();
                 reader = new BufferedReader(new InputStreamReader(con.getInputStream()));
 
@@ -269,25 +269,12 @@ public class ServerRequests {
             dataToSend.put("password", user.password);
 
             String encodedStr = getEncodedData(dataToSend);
-
             BufferedReader reader = null;
-
             User returnUser = null;
+            String filename = "FetchUserData.php";
 
             try {
-
-                URL url = new URL(SERVER_ADDRESS + "FetchUserData.php");
-
-                HttpURLConnection con = (HttpURLConnection) url.openConnection();
-
-                con.setRequestMethod("POST");
-
-                con.setDoOutput(true);
-                OutputStreamWriter writer = new OutputStreamWriter(con.getOutputStream());
-
-                writer.write(encodedStr);
-                writer.flush();
-
+                HttpURLConnection con = setupServer(filename, encodedStr);
                 StringBuilder sb = new StringBuilder();
                 reader = new BufferedReader(new InputStreamReader(con.getInputStream()));
 
@@ -354,25 +341,12 @@ public class ServerRequests {
             dataToSend.put("username", user.username);
 
             String encodedStr = getEncodedData(dataToSend);
-
             BufferedReader reader = null;
-
             User returnUser = null;
+            String filename = "CheckUserData.php";
 
             try {
-
-                URL url = new URL(SERVER_ADDRESS + "CheckUserData.php");
-
-                HttpURLConnection con = (HttpURLConnection) url.openConnection();
-
-                con.setRequestMethod("POST");
-
-                con.setDoOutput(true);
-                OutputStreamWriter writer = new OutputStreamWriter(con.getOutputStream());
-
-                writer.write(encodedStr);
-                writer.flush();
-
+                HttpURLConnection con = setupServer(filename, encodedStr);
                 StringBuilder sb = new StringBuilder();
                 reader = new BufferedReader(new InputStreamReader(con.getInputStream()));
 
@@ -435,25 +409,12 @@ public class ServerRequests {
             dataToSend.put("username", user.username);
 
             String encodedStr = getEncodedData(dataToSend);
-
             BufferedReader reader = null;
-
             Map returnCourse = new HashMap();
+            String filename = "GetAllCourse.php";
 
             try {
-
-                URL url = new URL(SERVER_ADDRESS + "GetAllCourse.php");
-
-                HttpURLConnection con = (HttpURLConnection) url.openConnection();
-
-                con.setRequestMethod("POST");
-
-                con.setDoOutput(true);
-                OutputStreamWriter writer = new OutputStreamWriter(con.getOutputStream());
-
-                writer.write(encodedStr);
-                writer.flush();
-
+                HttpURLConnection con = setupServer(filename, encodedStr);
                 StringBuilder sb = new StringBuilder();
                 reader = new BufferedReader(new InputStreamReader(con.getInputStream()));
 
@@ -529,25 +490,12 @@ public class ServerRequests {
             dataToSend.put("course_name", course.course_name);
 
             String encodedStr = getEncodedData(dataToSend);
-
             BufferedReader reader = null;
-
             String description = new String();
+            String filename = "GetSelectedCourse.php";
 
             try {
-
-                URL url = new URL(SERVER_ADDRESS + "GetSelectedCourse.php");
-
-                HttpURLConnection con = (HttpURLConnection) url.openConnection();
-
-                con.setRequestMethod("POST");
-
-                con.setDoOutput(true);
-                OutputStreamWriter writer = new OutputStreamWriter(con.getOutputStream());
-
-                writer.write(encodedStr);
-                writer.flush();
-
+                HttpURLConnection con = setupServer(filename, encodedStr);
                 StringBuilder sb = new StringBuilder();
                 reader = new BufferedReader(new InputStreamReader(con.getInputStream()));
 
@@ -607,30 +555,15 @@ public class ServerRequests {
         @Override
         protected ArrayList doInBackground(Void... params) {
             Map dataToSend = new HashMap();
-
             dataToSend.put("course_name", queue.course_name);
             dataToSend.put("queue_name", queue.queue_name);
-
             String encodedStr = getEncodedData(dataToSend);
-
             BufferedReader reader = null;
-
             ArrayList queue = new ArrayList();
+            String filename = "CreateQueue.php";
 
             try {
-
-                URL url = new URL(SERVER_ADDRESS + "CreateQueue.php");
-
-                HttpURLConnection con = (HttpURLConnection) url.openConnection();
-
-                con.setRequestMethod("POST");
-
-                con.setDoOutput(true);
-                OutputStreamWriter writer = new OutputStreamWriter(con.getOutputStream());
-
-                writer.write(encodedStr);
-                writer.flush();
-
+                HttpURLConnection con = setupServer(filename, encodedStr);
                 StringBuilder sb = new StringBuilder();
                 reader = new BufferedReader(new InputStreamReader(con.getInputStream()));
 
@@ -690,25 +623,12 @@ public class ServerRequests {
 
             String encodedStr = getEncodedData(dataToSend);
             Log.i("send_check", "the data sent is: " + encodedStr);
-
             BufferedReader reader = null;
-
             ArrayList queue = new ArrayList();
+            String filename = "GetAllQueue.php";
 
             try {
-
-                URL url = new URL(SERVER_ADDRESS + "GetAllQueue.php");
-
-                HttpURLConnection con = (HttpURLConnection) url.openConnection();
-
-                con.setRequestMethod("POST");
-
-                con.setDoOutput(true);
-                OutputStreamWriter writer = new OutputStreamWriter(con.getOutputStream());
-
-                writer.write(encodedStr);
-                writer.flush();
-
+                HttpURLConnection con = setupServer(filename, encodedStr);
                 StringBuilder sb = new StringBuilder();
                 reader = new BufferedReader(new InputStreamReader(con.getInputStream()));
 
@@ -798,27 +718,13 @@ public class ServerRequests {
             dataToSend.put("user_notes", question.user_notes); // foobar
             dataToSend.put("course_name", question.course_name);
             dataToSend.put("ta_id", question.ta_id);
-
             String encodedStr = getEncodedData(dataToSend);
-
             BufferedReader reader = null;
-
             ArrayList queue = new ArrayList();
+            String filename = "Enqueue.php";
 
             try {
-
-                URL url = new URL(SERVER_ADDRESS + "Enqueue.php");
-
-                HttpURLConnection con = (HttpURLConnection) url.openConnection();
-
-                con.setRequestMethod("POST");
-
-                con.setDoOutput(true);
-                OutputStreamWriter writer = new OutputStreamWriter(con.getOutputStream());
-
-                writer.write(encodedStr);
-                writer.flush();
-
+                HttpURLConnection con = setupServer(filename, encodedStr);
                 StringBuilder sb = new StringBuilder();
                 reader = new BufferedReader(new InputStreamReader(con.getInputStream()));
 
@@ -880,27 +786,13 @@ public class ServerRequests {
             dataToSend.put("user_notes", question.user_notes); // foobar
             dataToSend.put("course_name", question.course_name);
             dataToSend.put("ta_id", question.ta_id);
-
             String encodedStr = getEncodedData(dataToSend);
-
             BufferedReader reader = null;
-
             ArrayList queue = new ArrayList();
+            String filename = "Editqueue.php";
 
             try {
-
-                URL url = new URL(SERVER_ADDRESS + "Editqueue.php");
-
-                HttpURLConnection con = (HttpURLConnection) url.openConnection();
-
-                con.setRequestMethod("POST");
-
-                con.setDoOutput(true);
-                OutputStreamWriter writer = new OutputStreamWriter(con.getOutputStream());
-
-                writer.write(encodedStr);
-                writer.flush();
-
+                HttpURLConnection con = setupServer(filename, encodedStr);
                 StringBuilder sb = new StringBuilder();
                 reader = new BufferedReader(new InputStreamReader(con.getInputStream()));
 
@@ -957,27 +849,13 @@ public class ServerRequests {
         protected ArrayList doInBackground(Void... params) {
             Map dataToSend = new HashMap();
             dataToSend.put("course_name", question.course_name);
-
             String encodedStr = getEncodedData(dataToSend);
-
             BufferedReader reader = null;
-
             ArrayList queue = new ArrayList();
+            String filename = "clearQueue.php";
 
             try {
-
-                URL url = new URL(SERVER_ADDRESS + "clearQueue.php");
-
-                HttpURLConnection con = (HttpURLConnection) url.openConnection();
-
-                con.setRequestMethod("POST");
-
-                con.setDoOutput(true);
-                OutputStreamWriter writer = new OutputStreamWriter(con.getOutputStream());
-
-                writer.write(encodedStr);
-                writer.flush();
-
+                HttpURLConnection con = setupServer(filename, encodedStr);
                 StringBuilder sb = new StringBuilder();
                 reader = new BufferedReader(new InputStreamReader(con.getInputStream()));
 
@@ -1035,27 +913,13 @@ public class ServerRequests {
             Map dataToSend = new HashMap();
             dataToSend.put("user_name", question.user_name);
             dataToSend.put("course_name", question.course_name);
-
             String encodedStr = getEncodedData(dataToSend);
-
             BufferedReader reader = null;
-
             ArrayList queue = new ArrayList();
+            String filename = "Dequeue.php";
 
             try {
-
-                URL url = new URL(SERVER_ADDRESS + "Dequeue.php");
-
-                HttpURLConnection con = (HttpURLConnection) url.openConnection();
-
-                con.setRequestMethod("POST");
-
-                con.setDoOutput(true);
-                OutputStreamWriter writer = new OutputStreamWriter(con.getOutputStream());
-
-                writer.write(encodedStr);
-                writer.flush();
-
+                HttpURLConnection con = setupServer(filename, encodedStr);
                 StringBuilder sb = new StringBuilder();
                 reader = new BufferedReader(new InputStreamReader(con.getInputStream()));
 
@@ -1117,27 +981,13 @@ public class ServerRequests {
             dataToSend.put("username", grade.username);
             dataToSend.put("score", grade.score);
             dataToSend.put("description", grade.description);
-
             String encodedStr = getEncodedData(dataToSend);
-
             BufferedReader reader = null;
-
             ArrayList grade = new ArrayList(); //TODO fix it!
+            String filename = "AddGrade.php";
 
             try {
-
-                URL url = new URL(SERVER_ADDRESS + "AddGrade.php");
-
-                HttpURLConnection con = (HttpURLConnection) url.openConnection();
-
-                con.setRequestMethod("POST");
-
-                con.setDoOutput(true);
-                OutputStreamWriter writer = new OutputStreamWriter(con.getOutputStream());
-
-                writer.write(encodedStr);
-                writer.flush();
-
+                HttpURLConnection con = setupServer(filename, encodedStr);
                 StringBuilder sb = new StringBuilder();
                 reader = new BufferedReader(new InputStreamReader(con.getInputStream()));
 
@@ -1197,29 +1047,14 @@ public class ServerRequests {
         protected ArrayList doInBackground(Void... params) {
             Map dataToSend = new HashMap();
             dataToSend.put("username", user.username);
-
             String encodedStr = getEncodedData(dataToSend);
-
             Log.i("user_check", "the data sent is: " + encodedStr);
-
             BufferedReader reader = null;
-
             ArrayList grades = new ArrayList();
+            String filename = "GetUserGrades.php";
 
             try {
-
-                URL url = new URL(SERVER_ADDRESS + "GetUserGrades.php");
-
-                HttpURLConnection con = (HttpURLConnection) url.openConnection();
-
-                con.setRequestMethod("POST");
-
-                con.setDoOutput(true);
-                OutputStreamWriter writer = new OutputStreamWriter(con.getOutputStream());
-
-                writer.write(encodedStr);
-                writer.flush();
-
+                HttpURLConnection con = setupServer(filename, encodedStr);
                 StringBuilder sb = new StringBuilder();
                 reader = new BufferedReader(new InputStreamReader(con.getInputStream()));
 
@@ -1310,27 +1145,13 @@ public class ServerRequests {
             Map dataToSend = new HashMap();
             dataToSend.put("name", ta.name);
             dataToSend.put("course_name", ta.course_name);
-
             String encodedStr = getEncodedData(dataToSend);
-
             BufferedReader reader = null;
-
             String ta_info = "";
+            String filename = "CheckAuthorisation.php";
 
             try {
-
-                URL url = new URL(SERVER_ADDRESS + "CheckAuthorisation.php");
-
-                HttpURLConnection con = (HttpURLConnection) url.openConnection();
-
-                con.setRequestMethod("POST");
-
-                con.setDoOutput(true);
-                OutputStreamWriter writer = new OutputStreamWriter(con.getOutputStream());
-
-                writer.write(encodedStr);
-                writer.flush();
-
+                HttpURLConnection con = setupServer(filename, encodedStr);
                 StringBuilder sb = new StringBuilder();
                 reader = new BufferedReader(new InputStreamReader(con.getInputStream()));
 
@@ -1390,25 +1211,12 @@ public class ServerRequests {
             dataToSend.put("course_name", question.course_name);
             dataToSend.put("ta_id", question.ta_id);
             String encodedStr = getEncodedData(dataToSend);
-
             BufferedReader reader = null;
-
             ArrayList question = new ArrayList();
+            String filename = "answer.php";
 
             try {
-
-                URL url = new URL(SERVER_ADDRESS + "answer.php");
-
-                HttpURLConnection con = (HttpURLConnection) url.openConnection();
-
-                con.setRequestMethod("POST");
-
-                con.setDoOutput(true);
-                OutputStreamWriter writer = new OutputStreamWriter(con.getOutputStream());
-
-                writer.write(encodedStr);
-                writer.flush();
-
+                HttpURLConnection con = setupServer(filename, encodedStr);
                 StringBuilder sb = new StringBuilder();
                 reader = new BufferedReader(new InputStreamReader(con.getInputStream()));
 
@@ -1461,27 +1269,13 @@ public class ServerRequests {
             Map dataToSend = new HashMap();
             dataToSend.put("name", ta.name);
             dataToSend.put("course_name", ta.course_name);
-
             String encodedStr = getEncodedData(dataToSend);
-
             BufferedReader reader = null;
-
             String ta_info = "";
+            String filename = "Onduty.php";
 
             try {
-
-                URL url = new URL(SERVER_ADDRESS + "Onduty.php");
-
-                HttpURLConnection con = (HttpURLConnection) url.openConnection();
-
-                con.setRequestMethod("POST");
-
-                con.setDoOutput(true);
-                OutputStreamWriter writer = new OutputStreamWriter(con.getOutputStream());
-
-                writer.write(encodedStr);
-                writer.flush();
-
+                HttpURLConnection con = setupServer(filename, encodedStr);
                 StringBuilder sb = new StringBuilder();
                 reader = new BufferedReader(new InputStreamReader(con.getInputStream()));
 
@@ -1539,29 +1333,14 @@ public class ServerRequests {
             Map dataToSend = new HashMap();
             dataToSend.put("name", ta.name);
             dataToSend.put("course_name", ta.course_name);
-
             System.out.println("check" + ta.name);
-
             String encodedStr = getEncodedData(dataToSend);
-
             BufferedReader reader = null;
-
             String ta_info = "";
+            String filename = "Offduty.php";
 
             try {
-
-                URL url = new URL(SERVER_ADDRESS + "Offduty.php");
-
-                HttpURLConnection con = (HttpURLConnection) url.openConnection();
-
-                con.setRequestMethod("POST");
-
-                con.setDoOutput(true);
-                OutputStreamWriter writer = new OutputStreamWriter(con.getOutputStream());
-
-                writer.write(encodedStr);
-                writer.flush();
-
+                HttpURLConnection con = setupServer(filename, encodedStr);
                 StringBuilder sb = new StringBuilder();
                 reader = new BufferedReader(new InputStreamReader(con.getInputStream()));
 
@@ -1618,27 +1397,13 @@ public class ServerRequests {
         protected String[] doInBackground(Void... params) {
             Map dataToSend = new HashMap();
             dataToSend.put("course_name", ta.course_name);
-
             String encodedStr = getEncodedData(dataToSend);
-
             BufferedReader reader = null;
-
             String[] ta_list = new String[20];
+            String filename = "GetOnDutyTA.php";
 
             try {
-
-                URL url = new URL(SERVER_ADDRESS + "GetOnDutyTA.php");
-
-                HttpURLConnection con = (HttpURLConnection) url.openConnection();
-
-                con.setRequestMethod("POST");
-
-                con.setDoOutput(true);
-                OutputStreamWriter writer = new OutputStreamWriter(con.getOutputStream());
-
-                writer.write(encodedStr);
-                writer.flush();
-
+                HttpURLConnection con = setupServer(filename, encodedStr);
                 StringBuilder sb = new StringBuilder();
                 reader = new BufferedReader(new InputStreamReader(con.getInputStream()));
 
@@ -1708,27 +1473,13 @@ public class ServerRequests {
             Map dataToSend = new HashMap();
             dataToSend.put("id", id);
             dataToSend.put("username", username);
-
             String encodedStr = getEncodedData(dataToSend);
-
             BufferedReader reader = null;
-
             ArrayList id = new ArrayList();
+            String filename = "AddRegId.php";
 
             try {
-
-                URL url = new URL(SERVER_ADDRESS + "AddRegId.php");
-
-                HttpURLConnection con = (HttpURLConnection) url.openConnection();
-
-                con.setRequestMethod("POST");
-
-                con.setDoOutput(true);
-                OutputStreamWriter writer = new OutputStreamWriter(con.getOutputStream());
-
-                writer.write(encodedStr);
-                writer.flush();
-
+                HttpURLConnection con = setupServer(filename, encodedStr);
                 StringBuilder sb = new StringBuilder();
                 reader = new BufferedReader(new InputStreamReader(con.getInputStream()));
 
@@ -1780,25 +1531,11 @@ public class ServerRequests {
         protected String doInBackground(Void... params) {
             Map dataToSend = new HashMap();
             dataToSend.put("message", message);
-
             String encodedStr = getEncodedData(dataToSend);
-
             BufferedReader reader = null;
-
+            String filename = "gcm_ta_login.php";
             try {
-
-                URL url = new URL(SERVER_ADDRESS + "gcm_ta_login.php");
-
-                HttpURLConnection con = (HttpURLConnection) url.openConnection();
-
-                con.setRequestMethod("POST");
-
-                con.setDoOutput(true);
-                OutputStreamWriter writer = new OutputStreamWriter(con.getOutputStream());
-
-                writer.write(encodedStr);
-                writer.flush();
-
+                HttpURLConnection con = setupServer(filename, encodedStr);
                 StringBuilder sb = new StringBuilder();
                 reader = new BufferedReader(new InputStreamReader(con.getInputStream()));
 
